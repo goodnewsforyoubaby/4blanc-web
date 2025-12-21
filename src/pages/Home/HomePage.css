@@ -1,9 +1,9 @@
 .home-page {
-  padding: var(--spacing-4) 0;
+  padding: 0;
 }
 
 .home-section {
-  margin-bottom: var(--spacing-6);
+  margin: var(--spacing-6) 0;
 }
 
 .home-section-header {
@@ -27,6 +27,15 @@
   text-decoration: underline;
 }
 
+/* Products Grid */
+.home-products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3);
+  padding: 0 var(--spacing-4);
+}
+
+/* Keep scroll for backwards compatibility */
 .home-products-scroll {
   display: flex;
   gap: var(--spacing-3);
@@ -34,6 +43,7 @@
   overflow-x: auto;
 }
 
+/* Legacy styles - can be removed later */
 .home-collections {
   display: flex;
   flex-direction: column;
