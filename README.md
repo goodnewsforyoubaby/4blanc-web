@@ -95,9 +95,9 @@ Switch between themes using the theme switcher in the bottom-right corner:
 
 | Theme | Style | Shadows | Best For |
 |-------|-------|---------|----------|
-| Minimal | GitHub/Notion inspired | None, borders only | Clean, modern look |
-| Shopify | 4blanc.com Shopify style | Subtle | Brand consistency |
-| Classic | Traditional e-commerce | Pronounced | Familiar UX |
+| Minimal | iOS Settings style | None, borders only | Clean, modern look |
+| Shopify | 4BLANC brand teal | Subtle | Brand consistency |
+| Classic | Luxury Warmth (cream/gold) | Warm, pronounced | Premium feel |
 
 ## Design Philosophy
 

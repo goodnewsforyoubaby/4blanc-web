@@ -21,9 +21,9 @@ npm run preview  # Preview production build
 
 ### Theme System
 Three switchable themes via CSS variables (`data-theme` attribute on `<html>`):
-- `minimal` - GitHub/Notion style, no shadows, borders only, iOS-style lists
-- `shopify` - 4blanc.com Shopify style with subtle shadows
-- `classic` - Traditional e-commerce with pronounced shadows and gradients
+- `minimal` - iOS Settings style, no shadows, borders only, iOS-style lists
+- `shopify` - 4BLANC brand identity with teal (#339999), subtle shadows
+- `classic` - Luxury Warmth with cream/ivory backgrounds, gold accents (#8B6914)
 
 Theme switching: `ThemeContext.tsx` → sets `data-theme` → CSS variables in `styles/themes/*.css` apply.
 
@@ -69,6 +69,8 @@ Layout height calculation:
 - `/account/register` - Create account
 - `/account/settings` - Account settings
 - `/account/setup-guide` - Product setup guides
+- `/account/setup-guide/maestro` - Maéstro setup guide (full page)
+- `/account/setup-guide/alize` - Alizé setup guide (full page)
 
 **Knowledge Base (`/knowledge`):**
 - `/knowledge/manual` - PDF user manuals (8 products)
@@ -197,11 +199,15 @@ This app MUST look and feel like a native iOS application. Follow these rules st
 /* Badge colors per theme */
 minimal:  --color-badge: #FF3B30 (iOS red)
 shopify:  --color-badge: #339999 (4BLANC teal)
-classic:  --color-badge: #E53935 (Material red)
+classic:  --color-badge: #8B6914 (Gold)
 
 /* Primary brand color (all themes) */
 --color-primary: #339999 (4BLANC teal)
 --color-primary-hover: #2a7a7a
+
+/* Classic theme special colors */
+classic:  --color-bg-primary: #FFFDF8 (Warm cream)
+classic:  --color-primary: #8B6914 (Gold)
 ```
 
 ---
@@ -484,4 +490,7 @@ Base URL configured as `/4blanc-web/` in:
 | `ContactPage` | Contact form (Name, Email, Phone, Comment) |
 | `ChatPage` | Support chat with product context support |
 | `ProductPage` | Product details with "Ask about this product" |
-| `SetupGuidePage` | Interactive setup guides with YouTube videos |
+| `SetupGuidePage` | Product selection for setup guides |
+| `SetupGuideDetailPage` | Full setup guide with sections, images, videos |
+| `MaestroSetupGuidePage` | Maéstro product setup guide |
+| `AlizeSetupGuidePage` | Alizé product setup guide |
