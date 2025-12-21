@@ -103,3 +103,36 @@
   flex-shrink: 0;
   margin-top: var(--spacing-2);
 }
+
+/* =========================
+   Theme: Minimal - iOS-style list
+   ========================= */
+[data-theme="minimal"] .partnership-programs {
+  padding: 0 0 var(--spacing-4) 0;
+}
+
+[data-theme="minimal"] .partnership-programs h2 {
+  padding: 0 var(--spacing-4);
+}
+
+[data-theme="minimal"] .partnership-list {
+  gap: 0;
+}
+
+[data-theme="minimal"] .partnership-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  border-radius: 0;
+  padding: var(--spacing-3) var(--spacing-4);
+  transition: background 80ms var(--ios-ease);
+}
+
+[data-theme="minimal"] .partnership-card:last-child {
+  border-bottom: none;
+}
+
+[data-theme="minimal"] .partnership-card:active {
+  background: var(--color-bg-secondary);
+}

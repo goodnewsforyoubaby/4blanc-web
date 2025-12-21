@@ -67,17 +67,6 @@ export interface Cart {
   subtotal: ProductPrice;
 }
 
-// Wishlist Types
-export interface WishlistItem {
-  id: string;
-  productId: string;
-  title: string;
-  handle: string;
-  price: string;
-  currencyCode: string;
-  image?: string;
-}
-
 // Chat Types
 export interface ChatMessage {
   id: string;

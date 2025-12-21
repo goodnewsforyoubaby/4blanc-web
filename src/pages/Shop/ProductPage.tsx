@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Heart, Minus, Plus, ShoppingBag } from 'lucide-react';
+import { Minus, Plus, ShoppingBag } from 'lucide-react';
 import { Button, H2, Body, BodySmall, Caption } from '../../components/common';
 import { useCart } from '../../contexts/CartContext';
-import { useWishlist } from '../../contexts/WishlistContext';
 import { mockProductDetails, mockProducts } from '../../data';
 import './ProductPage.css';
 
 export const ProductPage: React.FC = () => {
   const { handle } = useParams<{ handle: string }>();
   const { addItem } = useCart();
-  const { isInWishlist, toggleItem } = useWishlist();
 
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -44,7 +42,6 @@ export const ProductPage: React.FC = () => {
   };
 
   const selectedVariant = displayProduct.variants[selectedVariantIndex];
-  const inWishlist = isInWishlist(displayProduct.id);
 
   const price = parseFloat(selectedVariant.price.amount);
   const comparePrice = selectedVariant.compareAtPrice
@@ -61,18 +58,6 @@ export const ProductPage: React.FC = () => {
       price: selectedVariant.price,
       quantity,
       image: displayProduct.images[0],
-    });
-  };
-
-  const handleToggleWishlist = () => {
-    toggleItem({
-      id: `wish-${displayProduct.id}`,
-      productId: displayProduct.id,
-      title: displayProduct.title,
-      handle: displayProduct.handle,
-      price: selectedVariant.price.amount,
-      currencyCode: selectedVariant.price.currencyCode,
-      image: displayProduct.images[0]?.url,
     });
   };
 
@@ -173,12 +158,6 @@ export const ProductPage: React.FC = () => {
           >
             Add to Cart
           </Button>
-          <button
-            className={`product-wishlist-btn ${inWishlist ? 'active' : ''}`}
-            onClick={handleToggleWishlist}
-          >
-            <Heart size={24} fill={inWishlist ? 'currentColor' : 'none'} />
-          </button>
         </div>
 
         {/* Description */}

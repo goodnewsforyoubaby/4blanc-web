@@ -25,9 +25,17 @@
   --color-state-error: #CF222E;
   --color-state-warning: #9A6700;
 
+  /* Brand color - 4BLANC teal */
+  --color-primary: #339999;
+  --color-primary-hover: #2a7a7a;
+
   /* Accent */
   --color-accent-primary: #000000;
   --color-accent-secondary: #24292F;
+
+  /* Badge - iOS red */
+  --color-badge: #FF3B30;
+  --color-badge-text: #FFFFFF;
 
   /* Chat bubbles */
   --color-chat-user-bg: #E8EEF3;

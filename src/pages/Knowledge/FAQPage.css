@@ -31,7 +31,7 @@
   transition: background var(--transition-fast);
 }
 
-.faq-item:hover {
+.faq-item:active {
   background: var(--color-bg-secondary);
 }
 
@@ -43,6 +43,35 @@
 .faq-item svg {
   color: var(--color-text-tertiary);
   flex-shrink: 0;
+}
+
+/* =========================
+   Theme: Minimal - iOS-style list
+   ========================= */
+[data-theme="minimal"] .faq-page {
+  padding: var(--spacing-4) 0;
+}
+
+[data-theme="minimal"] .faq-category-title {
+  padding: 0 var(--spacing-4);
+  margin-bottom: var(--spacing-2);
+}
+
+[data-theme="minimal"] .faq-items {
+  gap: 0;
+}
+
+[data-theme="minimal"] .faq-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  border-radius: 0;
+  transition: background 80ms var(--ios-ease);
+}
+
+[data-theme="minimal"] .faq-item:last-child {
+  border-bottom: none;
 }
 
 /* Modal Content */

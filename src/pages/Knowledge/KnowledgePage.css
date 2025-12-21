@@ -110,3 +110,57 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* =========================
+   Theme: Minimal - iOS-style list
+   ========================= */
+[data-theme="minimal"] .knowledge-page {
+  padding: var(--spacing-4) 0;
+}
+
+[data-theme="minimal"] .knowledge-section-header {
+  padding: 0 var(--spacing-4);
+}
+
+[data-theme="minimal"] .knowledge-menu {
+  gap: 0;
+}
+
+[data-theme="minimal"] .knowledge-menu-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  border-radius: 0;
+  transition: background 80ms var(--ios-ease);
+}
+
+[data-theme="minimal"] .knowledge-menu-item:last-child {
+  border-bottom: none;
+}
+
+[data-theme="minimal"] .knowledge-menu-item:active {
+  background: var(--color-bg-secondary);
+}
+
+[data-theme="minimal"] .knowledge-articles {
+  gap: 0;
+}
+
+[data-theme="minimal"] .knowledge-article-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  border-radius: 0;
+  padding: var(--spacing-3) var(--spacing-4);
+  transition: background 80ms var(--ios-ease);
+}
+
+[data-theme="minimal"] .knowledge-article-card:last-child {
+  border-bottom: none;
+}
+
+[data-theme="minimal"] .knowledge-article-card:active {
+  background: var(--color-bg-secondary);
+}

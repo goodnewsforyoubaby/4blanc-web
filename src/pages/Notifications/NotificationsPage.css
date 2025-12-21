@@ -112,3 +112,40 @@
 .notification-dismiss:hover {
   color: var(--color-text-primary);
 }
+
+/* =========================
+   Theme: Minimal - iOS-style list
+   ========================= */
+[data-theme="minimal"] .notifications-page {
+  padding: var(--spacing-4) 0;
+}
+
+[data-theme="minimal"] .notifications-header {
+  padding: 0 var(--spacing-4);
+}
+
+[data-theme="minimal"] .notifications-list {
+  gap: 0;
+}
+
+[data-theme="minimal"] .notification-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  border-radius: 0;
+  padding: var(--spacing-3) var(--spacing-4);
+  transition: background 80ms var(--ios-ease);
+}
+
+[data-theme="minimal"] .notification-item:last-child {
+  border-bottom: none;
+}
+
+[data-theme="minimal"] .notification-item.unread {
+  background: var(--color-bg-secondary);
+}
+
+[data-theme="minimal"] .notification-item:active {
+  background: var(--color-bg-tertiary);
+}

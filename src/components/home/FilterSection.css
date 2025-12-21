@@ -35,7 +35,7 @@
   z-index: 1;
   text-align: center;
   padding: var(--spacing-6);
-  color: #fff;
+  color: var(--color-text-inverse);
   max-width: 340px;
 }
 

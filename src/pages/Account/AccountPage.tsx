@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   User,
-  Heart,
   Settings,
   Package,
   HelpCircle,
@@ -15,13 +14,11 @@ import {
 } from 'lucide-react';
 import { Button, H3, Body, BodySmall, Caption } from '../../components/common';
 import { useAuth } from '../../contexts/AuthContext';
-import { useWishlist } from '../../contexts/WishlistContext';
 import './AccountPage.css';
 
 export const AccountPage: React.FC = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
-  const { items: wishlistItems } = useWishlist();
 
   const handleLogout = () => {
     if (window.confirm('Are you sure you want to sign out?')) {
@@ -38,7 +35,7 @@ export const AccountPage: React.FC = () => {
           </div>
           <H3>Welcome to 4BLANC</H3>
           <BodySmall color="secondary">
-            Sign in to access your orders, wishlist, and more
+            Sign in to access your orders and more
           </BodySmall>
           <Button fullWidth onClick={() => navigate('/account/login')}>
             Sign In
@@ -53,12 +50,6 @@ export const AccountPage: React.FC = () => {
         </div>
 
         <div className="account-menu">
-          <MenuItem
-            icon={<Heart size={22} />}
-            label="Wishlist"
-            badge={wishlistItems.length}
-            onClick={() => navigate('/account/wishlist')}
-          />
           <MenuItem
             icon={<BookOpen size={22} />}
             label="Setup Guide"
@@ -106,14 +97,6 @@ export const AccountPage: React.FC = () => {
           icon={<Package size={22} />}
           label="Order History"
           onClick={() => alert('Order history coming soon!')}
-        />
-
-        <Caption className="account-menu-title">MY LISTS</Caption>
-        <MenuItem
-          icon={<Heart size={22} />}
-          label="Wishlist"
-          badge={wishlistItems.length}
-          onClick={() => navigate('/account/wishlist')}
         />
 
         <Caption className="account-menu-title">ACCOUNT</Caption>

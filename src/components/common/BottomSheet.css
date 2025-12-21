@@ -1,9 +1,9 @@
 .bottom-sheet-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  animation: fadeIn 0.2s ease-out;
+  animation: fadeIn 200ms var(--ios-ease);
 }
 
 @keyframes fadeIn {
@@ -13,17 +13,18 @@
 
 .bottom-sheet {
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   left: 0;
   right: 0;
-  height: 90%;
-  max-height: calc(100% - 60px);
+  height: calc(90% + 20px);
+  max-height: calc(100% - 40px);
+  padding-bottom: 20px;
   background: var(--color-bg-primary);
-  border-radius: 20px 20px 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   display: flex;
   flex-direction: column;
-  animation: slideUp 0.3s ease-out;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideUp 280ms var(--ios-ease);
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.12);
 }
 
 @keyframes slideUp {
@@ -44,18 +45,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   background: none;
   border: none;
   cursor: pointer;
   color: var(--color-text-primary);
   border-radius: var(--radius-full);
-  transition: background var(--transition-fast);
+  transition: background var(--transition-fast), transform 100ms var(--ios-ease);
 }
 
 .bottom-sheet-back:hover {
   background: var(--color-bg-secondary);
+}
+
+.bottom-sheet-back:active {
+  transform: scale(0.92);
 }
 
 .bottom-sheet-title {
@@ -67,7 +72,7 @@
 }
 
 .bottom-sheet-spacer {
-  width: 40px;
+  width: var(--touch-target-min);
 }
 
 .bottom-sheet-content {

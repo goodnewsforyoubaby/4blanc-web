@@ -16,6 +16,12 @@
   cursor: not-allowed;
 }
 
+/* iOS-style press feedback */
+.btn:active:not(:disabled) {
+  transform: scale(0.96);
+  transition: transform 100ms var(--ios-ease);
+}
+
 /* Sizes */
 .btn-small {
   padding: var(--spacing-2) var(--spacing-3);

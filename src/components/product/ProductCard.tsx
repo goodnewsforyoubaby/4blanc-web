@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Heart } from 'lucide-react';
 import { ProductListItem } from '../../types';
-import { useWishlist } from '../../contexts/WishlistContext';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -12,22 +10,6 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, compact = false }) => {
   const navigate = useNavigate();
-  const { isInWishlist, toggleItem } = useWishlist();
-
-  const inWishlist = isInWishlist(product.id);
-
-  const handleWishlistClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    toggleItem({
-      id: `wish-${product.id}`,
-      productId: product.id,
-      title: product.title,
-      handle: product.handle,
-      price: product.priceRange.minVariantPrice.amount,
-      currencyCode: product.priceRange.minVariantPrice.currencyCode,
-      image: product.featuredImage?.url,
-    });
-  };
 
   const price = parseFloat(product.priceRange.minVariantPrice.amount);
   const comparePrice = product.compareAtPriceRange
@@ -46,12 +28,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, compact = fal
         ) : (
           <div className="product-card-placeholder">No Image</div>
         )}
-        <button
-          className={`product-card-wishlist ${inWishlist ? 'active' : ''}`}
-          onClick={handleWishlistClick}
-        >
-          <Heart size={18} fill={inWishlist ? 'currentColor' : 'none'} />
-        </button>
         {hasDiscount && (
           <span className="product-card-sale">Sale</span>
         )}

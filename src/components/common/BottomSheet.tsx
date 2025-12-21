@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ChevronLeft } from 'lucide-react';
 import './BottomSheet.css';
 
@@ -15,6 +16,14 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
   title,
   children,
 }) => {
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
+
+  // Find the modal-root element inside app-layout
+  useEffect(() => {
+    const target = document.getElementById('modal-root');
+    setPortalTarget(target);
+  }, []);
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -27,9 +36,9 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !portalTarget) return null;
 
-  return (
+  return createPortal(
     <div className="bottom-sheet-overlay" onClick={onClose}>
       <div className="bottom-sheet" onClick={(e) => e.stopPropagation()}>
         <div className="bottom-sheet-header">
@@ -43,6 +52,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
           {children}
         </div>
       </div>
-    </div>
+    </div>,
+    portalTarget
   );
 };

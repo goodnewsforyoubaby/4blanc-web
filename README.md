@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+# 4BLANC Web Prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mobile e-commerce prototype for 4BLANC professional nail equipment. Built with React + TypeScript + Vite.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a design/UX prototype that simulates a native iOS mobile shopping experience. The app renders in a phone-sized frame (390x844px) and is used to test UI/UX patterns before native mobile implementation.
 
-## React Compiler
+**Live Demo:** [https://your-username.github.io/4blanc-web/](https://your-username.github.io/4blanc-web/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- 3 switchable themes (Minimal, Shopify, Classic)
+- iOS-native animations and interactions
+- Product catalog with search and filters
+- Shopping cart functionality
+- Support chat interface
+- Knowledge base (FAQ, articles, policies)
+- User authentication (mocked)
+- Push notifications (mocked)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Quick Start
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Install dependencies
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Start development server
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Development server runs at: `http://localhost:5173/4blanc-web/`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Tech Stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Framework:** React 18 + TypeScript
+- **Build:** Vite
+- **Routing:** React Router v6
+- **Icons:** Lucide React
+- **Styling:** CSS Variables + CSS Modules (co-located)
+- **State:** React Context + localStorage persistence
+
+## Project Structure
+
 ```
+src/
+├── components/
+│   ├── common/      # Reusable UI components (Button, Input, Badge, etc.)
+│   ├── home/        # Home page components
+│   ├── layout/      # App layout (Header, BottomTabBar, etc.)
+│   └── product/     # Product-related components
+├── contexts/        # React Context providers
+├── data/            # Mock data
+├── pages/           # Page components
+├── styles/          # Global styles and themes
+└── types/           # TypeScript interfaces
+```
+
+## Themes
+
+Switch between themes using the theme switcher in the bottom-right corner:
+
+| Theme | Style | Shadows |
+|-------|-------|---------|
+| Minimal | GitHub/Notion inspired | None, borders only |
+| Shopify | 4blanc.com Shopify style | Subtle |
+| Classic | Traditional e-commerce | Pronounced |
+
+## Design Philosophy
+
+This prototype follows **iOS Human Interface Guidelines**:
+
+- Touch targets minimum 44x44px
+- Native iOS easing curves for animations
+- System font stack
+- Subtle shadows and clean layouts
+- No hover effects (touch-first design)
+
+## Deployment
+
+Automatically deploys to GitHub Pages on push to `main` branch via GitHub Actions.
+
+## License
+
+Private - 4BLANC

@@ -14,7 +14,6 @@ const getTitleByPath = (pathname: string): string => {
   if (pathname.startsWith('/knowledge')) return 'Knowledge Base';
   if (pathname.startsWith('/account/login')) return 'Sign In';
   if (pathname.startsWith('/account/register')) return 'Create Account';
-  if (pathname.startsWith('/account/wishlist')) return 'Wishlist';
   if (pathname.startsWith('/account/settings')) return 'Settings';
   if (pathname.startsWith('/account')) return 'Account';
   if (pathname.startsWith('/notifications')) return 'Notifications';

@@ -19,13 +19,14 @@
   --spacing-16: 64px;
 
   /* =========================
-     BORDER RADIUS
+     BORDER RADIUS (iOS-style)
      ========================= */
   --radius-none: 0;
   --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
   --radius-full: 9999px;
 
   /* =========================
@@ -40,6 +41,7 @@
   --font-family: var(--font-sans);
   --font-family-heading: var(--font-sans);
 
+  --text-2xs: 10px;
   --text-xs: 12px;
   --text-sm: 14px;
   --text-base: 16px;
@@ -67,9 +69,19 @@
   --content-height: calc(var(--mobile-height) - var(--header-height) - var(--tab-bar-height));
 
   /* =========================
-     TRANSITIONS
+     TRANSITIONS & iOS EASING
      ========================= */
-  --transition-fast: 150ms ease;
-  --transition-normal: 200ms ease;
-  --transition-slow: 300ms ease;
+  /* iOS-native easing curves */
+  --ios-ease: cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --ios-spring: cubic-bezier(0.34, 1.56, 0.64, 1.0);
+
+  --transition-fast: 150ms var(--ios-ease);
+  --transition-normal: 250ms var(--ios-ease);
+  --transition-slow: 350ms var(--ios-ease);
+  --transition-spring: 300ms var(--ios-spring);
+
+  /* =========================
+     iOS TOUCH TARGETS
+     ========================= */
+  --touch-target-min: 44px;
 }

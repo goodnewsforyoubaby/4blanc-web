@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { CartProvider } from './contexts/CartContext';
 import { AuthProvider } from './contexts/AuthContext';
-import { WishlistProvider } from './contexts/WishlistContext';
 import { NotificationProvider } from './contexts/NotificationContext';
 import { AppLayout } from './components/layout';
 import { HomePage } from './pages/Home';
@@ -23,7 +22,6 @@ import {
   AccountPage,
   LoginPage,
   RegisterPage,
-  WishlistPage,
   SettingsPage,
   SetupGuidePage,
 } from './pages/Account';
@@ -41,8 +39,7 @@ function App() {
       <ThemeProvider>
         <AuthProvider>
           <CartProvider>
-            <WishlistProvider>
-              <NotificationProvider>
+            <NotificationProvider>
                 <Routes>
                   <Route element={<AppLayout />}>
                     {/* Main Tabs */}
@@ -66,7 +63,6 @@ function App() {
                     <Route path="/account" element={<AccountPage />} />
                     <Route path="/account/login" element={<LoginPage />} />
                     <Route path="/account/register" element={<RegisterPage />} />
-                    <Route path="/account/wishlist" element={<WishlistPage />} />
                     <Route path="/account/settings" element={<SettingsPage />} />
                     <Route path="/account/setup-guide" element={<SetupGuidePage />} />
 
@@ -77,8 +73,7 @@ function App() {
                     <Route path="/cart" element={<CartPage />} />
                   </Route>
                 </Routes>
-              </NotificationProvider>
-            </WishlistProvider>
+            </NotificationProvider>
           </CartProvider>
         </AuthProvider>
       </ThemeProvider>

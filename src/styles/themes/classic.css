@@ -30,9 +30,17 @@
   --color-state-error: #E53935;
   --color-state-warning: #FB8C00;
 
+  /* Brand color - 4BLANC teal */
+  --color-primary: #339999;
+  --color-primary-hover: #2a7a7a;
+
   /* Accent - Classic blue */
   --color-accent-primary: #1976D2;
   --color-accent-secondary: #1565C0;
+
+  /* Badge - Classic red */
+  --color-badge: #E53935;
+  --color-badge-text: #FFFFFF;
 
   /* Chat bubbles - soft blue instead of bright */
   --color-chat-user-bg: #E3EDF7;

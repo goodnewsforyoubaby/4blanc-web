@@ -19,6 +19,8 @@ export const AppLayout: React.FC = () => {
           <Outlet />
         </main>
         {showTabBar && <BottomTabBar />}
+        {/* Portal target for modals */}
+        <div id="modal-root" />
       </div>
     </MobileContainer>
   );

@@ -45,19 +45,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   border-radius: var(--radius-full);
   color: var(--color-text-primary);
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: background var(--transition-fast);
+  transition: background var(--transition-fast), transform 100ms var(--ios-ease);
   position: relative;
 }
 
 .header-btn:hover {
   background: var(--color-bg-secondary);
+}
+
+.header-btn:active {
+  transform: scale(0.92);
 }
 
 .header-btn .badge {

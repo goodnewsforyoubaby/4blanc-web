@@ -25,9 +25,17 @@
   --color-state-error: #D72C0D;
   --color-state-warning: #FFC453;
 
+  /* Brand color - 4BLANC teal */
+  --color-primary: #339999;
+  --color-primary-hover: #2a7a7a;
+
   /* Accent - 4BLANC uses black accent */
   --color-accent-primary: #121212;
   --color-accent-secondary: #2A2A2A;
+
+  /* Badge - 4BLANC teal */
+  --color-badge: #339999;
+  --color-badge-text: #FFFFFF;
 
   /* Chat bubbles */
   --color-chat-user-bg: #E5E5E5;

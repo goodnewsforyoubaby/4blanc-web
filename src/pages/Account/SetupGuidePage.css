@@ -36,14 +36,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: var(--color-text-inverse);
   width: 90%;
 }
 
 .setup-guide-banner-content h2 {
-  color: #fff;
+  color: var(--color-text-inverse);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  font-size: 20px;
+  font-size: var(--text-xl);
   line-height: 1.3;
 }
 
@@ -94,17 +94,21 @@
   width: 100%;
   padding: var(--spacing-2) var(--spacing-3);
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-text-inverse);
   border: none;
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   cursor: pointer;
-  transition: background var(--transition-fast);
+  transition: background var(--transition-fast), transform 100ms var(--ios-ease);
 }
 
 .setup-guide-product-button:hover {
   background: var(--color-primary-hover);
+}
+
+.setup-guide-product-button:active {
+  transform: scale(0.96);
 }
 
 /* Video Guide List */
@@ -138,8 +142,37 @@
   transition: background var(--transition-fast);
 }
 
-.setup-guide-item:hover {
+.setup-guide-item:active {
   background: var(--color-bg-secondary);
+}
+
+/* =========================
+   Theme: Minimal - iOS-style list
+   ========================= */
+[data-theme="minimal"] .setup-guide-list {
+  padding: var(--spacing-4) 0;
+}
+
+[data-theme="minimal"] .setup-guide-list-header {
+  padding: 0 var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+}
+
+[data-theme="minimal"] .setup-guide-items {
+  gap: 0;
+}
+
+[data-theme="minimal"] .setup-guide-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  border-radius: 0;
+  transition: background 80ms var(--ios-ease);
+}
+
+[data-theme="minimal"] .setup-guide-item:last-child {
+  border-bottom: none;
 }
 
 .setup-guide-item-content {
