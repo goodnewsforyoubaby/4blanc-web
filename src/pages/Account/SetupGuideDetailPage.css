@@ -1,0 +1,198 @@
+.guide-detail-page {
+  padding: 0;
+}
+
+/* Hero Banner */
+.guide-detail-banner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.guide-detail-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.guide-detail-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.guide-detail-banner-content {
+  position: absolute;
+  bottom: var(--spacing-5);
+  left: var(--page-padding);
+  right: var(--page-padding);
+  color: var(--color-text-inverse);
+}
+
+.guide-detail-banner-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.guide-detail-banner-subtitle {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-text-inverse);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: var(--spacing-1) 0 0;
+  opacity: 0.95;
+}
+
+/* Content Container */
+.guide-detail-content {
+  padding: var(--section-gap) var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+/* Sections */
+.guide-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.guide-detail-section-title {
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.guide-detail-section-content {
+  color: var(--color-text-secondary);
+}
+
+.guide-detail-section-content p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* List */
+.guide-detail-list {
+  margin: 0;
+  padding-left: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.guide-detail-list li {
+  line-height: 1.6;
+}
+
+.guide-detail-list li p {
+  margin: 0;
+}
+
+/* Warning Box */
+.guide-detail-warning {
+  background: rgba(255, 59, 48, 0.1);
+  border-left: 3px solid var(--color-state-error);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-sm);
+}
+
+.guide-detail-warning p {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+/* Tip Box */
+.guide-detail-tip {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.guide-detail-tip p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+/* Single Image */
+.guide-detail-image-container {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.guide-detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Images Grid (3 columns) */
+.guide-detail-images-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.guide-detail-grid-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+/* YouTube Video */
+.guide-detail-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.guide-detail-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Theme: Minimal - Adjust tip/warning boxes */
+[data-theme="minimal"] .guide-detail-tip {
+  background: var(--color-bg-secondary);
+  border-left-color: var(--color-primary);
+}
+
+[data-theme="minimal"] .guide-detail-warning {
+  background: rgba(255, 59, 48, 0.08);
+}
+
+/* Theme: Classic - Warm tones */
+[data-theme="classic"] .guide-detail-tip {
+  background: var(--color-bg-tertiary);
+  border-left-color: var(--color-primary);
+}
+
+[data-theme="classic"] .guide-detail-warning {
+  background: rgba(255, 59, 48, 0.08);
+}

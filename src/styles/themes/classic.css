@@ -1,6 +1,7 @@
 /* =========================
-   Theme 3: Classic (Traditional E-commerce)
-   Serif fonts: Playfair Display + Lora
+   Theme 3: Classic (Luxury Warmth)
+   Premium feel with warm cream/ivory tones and gold accents
+   Serif fonts: Playfair Display for headings
    ========================= */
 
 [data-theme="classic"] {
@@ -8,77 +9,78 @@
   --font-family: var(--font-sans);
   --font-family-heading: var(--font-serif-heading);
 
-  /* Backgrounds */
-  --color-bg-primary: #F8FAFF;
-  --color-bg-secondary: #EEF3FF;
-  --color-bg-tertiary: #E2E9FF;
-  --color-bg-inset: #DCE6FF;
+  /* Backgrounds - Warm cream/ivory palette */
+  --color-bg-primary: #FFFDF9;
+  --color-bg-secondary: #FAF7F2;
+  --color-bg-tertiary: #F5F1E8;
+  --color-bg-inset: #EDE8DC;
 
-  /* Text */
-  --color-text-primary: #0B1B33;
-  --color-text-secondary: #3E4C66;
-  --color-text-tertiary: #64718A;
-  --color-text-link: #1D4ED8;
+  /* Text - Warm dark tones */
+  --color-text-primary: #2C2416;
+  --color-text-secondary: #5C5040;
+  --color-text-tertiary: #8C826E;
+  --color-text-link: #8B6914;
   --color-text-inverse: #FFFFFF;
 
-  /* Borders */
-  --color-border-default: #CCD7F2;
-  --color-border-muted: #E0E8F8;
+  /* Borders - Warm tan */
+  --color-border-default: #E5DFD0;
+  --color-border-muted: #F0EBE0;
 
-  /* States */
-  --color-state-success: #2F855A;
-  --color-state-error: #DC2626;
-  --color-state-warning: #B45309;
+  /* States - iOS standard */
+  --color-state-success: #34C759;
+  --color-state-error: #FF3B30;
+  --color-state-warning: #FF9500;
 
-  /* Brand color - Classic blue */
-  --color-primary: #1E40AF;
-  --color-primary-hover: #1E3A8A;
+  /* Brand color - Gold */
+  --color-primary: #8B6914;
+  --color-primary-hover: #705510;
 
-  /* Accent - Classic blue */
-  --color-accent-primary: #2563EB;
-  --color-accent-secondary: #1D4ED8;
+  /* Accent - Gold */
+  --color-accent-primary: #8B6914;
+  --color-accent-secondary: #705510;
 
-  /* Badge */
-  --color-badge: #1E40AF;
+  /* Badge - Gold */
+  --color-badge: #8B6914;
   --color-badge-text: #FFFFFF;
 
-  /* Chat bubbles - soft blue instead of bright */
-  --color-chat-user-bg: #E7EEFF;
+  /* Chat bubbles - Warm tones */
+  --color-chat-user-bg: #F5F1E8;
   --color-chat-user-text: var(--color-text-primary);
-  --color-chat-support-bg: #F1F5FF;
+  --color-chat-support-bg: #FAF7F2;
 
-  /* Shadows - refined */
-  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.08);
-  --shadow-md: 0 10px 20px rgba(15, 23, 42, 0.12);
-  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+  /* Shadows - Pronounced, warm tint */
+  --shadow-sm: 0 2px 8px rgba(44, 36, 22, 0.08);
+  --shadow-md: 0 8px 24px rgba(44, 36, 22, 0.12);
+  --shadow-lg: 0 16px 48px rgba(44, 36, 22, 0.16);
 
-  /* Border style for cards */
-  --card-border: 1px solid #CFDAF2;
+  /* Cards - Warm border */
+  --card-border: 1px solid #E5DFD0;
   --card-shadow: var(--shadow-sm);
 
-  /* Override border radius for more rounded feel */
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  /* Radius - Larger for soft feel */
+  --radius-md: 12px;
+  --radius-lg: 16px;
 
-  /* Button specifics - gradient */
-  --btn-primary-bg: linear-gradient(180deg, #2563EB 0%, #1E40AF 100%);
+  /* Button specifics - Solid gold, no gradient */
+  --btn-primary-bg: #8B6914;
   --btn-primary-text: #FFFFFF;
-  --btn-primary-hover: linear-gradient(180deg, #1D4ED8 0%, #1E40AF 100%);
-  --btn-secondary-bg: #F8FAFF;
-  --btn-secondary-text: #1E40AF;
-  --btn-secondary-border: #1E40AF;
-  --btn-secondary-hover: #EEF3FF;
+  --btn-primary-hover: #705510;
+  --btn-secondary-bg: #FFFDF9;
+  --btn-secondary-text: #8B6914;
+  --btn-secondary-border: #8B6914;
+  --btn-secondary-hover: #FAF7F2;
 
   /* Surfaces */
-  --surface-card: #FFFFFF;
-  --surface-card-muted: #EEF3FF;
-  --surface-card-inset: #E2E9FF;
-  --list-icon-bg: #E6EEFF;
-  --list-icon-color: #1E40AF;
-  --list-item-padding-x: 20px;
-  --input-bg: #FFFFFF;
-  --input-border: #CCD7F2;
-  --input-focus-border: #2563EB;
-  --input-focus-ring: rgba(37, 99, 235, 0.18);
-  --attachment-bg: #E3ECFF;
+  --surface-card: #FFFDF9;
+  --surface-card-muted: #FAF7F2;
+  --surface-card-inset: #F5F1E8;
+  --list-icon-bg: #F5F1E8;
+  --list-icon-color: #8B6914;
+
+  /* Input */
+  --input-bg: #FFFDF9;
+  --input-border: #E5DFD0;
+  --input-focus-border: #8B6914;
+  --input-focus-ring: rgba(139, 105, 20, 0.15);
+  --attachment-bg: #F5F1E8;
 }

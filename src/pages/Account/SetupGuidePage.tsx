@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { H2, H3, Body, BodySmall, BottomSheet } from '../../components/common';
 import './SetupGuidePage.css';
@@ -108,13 +109,6 @@ const YouTubeEmbed: React.FC<{ videoId: string; title: string }> = ({ videoId, t
 export const SetupGuidePage: React.FC = () => {
   const [selectedSection, setSelectedSection] = useState<VideoSection | null>(null);
 
-  const openSection = (sectionId: string) => {
-    const section = videoSections.find((s) => s.id === sectionId);
-    if (section) {
-      setSelectedSection(section);
-    }
-  };
-
   return (
     <div className="setup-guide-page">
       {/* Header Banner */}
@@ -140,14 +134,20 @@ export const SetupGuidePage: React.FC = () => {
 
       {/* Product Selection Grid */}
       <section className="setup-guide-products">
-        <div className="setup-guide-product-card" onClick={() => openSection('alize')}>
-          <img src={IMAGES.alizeProduct} alt="Alizé™" className="setup-guide-product-image" />
-          <button className="setup-guide-product-button">Alizé™ Setup Guide</button>
-        </div>
-        <div className="setup-guide-product-card" onClick={() => openSection('maestro')}>
-          <img src={IMAGES.maestroProduct} alt="Maéstro™" className="setup-guide-product-image" />
-          <button className="setup-guide-product-button">Maéstro™ Setup Guide</button>
-        </div>
+        <Link to="/account/setup-guide/alize" className="setup-guide-product-card">
+          <div className="setup-guide-product-image-wrapper">
+            <img src={IMAGES.alizeProduct} alt="Alizé™" className="setup-guide-product-image" />
+          </div>
+          <span className="setup-guide-product-name">Alizé™</span>
+          <span className="setup-guide-product-button">View Guide</span>
+        </Link>
+        <Link to="/account/setup-guide/maestro" className="setup-guide-product-card">
+          <div className="setup-guide-product-image-wrapper">
+            <img src={IMAGES.maestroProduct} alt="Maéstro™" className="setup-guide-product-image" />
+          </div>
+          <span className="setup-guide-product-name">Maéstro™</span>
+          <span className="setup-guide-product-button">View Guide</span>
+        </Link>
       </section>
 
       {/* Video Guide List */}

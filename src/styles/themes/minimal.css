@@ -20,10 +20,10 @@
   --color-border-default: #D1D9E0;
   --color-border-muted: #E6EBF1;
 
-  /* States */
-  --color-state-success: #1A7F37;
-  --color-state-error: #CF222E;
-  --color-state-warning: #9A6700;
+  /* States - iOS standard */
+  --color-state-success: #34C759;
+  --color-state-error: #FF3B30;
+  --color-state-warning: #FF9500;
 
   /* Brand color - 4BLANC teal */
   --color-primary: #339999;

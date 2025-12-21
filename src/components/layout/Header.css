@@ -71,3 +71,19 @@
   top: 4px;
   right: 4px;
 }
+
+/* =========================
+   Theme: Shopify
+   - Clean white with subtle border
+   ========================= */
+[data-theme="shopify"] .header {
+  border-bottom-color: #E8E8E8;
+}
+
+/* =========================
+   Theme: Classic
+   - Warm cream background with tan border
+   ========================= */
+[data-theme="classic"] .header {
+  border-bottom-color: #E5DFD0;
+}

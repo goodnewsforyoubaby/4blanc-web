@@ -49,7 +49,7 @@
 
 /* Introduction Section */
 .setup-guide-intro {
-  padding: var(--spacing-5) var(--page-padding);
+  padding: var(--section-gap) var(--page-padding);
   text-align: center;
 }
 
@@ -64,7 +64,7 @@
 .setup-guide-select-label {
   font-weight: var(--font-medium);
   color: var(--color-text-primary);
-  margin-top: var(--spacing-4);
+  margin-top: var(--spacing-3);
 }
 
 /* Product Selection Grid */
@@ -72,7 +72,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-3);
-  padding: 0 var(--page-padding) var(--spacing-5);
+  padding: 0 var(--page-padding);
+  margin-bottom: var(--section-gap);
+}
+
+a.setup-guide-product-card {
+  text-decoration: none;
+  color: inherit;
 }
 
 .setup-guide-product-card {
@@ -80,18 +86,40 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  gap: var(--spacing-2);
+}
+
+.setup-guide-product-card:active {
+  transform: scale(0.98);
+}
+
+.setup-guide-product-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
 .setup-guide-product-image {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-2);
+  height: 100%;
+  object-fit: contain;
+}
+
+.setup-guide-product-name {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  text-align: center;
 }
 
 .setup-guide-product-button {
   width: 100%;
+  height: var(--touch-target-min);
   padding: var(--spacing-2) var(--spacing-3);
   background: var(--color-primary);
   color: var(--color-text-inverse);
@@ -101,19 +129,15 @@
   font-weight: var(--font-semibold);
   cursor: pointer;
   transition: background var(--transition-fast), transform 100ms var(--ios-ease);
-}
-
-.setup-guide-product-button:hover {
-  background: var(--color-primary-hover);
-}
-
-.setup-guide-product-button:active {
-  transform: scale(0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Video Guide List */
 .setup-guide-list {
-  padding: var(--page-padding);
+  padding: var(--section-gap) var(--page-padding);
 }
 
 .setup-guide-list-header {
@@ -151,7 +175,7 @@
    Theme: Minimal - iOS-style list
    ========================= */
 [data-theme="minimal"] .setup-guide-list {
-  padding: var(--page-padding) 0;
+  padding: var(--section-gap) 0;
 }
 
 [data-theme="minimal"] .setup-guide-list-header {
@@ -169,11 +193,25 @@
   box-shadow: none;
   border-bottom: 1px solid var(--color-border-muted);
   border-radius: 0;
+  padding: var(--spacing-3) var(--page-padding);
   transition: background 80ms var(--ios-ease);
 }
 
 [data-theme="minimal"] .setup-guide-item:last-child {
   border-bottom: none;
+}
+
+/* Minimal theme: link style instead of button */
+[data-theme="minimal"] .setup-guide-product-button {
+  background: transparent;
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  height: auto;
+  padding: var(--spacing-1) 0;
+}
+
+[data-theme="minimal"] .setup-guide-product-card:active .setup-guide-product-button {
+  opacity: 0.6;
 }
 
 .setup-guide-item-content {

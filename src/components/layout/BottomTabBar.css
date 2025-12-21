@@ -117,8 +117,8 @@
 /* =========================
    Theme: Classic
    - Labels visible
-   - Active: blue accent color
-   - Filled icon style
+   - Active: gold accent color
+   - Filled icon style with warm tint
    ========================= */
 [data-theme="classic"] .tab-icon svg {
   stroke-width: 2;
@@ -130,7 +130,7 @@
 
 [data-theme="classic"] .tab-active .tab-icon svg {
   stroke-width: 2.5;
-  fill: rgba(25, 118, 210, 0.1);
+  fill: rgba(139, 105, 20, 0.1);
 }
 
 [data-theme="classic"] .tab-active .tab-label {
