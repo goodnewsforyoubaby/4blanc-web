@@ -68,13 +68,13 @@
 }
 
 .chat-bubble.user {
-  background: var(--color-accent-primary);
-  color: var(--color-text-inverse);
+  background: var(--color-chat-user-bg);
+  color: var(--color-chat-user-text);
   border-bottom-right-radius: var(--radius-sm);
 }
 
 .chat-bubble.support {
-  background: var(--color-bg-secondary);
+  background: var(--color-chat-support-bg);
   border-bottom-left-radius: var(--radius-sm);
 }
 

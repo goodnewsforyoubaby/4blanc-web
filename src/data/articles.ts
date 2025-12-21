@@ -37,7 +37,7 @@ export const mockArticles: Article[] = [
     author: '4BLANC Team',
     publishedAt: new Date('2024-12-15'),
     readTime: 5,
-    featuredImage: 'https://cdn.shopify.com/s/files/1/0726/0549/9680/files/UV1.jpg?v=1730131355',
+    featuredImage: 'https://placehold.co/400x300/E8E0F0/4A3F5C?text=Gel+Cure',
     tags: ['UV lamp', 'gel nails', 'tutorial'],
   },
   {
@@ -74,7 +74,7 @@ export const mockArticles: Article[] = [
     author: '4BLANC Team',
     publishedAt: new Date('2024-12-10'),
     readTime: 4,
-    featuredImage: 'https://cdn.shopify.com/s/files/1/0726/0549/9680/files/alize1.jpg?v=1730131355',
+    featuredImage: 'https://placehold.co/400x300/F0E8E8/5C4A4A?text=Dust+Collector',
     tags: ['maintenance', 'dust collector', 'filters'],
   },
   {
@@ -104,7 +104,7 @@ export const mockArticles: Article[] = [
     author: '4BLANC Team',
     publishedAt: new Date('2024-12-05'),
     readTime: 3,
-    featuredImage: 'https://cdn.shopify.com/s/files/1/0726/0549/9680/files/oil1.jpg?v=1730131355',
+    featuredImage: 'https://placehold.co/400x300/E8F0F0/4A5C5C?text=Cuticle+Care',
     tags: ['cuticle care', 'nail health', 'tips'],
   },
   {
@@ -132,7 +132,7 @@ export const mockArticles: Article[] = [
     author: '4BLANC Team',
     publishedAt: new Date('2024-11-28'),
     readTime: 6,
-    featuredImage: 'https://cdn.shopify.com/s/files/1/0726/0549/9680/files/toolkit1.jpg?v=1730131355',
+    featuredImage: 'https://placehold.co/400x300/F5F5F5/666666?text=Home+Salon',
     tags: ['salon setup', 'business', 'equipment'],
   },
 ];

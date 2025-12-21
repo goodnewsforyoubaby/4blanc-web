@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-family);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--color-text-primary);
@@ -26,6 +26,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Headings use heading font family */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
 }
 
 #root {

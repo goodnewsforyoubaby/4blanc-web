@@ -1,8 +1,13 @@
 /* =========================
    Theme 3: Classic (Traditional E-commerce)
+   Serif fonts: Playfair Display + Lora
    ========================= */
 
 [data-theme="classic"] {
+  /* Typography - Serif fonts */
+  --font-family: var(--font-serif-body);
+  --font-family-heading: var(--font-serif-heading);
+
   /* Backgrounds */
   --color-bg-primary: #FFFFFF;
   --color-bg-secondary: #FAFAFA;
@@ -28,6 +33,11 @@
   /* Accent - Classic blue */
   --color-accent-primary: #1976D2;
   --color-accent-secondary: #1565C0;
+
+  /* Chat bubbles - soft blue instead of bright */
+  --color-chat-user-bg: #E3EDF7;
+  --color-chat-user-text: var(--color-text-primary);
+  --color-chat-support-bg: #F5F5F5;
 
   /* Shadows - pronounced */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);

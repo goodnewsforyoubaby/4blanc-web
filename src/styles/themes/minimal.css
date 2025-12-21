@@ -29,6 +29,11 @@
   --color-accent-primary: #000000;
   --color-accent-secondary: #24292F;
 
+  /* Chat bubbles */
+  --color-chat-user-bg: #E8EEF3;
+  --color-chat-user-text: var(--color-text-primary);
+  --color-chat-support-bg: #F6F8FA;
+
   /* Shadows - minimal theme has no shadows */
   --shadow-sm: none;
   --shadow-md: none;

@@ -40,13 +40,14 @@ export const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-left">
-        {showBack ? (
+        {showBack && (
           <button className="header-btn" onClick={() => navigate(-1)}>
             <ChevronLeft size={24} />
           </button>
-        ) : (
-          <div className="header-spacer" />
         )}
+        <button className="header-btn" onClick={() => navigate('/account')}>
+          <User size={22} />
+        </button>
       </div>
 
       <div className="header-center">
@@ -55,23 +56,14 @@ export const Header: React.FC = () => {
       </div>
 
       <div className="header-right">
-        {isHome && (
-          <button className="header-btn header-btn-cart" onClick={() => navigate('/cart')}>
-            <ShoppingBag size={22} />
-            <Badge count={cart.totalQuantity} />
-          </button>
-        )}
-        {!isHome && (
-          <>
-            <button className="header-btn" onClick={() => navigate('/notifications')}>
-              <Bell size={22} />
-              <Badge count={unreadCount} />
-            </button>
-            <button className="header-btn" onClick={() => navigate('/account')}>
-              <User size={22} />
-            </button>
-          </>
-        )}
+        <button className="header-btn" onClick={() => navigate('/notifications')}>
+          <Bell size={22} />
+          <Badge count={unreadCount} />
+        </button>
+        <button className="header-btn" onClick={() => navigate('/cart')}>
+          <ShoppingBag size={22} />
+          <Badge count={cart.totalQuantity} />
+        </button>
       </div>
     </header>
   );
