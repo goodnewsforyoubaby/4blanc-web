@@ -6,8 +6,8 @@
 /* Hero Section */
 .partnership-hero {
   background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%);
-  padding: var(--spacing-6) var(--spacing-4);
-  margin: calc(-1 * var(--spacing-4));
+  padding: var(--spacing-6) var(--page-padding);
+  margin: calc(-1 * var(--page-padding));
   margin-bottom: var(--spacing-4);
 }
 
@@ -40,7 +40,7 @@
 
 /* Programs Section */
 .partnership-programs {
-  padding: 0 var(--spacing-4) var(--spacing-4);
+  padding: 0 var(--page-padding) var(--spacing-4);
 }
 
 .partnership-programs h2 {
@@ -57,7 +57,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--spacing-3);
-  padding: var(--spacing-3);
+  padding: var(--spacing-3) var(--page-padding);
   background: var(--color-bg-primary);
   border: var(--card-border);
   box-shadow: var(--card-shadow);
@@ -70,6 +70,10 @@
 
 .partnership-card:hover {
   background: var(--color-bg-secondary);
+}
+
+.partnership-card:active {
+  background: var(--color-bg-tertiary);
 }
 
 .partnership-card-image {
@@ -112,7 +116,7 @@
 }
 
 [data-theme="minimal"] .partnership-programs h2 {
-  padding: 0 var(--spacing-4);
+  padding: 0 var(--page-padding);
 }
 
 [data-theme="minimal"] .partnership-list {
@@ -125,7 +129,7 @@
   box-shadow: none;
   border-bottom: 1px solid var(--color-border-muted);
   border-radius: 0;
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   transition: background 80ms var(--ios-ease);
 }
 

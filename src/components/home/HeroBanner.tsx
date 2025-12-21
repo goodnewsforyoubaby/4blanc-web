@@ -41,10 +41,14 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
       <img src={image} alt={title} className="hero-banner__image" />
       {overlay && <div className="hero-banner__overlay" />}
       <div className="hero-banner__content">
-        {badge && (
-          <img src={badge} alt="Award Badge" className="hero-banner__badge" />
+        {(badge || label) && (
+          <div className="hero-banner__meta">
+            {badge && (
+              <img src={badge} alt="Award Badge" className="hero-banner__badge" />
+            )}
+            {label && <span className="hero-banner__label">{label}</span>}
+          </div>
         )}
-        {label && <span className="hero-banner__label">{label}</span>}
         <h2 className="hero-banner__title">{title}</h2>
         {subtitle && <p className="hero-banner__subtitle">{subtitle}</p>}
         <Button onClick={handleClick} className="hero-banner__button">

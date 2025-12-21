@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   border-bottom: 1px solid var(--color-border-muted);
 }
 
@@ -39,7 +39,7 @@
 .chat-messages {
   flex: 1;
   overflow-y: auto;
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
@@ -80,7 +80,7 @@
 
 .chat-time {
   margin-top: var(--spacing-1);
-  font-size: 10px;
+  font-size: var(--text-2xs);
 }
 
 .chat-attachment {
@@ -114,7 +114,7 @@
 .chat-quick-replies {
   display: flex;
   gap: var(--spacing-2);
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: var(--spacing-2) var(--page-padding);
   overflow-x: auto;
   border-top: 1px solid var(--color-border-muted);
 }
@@ -134,18 +134,22 @@
   background: var(--color-bg-tertiary);
 }
 
+.chat-quick-reply:active {
+  background: var(--color-bg-inset);
+}
+
 .chat-input-container {
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   border-top: 1px solid var(--color-border-muted);
   background: var(--color-bg-primary);
 }
 
 .chat-attach-btn {
-  width: 40px;
-  height: 40px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,10 +157,16 @@
   background: none;
   border: none;
   cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast), transform 100ms var(--ios-ease);
 }
 
 .chat-attach-btn:hover {
   color: var(--color-text-primary);
+}
+
+.chat-attach-btn:active {
+  transform: scale(0.92);
 }
 
 .chat-input {
@@ -173,8 +183,8 @@
 }
 
 .chat-send-btn {
-  width: 40px;
-  height: 40px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +193,11 @@
   border: none;
   border-radius: var(--radius-full);
   cursor: pointer;
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition-fast), transform 100ms var(--ios-ease);
+}
+
+.chat-send-btn:active:not(:disabled) {
+  transform: scale(0.92);
 }
 
 .chat-send-btn:disabled {

@@ -1,9 +1,9 @@
 .knowledge-page {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .knowledge-section {
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--section-gap);
 }
 
 .knowledge-section-header {
@@ -19,7 +19,13 @@
   color: var(--color-text-link);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
+  min-height: var(--touch-target-min);
+  padding: 0 var(--spacing-2);
   cursor: pointer;
+}
+
+.knowledge-link:active {
+  opacity: 0.7;
 }
 
 .knowledge-menu {
@@ -32,7 +38,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   background: var(--color-bg-primary);
   border: var(--card-border);
   box-shadow: var(--card-shadow);
@@ -45,6 +51,10 @@
 
 .knowledge-menu-item:hover {
   background: var(--color-bg-secondary);
+}
+
+.knowledge-menu-item:active {
+  background: var(--color-bg-tertiary);
 }
 
 .knowledge-menu-icon {
@@ -75,7 +85,7 @@
 .knowledge-article-card {
   display: flex;
   gap: var(--spacing-3);
-  padding: var(--spacing-3);
+  padding: var(--spacing-3) var(--page-padding);
   background: var(--color-bg-primary);
   border: var(--card-border);
   box-shadow: var(--card-shadow);
@@ -88,6 +98,10 @@
 
 .knowledge-article-card:hover {
   background: var(--color-bg-secondary);
+}
+
+.knowledge-article-card:active {
+  background: var(--color-bg-tertiary);
 }
 
 .knowledge-article-card img {
@@ -115,11 +129,11 @@
    Theme: Minimal - iOS-style list
    ========================= */
 [data-theme="minimal"] .knowledge-page {
-  padding: var(--spacing-4) 0;
+  padding: var(--page-padding) 0;
 }
 
 [data-theme="minimal"] .knowledge-section-header {
-  padding: 0 var(--spacing-4);
+  padding: 0 var(--page-padding);
 }
 
 [data-theme="minimal"] .knowledge-menu {
@@ -153,7 +167,7 @@
   box-shadow: none;
   border-bottom: 1px solid var(--color-border-muted);
   border-radius: 0;
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   transition: background 80ms var(--ios-ease);
 }
 

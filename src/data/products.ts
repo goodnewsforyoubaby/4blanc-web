@@ -1,5 +1,8 @@
 import { ProductListItem, Product, Collection } from '../types';
 
+// Base path for product images
+const IMG_PATH = '/4blanc-web/images/products';
+
 export const mockProducts: ProductListItem[] = [
   {
     id: 'prod-1',
@@ -13,7 +16,7 @@ export const mockProducts: ProductListItem[] = [
       minVariantPrice: { amount: '119.99', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/E8E0F0/4A3F5C?text=UV+Lamp',
+      url: `${IMG_PATH}/uv-lamp.jpg`,
       altText: 'SMART UV LED Nail Lamp',
     },
   },
@@ -26,7 +29,7 @@ export const mockProducts: ProductListItem[] = [
       minVariantPrice: { amount: '165.00', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/F0E8E8/5C4A4A?text=Alize+Dust',
+      url: `${IMG_PATH}/alize.jpg`,
       altText: 'Alize Nail Dust Collector',
     },
   },
@@ -39,14 +42,14 @@ export const mockProducts: ProductListItem[] = [
       minVariantPrice: { amount: '245.00', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/E8F0E8/4A5C4A?text=Maestro',
+      url: `${IMG_PATH}/maestro.jpg`,
       altText: 'Maestro Nail Dust Collector',
     },
   },
   {
     id: 'prod-4',
-    title: 'Professional E-File Machine',
-    handle: 'e-file-machine',
+    title: 'Shadowless Nail Lamp',
+    handle: 'shadowless-lamp',
     availableForSale: true,
     priceRange: {
       minVariantPrice: { amount: '195.00', currencyCode: 'USD' },
@@ -55,53 +58,53 @@ export const mockProducts: ProductListItem[] = [
       minVariantPrice: { amount: '249.00', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/E8E8F0/4A4A5C?text=E-File',
-      altText: 'Professional E-File Machine',
+      url: `${IMG_PATH}/shadowless-lamp.jpg`,
+      altText: 'Shadowless Nail Lamp',
     },
   },
   {
     id: 'prod-5',
-    title: 'Replacement Filters (3 Pack)',
-    handle: 'replacement-filters',
+    title: 'Alize Replacement Filter',
+    handle: 'alize-filter',
     availableForSale: true,
     priceRange: {
       minVariantPrice: { amount: '24.00', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/F0F0E8/5C5C4A?text=Filters',
-      altText: 'Replacement Filters',
+      url: `${IMG_PATH}/alize-filter.jpg`,
+      altText: 'Alize Replacement Filter',
     },
   },
   {
     id: 'prod-6',
-    title: 'Nail Art Brush Set',
-    handle: 'nail-art-brush-set',
+    title: 'Maestro HEPA Filter',
+    handle: 'maestro-filter',
     availableForSale: true,
     priceRange: {
       minVariantPrice: { amount: '35.00', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/F0E8F0/5C4A5C?text=Brushes',
-      altText: 'Nail Art Brush Set',
+      url: `${IMG_PATH}/maestro-filter.jpg`,
+      altText: 'Maestro HEPA Filter',
     },
   },
   {
     id: 'prod-7',
-    title: 'Cuticle Oil Set',
-    handle: 'cuticle-oil-set',
+    title: 'Nail Art Table Mat',
+    handle: 'table-mat',
     availableForSale: true,
     priceRange: {
       minVariantPrice: { amount: '18.00', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/E8F0F0/4A5C5C?text=Cuticle+Oil',
-      altText: 'Cuticle Oil Set',
+      url: `${IMG_PATH}/table-mat.jpg`,
+      altText: 'Nail Art Table Mat',
     },
   },
   {
     id: 'prod-8',
-    title: 'Professional Tool Kit',
-    handle: 'professional-tool-kit',
+    title: 'Macro 20X Photo Lens',
+    handle: 'macro-lens',
     availableForSale: true,
     priceRange: {
       minVariantPrice: { amount: '89.00', currencyCode: 'USD' },
@@ -110,8 +113,8 @@ export const mockProducts: ProductListItem[] = [
       minVariantPrice: { amount: '110.00', currencyCode: 'USD' },
     },
     featuredImage: {
-      url: 'https://placehold.co/400x400/F5F5F5/666666?text=Tool+Kit',
-      altText: 'Professional Tool Kit',
+      url: `${IMG_PATH}/macro-lens.jpg`,
+      altText: 'Macro 20X Photo Lens',
     },
   },
 ];
@@ -121,8 +124,7 @@ export const mockProductDetails: Record<string, Product> = {
     ...mockProducts[0],
     description: 'Professional SMART UV LED Nail Lamp with intelligent sensor. 48W power, cures all gel types in 30-60 seconds. Features include automatic sensor, 4 timer settings, and removable base for pedicures.',
     images: [
-      { url: 'https://placehold.co/400x400/E8E0F0/4A3F5C?text=UV+Lamp', altText: 'UV Lamp Front' },
-      { url: 'https://placehold.co/400x400/E8E0F0/4A3F5C?text=UV+Lamp+2', altText: 'UV Lamp Side' },
+      { url: `${IMG_PATH}/uv-lamp.jpg`, altText: 'UV Lamp Front' },
     ],
     variants: [
       {
@@ -148,7 +150,7 @@ export const mockProductDetails: Record<string, Product> = {
     ...mockProducts[1],
     description: 'Compact and powerful nail dust collector. Perfect for home salons and mobile technicians. Quiet operation with HEPA filtration system.',
     images: [
-      { url: 'https://placehold.co/400x400/F0E8E8/5C4A4A?text=Alize+Dust', altText: 'Alize Front' },
+      { url: `${IMG_PATH}/alize.jpg`, altText: 'Alize Front' },
     ],
     variants: [
       {
@@ -165,7 +167,7 @@ export const mockProductDetails: Record<string, Product> = {
     ...mockProducts[2],
     description: 'Professional-grade dust collector with superior suction power. Built-in LED lighting, adjustable speed, and washable filters. Ideal for busy salons.',
     images: [
-      { url: 'https://placehold.co/400x400/E8F0E8/4A5C4A?text=Maestro', altText: 'Maestro Front' },
+      { url: `${IMG_PATH}/maestro.jpg`, altText: 'Maestro Front' },
     ],
     variants: [
       {
@@ -193,35 +195,35 @@ export const mockCollections: Collection[] = [
     title: 'UV & LED Lamps',
     handle: 'uv-led-lamps',
     description: 'Professional curing lamps for gel and polygel',
-    image: { url: 'https://placehold.co/400x400/E8E0F0/4A3F5C?text=UV+Lamp', altText: 'UV Lamps' },
+    image: { url: `${IMG_PATH}/uv-lamp.jpg`, altText: 'UV Lamps' },
   },
   {
     id: 'col-2',
     title: 'Dust Collectors',
     handle: 'dust-collectors',
     description: 'Keep your workspace clean and healthy',
-    image: { url: 'https://placehold.co/400x400/F0E8E8/5C4A4A?text=Alize+Dust', altText: 'Dust Collectors' },
+    image: { url: `${IMG_PATH}/alize.jpg`, altText: 'Dust Collectors' },
   },
   {
     id: 'col-3',
-    title: 'E-File Machines',
-    handle: 'e-file-machines',
-    description: 'Professional electric nail drills',
-    image: { url: 'https://placehold.co/400x400/E8E8F0/4A4A5C?text=E-File', altText: 'E-File Machines' },
+    title: 'Maestro Series',
+    handle: 'maestro-series',
+    description: 'Professional Maestro equipment',
+    image: { url: `${IMG_PATH}/maestro.jpg`, altText: 'Maestro Series' },
   },
   {
     id: 'col-4',
     title: 'Accessories',
     handle: 'accessories',
-    description: 'Filters, brushes, and more',
-    image: { url: 'https://placehold.co/400x400/F0F0E8/5C5C4A?text=Filters', altText: 'Accessories' },
+    description: 'Filters, mats, and more',
+    image: { url: `${IMG_PATH}/alize-filter.jpg`, altText: 'Accessories' },
   },
   {
     id: 'col-5',
     title: 'Sale',
     handle: 'sale',
     description: 'Special offers and discounts',
-    image: { url: 'https://placehold.co/400x400/F5F5F5/666666?text=Tool+Kit', altText: 'Sale Items' },
+    image: { url: `${IMG_PATH}/shadowless-lamp.jpg`, altText: 'Sale Items' },
   },
 ];
 
@@ -230,12 +232,12 @@ export const getProductsByCollection = (handle: string): ProductListItem[] => {
     case 'uv-led-lamps':
       return mockProducts.filter((p) => p.handle.includes('lamp'));
     case 'dust-collectors':
-      return mockProducts.filter((p) => p.handle.includes('collector'));
-    case 'e-file-machines':
-      return mockProducts.filter((p) => p.handle.includes('e-file'));
+      return mockProducts.filter((p) => p.handle.includes('collector') || p.handle.includes('alize') || p.handle.includes('maestro'));
+    case 'maestro-series':
+      return mockProducts.filter((p) => p.handle.includes('maestro'));
     case 'accessories':
       return mockProducts.filter((p) =>
-        p.handle.includes('filter') || p.handle.includes('brush') || p.handle.includes('oil')
+        p.handle.includes('filter') || p.handle.includes('mat') || p.handle.includes('lens')
       );
     case 'sale':
       return mockProducts.filter((p) => p.compareAtPriceRange);

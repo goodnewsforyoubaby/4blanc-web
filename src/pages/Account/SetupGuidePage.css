@@ -49,7 +49,7 @@
 
 /* Introduction Section */
 .setup-guide-intro {
-  padding: var(--spacing-5) var(--spacing-4);
+  padding: var(--spacing-5) var(--page-padding);
   text-align: center;
 }
 
@@ -72,7 +72,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-3);
-  padding: 0 var(--spacing-4) var(--spacing-5);
+  padding: 0 var(--page-padding) var(--spacing-5);
 }
 
 .setup-guide-product-card {
@@ -113,7 +113,7 @@
 
 /* Video Guide List */
 .setup-guide-list {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .setup-guide-list-header {
@@ -132,7 +132,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   background: var(--color-bg-primary);
   border: var(--card-border);
   box-shadow: var(--card-shadow);
@@ -150,11 +150,11 @@
    Theme: Minimal - iOS-style list
    ========================= */
 [data-theme="minimal"] .setup-guide-list {
-  padding: var(--spacing-4) 0;
+  padding: var(--page-padding) 0;
 }
 
 [data-theme="minimal"] .setup-guide-list-header {
-  padding: 0 var(--spacing-4);
+  padding: 0 var(--page-padding);
   margin-bottom: var(--spacing-3);
 }
 

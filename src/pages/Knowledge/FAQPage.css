@@ -1,9 +1,9 @@
 .faq-page {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .faq-section {
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--section-gap);
 }
 
 .faq-category-title {
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   background: var(--color-bg-primary);
   border: var(--card-border);
   box-shadow: var(--card-shadow);
@@ -49,11 +49,11 @@
    Theme: Minimal - iOS-style list
    ========================= */
 [data-theme="minimal"] .faq-page {
-  padding: var(--spacing-4) 0;
+  padding: var(--page-padding) 0;
 }
 
 [data-theme="minimal"] .faq-category-title {
-  padding: 0 var(--spacing-4);
+  padding: 0 var(--page-padding);
   margin-bottom: var(--spacing-2);
 }
 

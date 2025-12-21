@@ -4,7 +4,7 @@
 }
 
 .partnership-not-found {
-  padding: var(--spacing-8) var(--spacing-4);
+  padding: var(--spacing-8) var(--page-padding);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 /* Hero Section */
 .pd-hero {
   background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%);
-  padding: var(--spacing-6) var(--spacing-4);
+  padding: var(--spacing-6) var(--page-padding);
   text-align: center;
 }
 
@@ -42,7 +42,7 @@
 
 /* Section Styles */
 .pd-section {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
   border-bottom: 1px solid var(--color-border-muted);
 }
 
@@ -154,7 +154,7 @@
 
 /* CTA Section */
 .pd-cta-section {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
   background: var(--color-bg-secondary);
 }
 

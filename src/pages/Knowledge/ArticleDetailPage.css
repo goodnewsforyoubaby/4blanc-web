@@ -14,7 +14,7 @@
 }
 
 .article-content {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .article-meta {

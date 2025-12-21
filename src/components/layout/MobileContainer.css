@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: 47px;
+  padding-top: calc(var(--mobile-safe-top) + var(--safe-area-top));
 }
 
 .mobile-home-indicator {
@@ -63,6 +63,7 @@
     height: 100vh;
     border-radius: 0;
     box-shadow: none;
+    --mobile-safe-top: 0px;
   }
 
   .mobile-notch,
@@ -71,6 +72,6 @@
   }
 
   .mobile-content {
-    padding-top: 0;
+    padding-top: calc(var(--mobile-safe-top) + var(--safe-area-top));
   }
 }

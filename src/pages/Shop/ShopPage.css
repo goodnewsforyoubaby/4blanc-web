@@ -1,5 +1,5 @@
 .shop-page {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .shop-search {
@@ -35,7 +35,7 @@
 }
 
 .shop-section {
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--section-gap);
 }
 
 .shop-section-title {

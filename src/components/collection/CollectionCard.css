@@ -15,6 +15,10 @@
   background: var(--color-bg-secondary);
 }
 
+.collection-card:active {
+  background: var(--color-bg-tertiary);
+}
+
 .collection-card-image {
   width: 64px;
   height: 64px;

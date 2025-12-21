@@ -5,7 +5,7 @@
   min-width: 16px;
   height: 16px;
   padding: 0 4px;
-  font-size: 10px;
+  font-size: var(--text-2xs);
   font-weight: var(--font-semibold);
   color: var(--color-badge-text);
   background: var(--color-badge);

@@ -58,59 +58,69 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="home-page">
-      {/* Christmas Promotion Banner */}
-      <HeroBanner
-        image={IMAGES.xmasBanner}
-        title="The 4BLANC® Christmas Studio Upgrade"
-        buttonText="Discover Your Exclusive Holiday Savings"
-        buttonLink="/shop"
-        variant="christmas"
-      />
-
-      {/* UV Nail Lamp Banner */}
-      <HeroBanner
-        image={IMAGES.uvLampHero}
-        label="NEW ARRIVAL"
-        title="SMART UV LED NAIL LAMP"
-        buttonText="Pre Order Now"
-        buttonLink="/shop"
-        variant="dark"
-      />
-
-      {/* Main Hero Banner */}
-      <HeroBanner
-        image={IMAGES.mainHero}
-        badge={IMAGES.awardBadge}
-        title="Revolutionizing Nail Care"
-        subtitle="The Perfect Balance of Protection, Efficiency, and Comfort"
-        buttonText="Shop Now"
-        buttonLink="/shop"
-      />
-
-      {/* Product Carousel */}
-      <ProductCarousel slides={carouselSlides} />
-
-      {/* Filter Section */}
-      <FilterSection
-        image={IMAGES.filterIntro}
-        heading="Medical-grade filters HEPA-11 & HEPA-12"
-        description="Capture up to 99.8% of particles as small as 0.3 µm, including the finest nail and gel dust, dead skin cells, and fungi, ensuring the air you breathe is pure and healthy."
-      />
-
-      {/* Featured Products Grid */}
-      <section className="home-section">
-        <div className="home-section-header">
-          <H2>Our Products</H2>
-          <button className="home-link" onClick={() => navigate('/shop')}>
-            View all
-          </button>
+      <section className="home-hero-stack hide-scrollbar">
+        <div className="home-hero-slide">
+          {/* Christmas Promotion Banner */}
+          <HeroBanner
+            image={IMAGES.xmasBanner}
+            title="The 4BLANC® Christmas Studio Upgrade"
+            buttonText="Discover Your Exclusive Holiday Savings"
+            buttonLink="/shop"
+            variant="christmas"
+          />
         </div>
-        <div className="home-products-grid">
-          {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} compact />
-          ))}
+
+        <div className="home-hero-slide">
+          {/* UV Nail Lamp Banner */}
+          <HeroBanner
+            image={IMAGES.uvLampHero}
+            label="NEW ARRIVAL"
+            title="SMART UV LED NAIL LAMP"
+            buttonText="Pre Order Now"
+            buttonLink="/shop"
+            variant="dark"
+          />
+        </div>
+
+        <div className="home-hero-slide">
+          {/* Main Hero Banner */}
+          <HeroBanner
+            image={IMAGES.mainHero}
+            badge={IMAGES.awardBadge}
+            title="Revolutionizing Nail Care"
+            subtitle="The Perfect Balance of Protection, Efficiency, and Comfort"
+            buttonText="Shop Now"
+            buttonLink="/shop"
+          />
         </div>
       </section>
+
+      <div className="home-content">
+        {/* Product Carousel */}
+        <ProductCarousel slides={carouselSlides} />
+
+        {/* Filter Section */}
+        <FilterSection
+          image={IMAGES.filterIntro}
+          heading="Medical-grade filters HEPA-11 & HEPA-12"
+          description="Capture up to 99.8% of particles as small as 0.3 µm, including the finest nail and gel dust, dead skin cells, and fungi, ensuring the air you breathe is pure and healthy."
+        />
+
+        {/* Featured Products Grid */}
+        <section className="home-section">
+          <div className="home-section-header">
+            <H2>Our Products</H2>
+            <button className="home-link" onClick={() => navigate('/shop')}>
+              View all
+            </button>
+          </div>
+          <div className="home-products-grid">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} compact />
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

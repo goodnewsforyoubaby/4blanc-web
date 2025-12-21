@@ -1,9 +1,9 @@
 .settings-page {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .settings-section {
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--section-gap);
 }
 
 .settings-section h3 {
@@ -38,6 +38,9 @@
   border-color: var(--color-border-default);
 }
 
+.settings-theme:active {
+  background: var(--color-bg-secondary);
+}
 .settings-theme.active {
   border-color: var(--color-accent-primary);
 }
@@ -149,7 +152,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-3);
+  padding: var(--spacing-3) 0;
   border-bottom: 1px solid var(--color-border-muted);
 }
 
@@ -168,6 +171,10 @@
   padding: var(--spacing-3) 0;
   border-bottom: 1px solid var(--color-border-muted);
   cursor: pointer;
+}
+
+.settings-toggle:active {
+  background: var(--color-bg-secondary);
 }
 
 .settings-toggle span {

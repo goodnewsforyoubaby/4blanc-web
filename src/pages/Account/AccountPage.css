@@ -1,5 +1,5 @@
 .account-page {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .account-guest {
@@ -81,6 +81,10 @@
 
 .account-menu-item:hover {
   background: var(--color-bg-secondary);
+}
+
+.account-menu-item:active {
+  background: var(--color-bg-tertiary);
 }
 
 .account-menu-item.danger {

@@ -8,13 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--page-padding);
   border-bottom: 1px solid var(--color-border-muted);
 }
 
 .cart-close {
-  width: 40px;
-  height: 40px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,6 +22,13 @@
   border: none;
   cursor: pointer;
   color: var(--color-text-primary);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast), transform 100ms var(--ios-ease);
+}
+
+.cart-close:active {
+  background: var(--color-bg-secondary);
+  transform: scale(0.92);
 }
 
 .cart-clear {
@@ -30,7 +37,13 @@
   color: var(--color-state-error);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
+  min-height: var(--touch-target-min);
+  padding: 0 var(--spacing-2);
   cursor: pointer;
+}
+
+.cart-clear:active {
+  opacity: 0.7;
 }
 
 .cart-empty {
@@ -51,7 +64,7 @@
 .cart-items {
   flex: 1;
   overflow-y: auto;
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
 }
 
 .cart-item {
@@ -119,8 +132,8 @@
 }
 
 .cart-item-quantity button {
-  width: 32px;
-  height: 32px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,15 +159,25 @@
   border: none;
   color: var(--color-text-tertiary);
   cursor: pointer;
-  padding: var(--spacing-1);
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast), transform 100ms var(--ios-ease);
 }
 
 .cart-item-remove:hover {
   color: var(--color-state-error);
 }
 
+.cart-item-remove:active {
+  color: var(--color-state-error);
+  transform: scale(0.92);
+}
+
 .cart-summary {
-  padding: var(--spacing-4);
+  padding: var(--page-padding);
   border-top: 1px solid var(--color-border-muted);
   background: var(--color-bg-secondary);
 }
