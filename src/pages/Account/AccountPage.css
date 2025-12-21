@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
   border-radius: var(--radius-full);
   color: var(--color-text-tertiary);
 }
@@ -38,7 +38,7 @@
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-4);
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
   border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-4);
 }
@@ -84,8 +84,9 @@
 .account-menu-group {
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-primary);
+  background: var(--surface-card);
   border: var(--card-border);
+  border-image: var(--card-border-image);
   box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -95,7 +96,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--list-item-padding-x);
   min-height: var(--touch-target-min);
   background: transparent;
   border: none;
@@ -118,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: var(--list-icon-color);
   flex-shrink: 0;
 }
 
@@ -135,7 +136,7 @@
 
 .account-menu-badge {
   padding: var(--spacing-1) var(--spacing-2);
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   font-weight: var(--font-medium);
@@ -163,8 +164,9 @@
 }
 
 .account-signout .account-menu-item {
-  background: var(--color-bg-primary);
+  background: var(--surface-card);
   border: var(--card-border);
+  border-image: var(--card-border-image);
   box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
   justify-content: center;

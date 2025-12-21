@@ -121,19 +121,20 @@
   align-items: center;
   gap: var(--spacing-1);
   padding: var(--spacing-4);
-  background: var(--color-bg-secondary);
+  background: var(--surface-card);
   border: var(--card-border);
+  border-image: var(--card-border-image);
   border-radius: var(--radius-lg);
   cursor: pointer;
   transition: background var(--transition-fast);
 }
 
 .home-quick-action:hover {
-  background: var(--color-bg-tertiary);
+  background: var(--surface-card-muted);
 }
 
 .home-quick-action:active {
-  background: var(--color-bg-inset);
+  background: var(--surface-card-inset);
   transform: scale(0.98);
 }
 

@@ -21,9 +21,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: var(--spacing-3) var(--page-padding);
-  background: var(--color-bg-primary);
+  padding: var(--spacing-3) var(--list-item-padding-x);
+  background: var(--surface-card);
   border: var(--card-border);
+  border-image: var(--card-border-image);
   box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
   cursor: pointer;

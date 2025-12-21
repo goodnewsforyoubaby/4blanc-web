@@ -53,6 +53,7 @@
   background: var(--btn-secondary-bg);
   color: var(--btn-secondary-text);
   border: 1px solid var(--btn-secondary-border);
+  border-image: var(--btn-secondary-border-image);
 }
 
 .btn-secondary:hover:not(:disabled) {

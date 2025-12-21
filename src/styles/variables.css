@@ -31,6 +31,23 @@
   --section-gap: var(--spacing-6);
 
   /* =========================
+     SURFACES & COMPONENT TOKENS
+     ========================= */
+  --surface-card: var(--color-bg-primary);
+  --surface-card-muted: var(--color-bg-secondary);
+  --surface-card-inset: var(--color-bg-tertiary);
+  --list-item-padding-x: var(--page-padding);
+  --list-icon-bg: var(--color-bg-secondary);
+  --list-icon-color: var(--color-primary);
+  --card-border-image: none;
+  --btn-secondary-border-image: none;
+  --input-bg: var(--color-bg-primary);
+  --input-border: var(--color-border-default);
+  --input-focus-border: var(--color-text-link);
+  --input-focus-ring: rgba(0, 122, 255, 0.15);
+  --attachment-bg: var(--color-bg-inset);
+
+  /* =========================
      BORDER RADIUS (iOS-style)
      ========================= */
   --radius-none: 0;

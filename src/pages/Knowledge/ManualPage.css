@@ -22,10 +22,11 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--list-item-padding-x);
   min-height: var(--touch-target-min);
-  background: var(--color-bg-primary);
+  background: var(--surface-card);
   border: var(--card-border);
+  border-image: var(--card-border-image);
   box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
   cursor: pointer;
@@ -46,9 +47,9 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: var(--color-bg-secondary);
+  background: var(--list-icon-bg);
   border-radius: var(--radius-md);
-  color: var(--color-primary);
+  color: var(--list-icon-color);
   flex-shrink: 0;
 }
 
@@ -102,7 +103,7 @@
   box-shadow: none;
   border-radius: 0;
   border-bottom: 1px solid var(--color-border-muted);
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--list-item-padding-x);
 }
 
 [data-theme="minimal"] .manual-item:last-child {

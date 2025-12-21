@@ -18,9 +18,12 @@ export const ThemeSwitcher: React.FC = () => {
             key={t.id}
             className={`theme-button ${theme === t.id ? 'active' : ''}`}
             onClick={() => setTheme(t.id)}
-            title={t.description}
           >
-            {t.name}
+            <span className={`theme-swatch theme-swatch--${t.id}`} />
+            <span className="theme-meta">
+              <span className="theme-name">{t.name}</span>
+              <span className="theme-desc">{t.description}</span>
+            </span>
           </button>
         ))}
       </div>

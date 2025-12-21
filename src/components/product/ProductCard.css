@@ -1,8 +1,9 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-primary);
+  background: var(--surface-card);
   border: var(--card-border);
+  border-image: var(--card-border-image);
   box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -22,7 +23,7 @@
 .product-card-image {
   position: relative;
   aspect-ratio: 1;
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
   overflow: hidden;
 }
 

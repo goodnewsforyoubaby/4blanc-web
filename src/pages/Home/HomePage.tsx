@@ -116,7 +116,7 @@ export const HomePage: React.FC = () => {
           </div>
           <div className="home-products-grid">
             {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} compact />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>

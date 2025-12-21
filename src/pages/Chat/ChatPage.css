@@ -103,7 +103,7 @@
   align-items: center;
   gap: var(--spacing-2);
   padding: var(--spacing-2);
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--attachment-bg);
   border-radius: var(--radius-md);
 }
 
@@ -121,7 +121,7 @@
 
 .chat-quick-reply {
   padding: var(--spacing-2) var(--spacing-3);
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
@@ -131,7 +131,7 @@
 }
 
 .chat-quick-reply:hover {
-  background: var(--color-bg-tertiary);
+  background: var(--surface-card-inset);
 }
 
 .chat-quick-reply:active {
@@ -211,7 +211,7 @@
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-3) var(--page-padding);
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
   border-top: 1px solid var(--color-border-muted);
 }
 

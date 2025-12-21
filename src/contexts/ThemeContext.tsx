@@ -8,9 +8,9 @@ interface ThemeContextType {
 }
 
 const themes: ThemeOption[] = [
-  { id: 'minimal', name: 'Minimal', description: 'Clean GitHub/Notion style' },
-  { id: 'shopify', name: 'Shopify', description: 'Based on 4blanc.com' },
-  { id: 'classic', name: 'Classic', description: 'Traditional e-commerce' },
+  { id: 'minimal', name: 'Minimal', description: 'iOS baseline and clean' },
+  { id: 'shopify', name: 'Shopify', description: 'Apple retail with gradient lines' },
+  { id: 'classic', name: 'Classic', description: 'Elegant blue and editorial' },
 ];
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);

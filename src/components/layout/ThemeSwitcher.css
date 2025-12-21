@@ -31,13 +31,13 @@
 }
 
 .theme-button {
-  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
   border: 1px solid #e1e4e8;
   border-radius: 8px;
   background: #f6f8fa;
-  color: #24292f;
-  font-size: 13px;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
   text-align: left;
@@ -51,6 +51,52 @@
 .theme-button.active {
   background: #0969da;
   border-color: #0969da;
+  color: #ffffff;
+}
+
+.theme-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 1px solid #d0d7de;
+  background: #ffffff;
+}
+
+.theme-swatch--minimal {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
+  border-color: #e1e4e8;
+}
+
+.theme-swatch--shopify {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f7 55%, #ededf1 100%);
+  border-color: #d2d2d7;
+}
+
+.theme-swatch--classic {
+  background: linear-gradient(135deg, #f8faff 0%, #eef3ff 60%, #dce6ff 100%);
+  border-color: #c7d3ee;
+}
+
+.theme-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.theme-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #24292f;
+}
+
+.theme-desc {
+  font-size: 11px;
+  color: #6e7781;
+}
+
+.theme-button.active .theme-name,
+.theme-button.active .theme-desc {
   color: #ffffff;
 }
 

@@ -83,7 +83,7 @@
   height: 80px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
   flex-shrink: 0;
 }
 
@@ -179,7 +179,7 @@
 .cart-summary {
   padding: var(--page-padding);
   border-top: 1px solid var(--color-border-muted);
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
 }
 
 .cart-summary-row {

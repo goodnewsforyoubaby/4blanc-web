@@ -1,7 +1,7 @@
 .product-carousel {
   position: relative;
   width: 100%;
-  background: var(--color-bg-secondary);
+  background: var(--surface-card-muted);
 }
 
 .product-carousel__slides {
@@ -71,7 +71,7 @@
   flex-direction: column;
   gap: 2px;
   padding: var(--spacing-2);
-  background: var(--color-bg-primary);
+  background: var(--surface-card);
   border-radius: var(--radius-md);
 }
 
@@ -88,8 +88,8 @@
 
 .product-carousel__button {
   margin-top: var(--spacing-2);
-  background: var(--color-text-primary);
-  color: var(--color-bg-primary);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   letter-spacing: 0.3px;
