@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { H2, H3, Body, BodySmall } from '../../components/common';
+import { ChevronRight } from 'lucide-react';
+import { H2, H3, Body, BodySmall, BottomSheet } from '../../components/common';
 import './SetupGuidePage.css';
 
 // Image paths
@@ -10,8 +10,15 @@ const IMAGES = {
   maestroProduct: '/4blanc-web/images/setup-guide/maestro-product.jpg',
 };
 
+// Video section type
+interface VideoSection {
+  id: string;
+  title: string;
+  videos: { id: string; title: string }[];
+}
+
 // Video guide sections data
-const videoSections = [
+const videoSections: VideoSection[] = [
   {
     id: 'maestro',
     title: 'Maéstro™ Ultimate Protection Nail Station',
@@ -99,28 +106,13 @@ const YouTubeEmbed: React.FC<{ videoId: string; title: string }> = ({ videoId, t
 );
 
 export const SetupGuidePage: React.FC = () => {
-  const [openSections, setOpenSections] = useState<Set<string>>(new Set(['maestro']));
+  const [selectedSection, setSelectedSection] = useState<VideoSection | null>(null);
 
-  const toggleSection = (id: string) => {
-    setOpenSections((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    setOpenSections((prev) => new Set([...prev, sectionId]));
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const openSection = (sectionId: string) => {
+    const section = videoSections.find((s) => s.id === sectionId);
+    if (section) {
+      setSelectedSection(section);
+    }
   };
 
   return (
@@ -148,49 +140,58 @@ export const SetupGuidePage: React.FC = () => {
 
       {/* Product Selection Grid */}
       <section className="setup-guide-products">
-        <div className="setup-guide-product-card" onClick={() => scrollToSection('alize')}>
+        <div className="setup-guide-product-card" onClick={() => openSection('alize')}>
           <img src={IMAGES.alizeProduct} alt="Alizé™" className="setup-guide-product-image" />
           <button className="setup-guide-product-button">Alizé™ Setup Guide</button>
         </div>
-        <div className="setup-guide-product-card" onClick={() => scrollToSection('maestro')}>
+        <div className="setup-guide-product-card" onClick={() => openSection('maestro')}>
           <img src={IMAGES.maestroProduct} alt="Maéstro™" className="setup-guide-product-image" />
           <button className="setup-guide-product-button">Maéstro™ Setup Guide</button>
         </div>
       </section>
 
-      {/* Video Guide Accordion */}
-      <section className="setup-guide-accordion">
-        <div className="setup-guide-accordion-header">
+      {/* Video Guide List */}
+      <section className="setup-guide-list">
+        <div className="setup-guide-list-header">
           <H2>4BLANC® Video Guide</H2>
         </div>
 
-        {videoSections.map((section) => (
-          <div key={section.id} id={section.id} className="setup-guide-section">
+        <div className="setup-guide-items">
+          {videoSections.map((section) => (
             <button
-              className={`setup-guide-section-header ${openSections.has(section.id) ? 'open' : ''}`}
-              onClick={() => toggleSection(section.id)}
+              key={section.id}
+              className="setup-guide-item"
+              onClick={() => setSelectedSection(section)}
             >
-              <Body>{section.title}</Body>
-              {openSections.has(section.id) ? (
-                <ChevronUp size={20} />
-              ) : (
-                <ChevronDown size={20} />
-              )}
-            </button>
-
-            {openSections.has(section.id) && (
-              <div className="setup-guide-section-content">
-                {section.videos.map((video) => (
-                  <div key={video.id} className="setup-guide-video-item">
-                    <YouTubeEmbed videoId={video.id} title={video.title} />
-                    <BodySmall className="setup-guide-video-title">{video.title}</BodySmall>
-                  </div>
-                ))}
+              <div className="setup-guide-item-content">
+                <Body>{section.title}</Body>
+                <BodySmall color="tertiary">
+                  {section.videos.length} video{section.videos.length > 1 ? 's' : ''}
+                </BodySmall>
               </div>
-            )}
-          </div>
-        ))}
+              <ChevronRight size={20} />
+            </button>
+          ))}
+        </div>
       </section>
+
+      {/* Video Modal */}
+      <BottomSheet
+        isOpen={selectedSection !== null}
+        onClose={() => setSelectedSection(null)}
+        title={selectedSection?.title || 'Video Guide'}
+      >
+        {selectedSection && (
+          <div className="setup-guide-modal-content">
+            {selectedSection.videos.map((video) => (
+              <div key={video.id} className="setup-guide-video-item">
+                <YouTubeEmbed videoId={video.id} title={video.title} />
+                <BodySmall className="setup-guide-video-title">{video.title}</BodySmall>
+              </div>
+            ))}
+          </div>
+        )}
+      </BottomSheet>
     </div>
   );
 };

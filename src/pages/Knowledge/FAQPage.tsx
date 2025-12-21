@@ -1,23 +1,12 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { H3, Body, BodySmall } from '../../components/common';
+import { ChevronRight } from 'lucide-react';
+import { H3, Body, BodySmall, BottomSheet } from '../../components/common';
 import { faqCategories, getFAQByCategory } from '../../data';
+import { FAQItem } from '../../types';
 import './FAQPage.css';
 
 export const FAQPage: React.FC = () => {
-  const [openItems, setOpenItems] = useState<Set<string>>(new Set());
-
-  const toggleItem = (id: string) => {
-    setOpenItems((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
-  };
+  const [selectedFAQ, setSelectedFAQ] = useState<FAQItem | null>(null);
 
   return (
     <div className="faq-page">
@@ -28,32 +17,34 @@ export const FAQPage: React.FC = () => {
             <H3 className="faq-category-title">{category.name}</H3>
             <div className="faq-items">
               {items.map((item) => (
-                <div
+                <button
                   key={item.id}
-                  className={`faq-item ${openItems.has(item.id) ? 'open' : ''}`}
+                  className="faq-item"
+                  onClick={() => setSelectedFAQ(item)}
                 >
-                  <button
-                    className="faq-question"
-                    onClick={() => toggleItem(item.id)}
-                  >
-                    <Body>{item.question}</Body>
-                    {openItems.has(item.id) ? (
-                      <ChevronUp size={20} />
-                    ) : (
-                      <ChevronDown size={20} />
-                    )}
-                  </button>
-                  {openItems.has(item.id) && (
-                    <div className="faq-answer">
-                      <BodySmall color="secondary">{item.answer}</BodySmall>
-                    </div>
-                  )}
-                </div>
+                  <Body>{item.question}</Body>
+                  <ChevronRight size={20} />
+                </button>
               ))}
             </div>
           </section>
         );
       })}
+
+      <BottomSheet
+        isOpen={selectedFAQ !== null}
+        onClose={() => setSelectedFAQ(null)}
+        title="FAQ"
+      >
+        {selectedFAQ && (
+          <div className="faq-modal-content">
+            <H3 className="faq-modal-question">{selectedFAQ.question}</H3>
+            <BodySmall color="secondary" className="faq-modal-answer">
+              {selectedFAQ.answer}
+            </BodySmall>
+          </div>
+        )}
+      </BottomSheet>
     </div>
   );
 };

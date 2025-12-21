@@ -17,37 +17,44 @@
 }
 
 .faq-item {
-  background: var(--color-bg-primary);
-  border: var(--card-border);
-  box-shadow: var(--card-shadow);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.faq-question {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: var(--spacing-3) var(--spacing-4);
-  background: none;
-  border: none;
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
   cursor: pointer;
   text-align: left;
+  transition: background var(--transition-fast);
 }
 
-.faq-question p {
+.faq-item:hover {
+  background: var(--color-bg-secondary);
+}
+
+.faq-item p {
   flex: 1;
   padding-right: var(--spacing-2);
 }
 
-.faq-question svg {
+.faq-item svg {
   color: var(--color-text-tertiary);
   flex-shrink: 0;
 }
 
-.faq-answer {
-  padding: 0 var(--spacing-4) var(--spacing-4);
-  border-top: 1px solid var(--color-border-muted);
-  padding-top: var(--spacing-3);
+/* Modal Content */
+.faq-modal-content {
+  padding: var(--spacing-2) 0;
+}
+
+.faq-modal-question {
+  margin-bottom: var(--spacing-4);
+  line-height: 1.4;
+}
+
+.faq-modal-answer {
+  line-height: 1.6;
 }
