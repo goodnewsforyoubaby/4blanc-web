@@ -1,0 +1,150 @@
+// Product Types
+export interface ProductImage {
+  url: string;
+  altText?: string;
+}
+
+export interface ProductPrice {
+  amount: string;
+  currencyCode: string;
+}
+
+export interface ProductVariant {
+  id: string;
+  title: string;
+  price: ProductPrice;
+  compareAtPrice?: ProductPrice;
+  availableForSale: boolean;
+  selectedOptions: { name: string; value: string }[];
+}
+
+export interface ProductListItem {
+  id: string;
+  title: string;
+  handle: string;
+  availableForSale: boolean;
+  priceRange: {
+    minVariantPrice: ProductPrice;
+  };
+  compareAtPriceRange?: {
+    minVariantPrice: ProductPrice;
+  };
+  featuredImage?: ProductImage;
+}
+
+export interface Product extends ProductListItem {
+  description: string;
+  descriptionHtml?: string;
+  images: ProductImage[];
+  variants: ProductVariant[];
+  options: { name: string; values: string[] }[];
+}
+
+// Collection Types
+export interface Collection {
+  id: string;
+  title: string;
+  handle: string;
+  description?: string;
+  image?: ProductImage;
+}
+
+// Cart Types
+export interface CartItem {
+  id: string;
+  productId: string;
+  variantId: string;
+  title: string;
+  variantTitle?: string;
+  price: ProductPrice;
+  quantity: number;
+  image?: ProductImage;
+}
+
+export interface Cart {
+  items: CartItem[];
+  totalQuantity: number;
+  subtotal: ProductPrice;
+}
+
+// Wishlist Types
+export interface WishlistItem {
+  id: string;
+  productId: string;
+  title: string;
+  handle: string;
+  price: string;
+  currencyCode: string;
+  image?: string;
+}
+
+// Chat Types
+export interface ChatMessage {
+  id: string;
+  type: 'user' | 'support';
+  content: string;
+  timestamp: Date;
+  attachment?: {
+    type: 'image' | 'file';
+    name: string;
+    url: string;
+    size?: string;
+  };
+  status?: 'sent' | 'delivered' | 'read';
+}
+
+// Article Types
+export type ArticleCategory = 'product-guides' | 'nail-care-tips' | 'salon-business' | 'maintenance';
+
+export interface Article {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  category: ArticleCategory;
+  author: string;
+  publishedAt: Date;
+  readTime: number;
+  featuredImage?: string;
+  tags: string[];
+}
+
+// FAQ Types
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+}
+
+// Notification Types
+export type NotificationType = 'order' | 'promo' | 'system' | 'chat';
+
+export interface Notification {
+  id: string;
+  type: NotificationType;
+  title: string;
+  message: string;
+  timestamp: Date;
+  read: boolean;
+  actionUrl?: string;
+}
+
+// User Types
+export interface User {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  avatar?: string;
+}
+
+// Theme Types
+export type ThemeName = 'minimal' | 'shopify' | 'classic';
+
+export interface ThemeOption {
+  id: ThemeName;
+  name: string;
+  description: string;
+}

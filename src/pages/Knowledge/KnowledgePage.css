@@ -1,0 +1,112 @@
+.knowledge-page {
+  padding: var(--spacing-4);
+}
+
+.knowledge-section {
+  margin-bottom: var(--spacing-6);
+}
+
+.knowledge-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.knowledge-link {
+  background: none;
+  border: none;
+  color: var(--color-text-link);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.knowledge-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.knowledge-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.knowledge-menu-item:hover {
+  background: var(--color-bg-secondary);
+}
+
+.knowledge-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+}
+
+.knowledge-menu-info {
+  flex: 1;
+}
+
+.knowledge-menu-arrow {
+  color: var(--color-text-tertiary);
+}
+
+.knowledge-articles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.knowledge-article-card {
+  display: flex;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.knowledge-article-card:hover {
+  background: var(--color-bg-secondary);
+}
+
+.knowledge-article-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.knowledge-article-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.knowledge-article-info p:first-child {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

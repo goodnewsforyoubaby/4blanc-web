@@ -1,0 +1,49 @@
+/* =========================
+   Theme 1: Minimal (GitHub/Notion Style)
+   ========================= */
+
+[data-theme="minimal"] {
+  /* Backgrounds */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F6F8FA;
+  --color-bg-tertiary: #F0F2F5;
+  --color-bg-inset: #EFF1F3;
+
+  /* Text */
+  --color-text-primary: #1F2328;
+  --color-text-secondary: #656D76;
+  --color-text-tertiary: #8B949E;
+  --color-text-link: #0969DA;
+  --color-text-inverse: #FFFFFF;
+
+  /* Borders */
+  --color-border-default: #D1D9E0;
+  --color-border-muted: #E6EBF1;
+
+  /* States */
+  --color-state-success: #1A7F37;
+  --color-state-error: #CF222E;
+  --color-state-warning: #9A6700;
+
+  /* Accent */
+  --color-accent-primary: #000000;
+  --color-accent-secondary: #24292F;
+
+  /* Shadows - minimal theme has no shadows */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+
+  /* Border style for cards */
+  --card-border: 1px solid var(--color-border-muted);
+  --card-shadow: none;
+
+  /* Button specifics */
+  --btn-primary-bg: #000000;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #24292F;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #1F2328;
+  --btn-secondary-border: #D1D9E0;
+  --btn-secondary-hover: #F6F8FA;
+}

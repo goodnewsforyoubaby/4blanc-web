@@ -1,0 +1,49 @@
+/* =========================
+   Theme 2: Shopify (4blanc.com Style)
+   ========================= */
+
+[data-theme="shopify"] {
+  /* Backgrounds */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F7F7F7;
+  --color-bg-tertiary: #EBEBEB;
+  --color-bg-inset: #E5E5E5;
+
+  /* Text */
+  --color-text-primary: #121212;
+  --color-text-secondary: #4A4A4A;
+  --color-text-tertiary: #717171;
+  --color-text-link: #121212;
+  --color-text-inverse: #FFFFFF;
+
+  /* Borders */
+  --color-border-default: #DEDEDE;
+  --color-border-muted: #EBEBEB;
+
+  /* States */
+  --color-state-success: #008060;
+  --color-state-error: #D72C0D;
+  --color-state-warning: #FFC453;
+
+  /* Accent - 4BLANC uses black accent */
+  --color-accent-primary: #121212;
+  --color-accent-secondary: #2A2A2A;
+
+  /* Shadows - subtle */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Border style for cards */
+  --card-border: 1px solid var(--color-border-muted);
+  --card-shadow: var(--shadow-sm);
+
+  /* Button specifics */
+  --btn-primary-bg: #121212;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #2A2A2A;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #121212;
+  --btn-secondary-border: #121212;
+  --btn-secondary-hover: #F7F7F7;
+}

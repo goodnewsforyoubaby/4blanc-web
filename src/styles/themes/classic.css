@@ -1,0 +1,53 @@
+/* =========================
+   Theme 3: Classic (Traditional E-commerce)
+   ========================= */
+
+[data-theme="classic"] {
+  /* Backgrounds */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #FAFAFA;
+  --color-bg-tertiary: #F5F5F5;
+  --color-bg-inset: #EEEEEE;
+
+  /* Text */
+  --color-text-primary: #212121;
+  --color-text-secondary: #616161;
+  --color-text-tertiary: #9E9E9E;
+  --color-text-link: #1976D2;
+  --color-text-inverse: #FFFFFF;
+
+  /* Borders */
+  --color-border-default: #E0E0E0;
+  --color-border-muted: #EEEEEE;
+
+  /* States */
+  --color-state-success: #43A047;
+  --color-state-error: #E53935;
+  --color-state-warning: #FB8C00;
+
+  /* Accent - Classic blue */
+  --color-accent-primary: #1976D2;
+  --color-accent-secondary: #1565C0;
+
+  /* Shadows - pronounced */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  /* Border style for cards - use shadows instead of borders */
+  --card-border: none;
+  --card-shadow: var(--shadow-md);
+
+  /* Override border radius for more rounded feel */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Button specifics - gradient */
+  --btn-primary-bg: linear-gradient(180deg, #1E88E5 0%, #1565C0 100%);
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: linear-gradient(180deg, #1976D2 0%, #1565C0 100%);
+  --btn-secondary-bg: #FFFFFF;
+  --btn-secondary-text: #1976D2;
+  --btn-secondary-border: #1976D2;
+  --btn-secondary-hover: #F5F5F5;
+}
