@@ -7,14 +7,16 @@ import { AppLayout } from './components/layout';
 import { HomePage } from './pages/Home';
 import { ShopPage, CollectionPage, ProductPage } from './pages/Shop';
 import { ChatPage } from './pages/Chat';
+import { ContactPage } from './pages/Contact';
 import { CartPage } from './pages/Cart';
 import {
   KnowledgePage,
   FAQPage,
-  ArticlesPage,
-  ArticleDetailPage,
+  ManualPage,
+  VideoGuidePage,
   ShippingPolicyPage,
   ReturnPolicyPage,
+  PrivacyPolicyPage,
   PartnershipPage,
   PartnershipDetailPage,
 } from './pages/Knowledge';
@@ -48,16 +50,18 @@ function App() {
                     <Route path="/shop/:handle" element={<CollectionPage />} />
                     <Route path="/product/:handle" element={<ProductPage />} />
                     <Route path="/chat" element={<ChatPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
 
                     {/* Knowledge Base */}
                     <Route path="/knowledge" element={<KnowledgePage />} />
                     <Route path="/knowledge/faq" element={<FAQPage />} />
-                    <Route path="/knowledge/articles" element={<ArticlesPage />} />
-                    <Route path="/knowledge/articles/:slug" element={<ArticleDetailPage />} />
+                    <Route path="/knowledge/manual" element={<ManualPage />} />
+                    <Route path="/knowledge/video-guide" element={<VideoGuidePage />} />
                     <Route path="/knowledge/partnership" element={<PartnershipPage />} />
                     <Route path="/knowledge/partnership/:slug" element={<PartnershipDetailPage />} />
                     <Route path="/knowledge/shipping-policy" element={<ShippingPolicyPage />} />
                     <Route path="/knowledge/return-policy" element={<ReturnPolicyPage />} />
+                    <Route path="/knowledge/privacy-policy" element={<PrivacyPolicyPage />} />
 
                     {/* Account */}
                     <Route path="/account" element={<AccountPage />} />

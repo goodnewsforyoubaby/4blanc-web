@@ -11,10 +11,22 @@ const getTitleByPath = (pathname: string): string => {
   if (pathname.startsWith('/shop')) return 'Shop';
   if (pathname.startsWith('/product')) return 'Product';
   if (pathname.startsWith('/chat')) return 'Support Chat';
+  if (pathname === '/contact') return 'Contact';
+  // Knowledge Base pages
+  if (pathname === '/knowledge') return 'Documentation';
+  if (pathname === '/knowledge/faq') return 'FAQ';
+  if (pathname === '/knowledge/manual') return 'User Manuals';
+  if (pathname === '/knowledge/video-guide') return 'Video Guide';
+  if (pathname === '/knowledge/shipping-policy') return 'Shipping Policy';
+  if (pathname === '/knowledge/return-policy') return 'Return Policy';
+  if (pathname === '/knowledge/privacy-policy') return 'Privacy Policy';
+  if (pathname.startsWith('/knowledge/partnership')) return 'Partnership';
   if (pathname.startsWith('/knowledge')) return 'Knowledge Base';
-  if (pathname.startsWith('/account/login')) return 'Sign In';
-  if (pathname.startsWith('/account/register')) return 'Create Account';
-  if (pathname.startsWith('/account/settings')) return 'Settings';
+  // Account pages
+  if (pathname === '/account/login') return 'Sign In';
+  if (pathname === '/account/register') return 'Create Account';
+  if (pathname === '/account/settings') return 'Settings';
+  if (pathname === '/account/setup-guide') return 'Setup Guide';
   if (pathname.startsWith('/account')) return 'Account';
   if (pathname.startsWith('/notifications')) return 'Notifications';
   if (pathname.startsWith('/cart')) return 'Cart';
@@ -22,7 +34,7 @@ const getTitleByPath = (pathname: string): string => {
 };
 
 const shouldShowBackButton = (pathname: string): boolean => {
-  const noBackRoutes = ['/', '/shop', '/chat', '/knowledge'];
+  const noBackRoutes = ['/', '/shop', '/chat', '/knowledge', '/account'];
   return !noBackRoutes.includes(pathname);
 };
 

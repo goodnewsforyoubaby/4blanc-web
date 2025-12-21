@@ -1,14 +1,33 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Paperclip, Image as ImageIcon, File } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { Send, Paperclip, X, File } from 'lucide-react';
 import { Body, BodySmall, Caption } from '../../components/common';
 import { mockChatHistory, supportInfo, quickReplies } from '../../data';
 import { ChatMessage } from '../../types';
 import './ChatPage.css';
 
+interface ProductContext {
+  title: string;
+  price: string;
+  image?: string;
+}
+
 export const ChatPage: React.FC = () => {
+  const location = useLocation();
   const [messages, setMessages] = useState<ChatMessage[]>(mockChatHistory);
   const [inputValue, setInputValue] = useState('');
+  const [productContext, setProductContext] = useState<ProductContext | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Check for product context from navigation state
+  useEffect(() => {
+    const state = location.state as { productContext?: ProductContext } | null;
+    if (state?.productContext) {
+      setProductContext(state.productContext);
+      // Clear the state to prevent showing context on refresh
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -21,28 +40,40 @@ export const ChatPage: React.FC = () => {
   const handleSend = () => {
     if (!inputValue.trim()) return;
 
+    // Include product context in message if present
+    const messageContent = productContext
+      ? `[Question about ${productContext.title}]\n\n${inputValue.trim()}`
+      : inputValue.trim();
+
     const newMessage: ChatMessage = {
       id: `msg-${Date.now()}`,
       type: 'user',
-      content: inputValue.trim(),
+      content: messageContent,
       timestamp: new Date(),
       status: 'sent',
     };
 
     setMessages([...messages, newMessage]);
     setInputValue('');
+    setProductContext(null); // Clear context after sending
 
     // Simulate support response
     setTimeout(() => {
       const response: ChatMessage = {
         id: `msg-${Date.now() + 1}`,
         type: 'support',
-        content: 'Thank you for your message! Our team will get back to you shortly.',
+        content: productContext
+          ? `Thank you for your question about ${productContext.title}! Our product specialist will assist you shortly.`
+          : 'Thank you for your message! Our team will get back to you shortly.',
         timestamp: new Date(),
         status: 'delivered',
       };
       setMessages((prev) => [...prev, response]);
     }, 1000);
+  };
+
+  const handleClearProductContext = () => {
+    setProductContext(null);
   };
 
   const handleQuickReply = (reply: string) => {
@@ -104,6 +135,33 @@ export const ChatPage: React.FC = () => {
         ))}
         <div ref={messagesEndRef} />
       </div>
+
+      {/* Product Context Card */}
+      {productContext && (
+        <div className="chat-product-context">
+          <div className="chat-product-context-info">
+            {productContext.image && (
+              <img
+                src={productContext.image}
+                alt={productContext.title}
+                className="chat-product-context-image"
+              />
+            )}
+            <div className="chat-product-context-details">
+              <BodySmall>Asking about:</BodySmall>
+              <Body>{productContext.title}</Body>
+              <Caption color="secondary">{productContext.price}</Caption>
+            </div>
+          </div>
+          <button
+            className="chat-product-context-close"
+            onClick={handleClearProductContext}
+            aria-label="Remove product context"
+          >
+            <X size={18} />
+          </button>
+        </div>
+      )}
 
       {/* Quick Replies */}
       <div className="chat-quick-replies hide-scrollbar">

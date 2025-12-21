@@ -1,8 +1,9 @@
 export { KnowledgePage } from './KnowledgePage';
 export { FAQPage } from './FAQPage';
-export { ArticlesPage } from './ArticlesPage';
-export { ArticleDetailPage } from './ArticleDetailPage';
+export { ManualPage } from './ManualPage';
+export { VideoGuidePage } from './VideoGuidePage';
 export { ShippingPolicyPage } from './ShippingPolicyPage';
 export { ReturnPolicyPage } from './ReturnPolicyPage';
+export { PrivacyPolicyPage } from './PrivacyPolicyPage';
 export { PartnershipPage } from './PartnershipPage';
 export { PartnershipDetailPage } from './PartnershipDetailPage';

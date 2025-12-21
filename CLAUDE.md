@@ -43,11 +43,47 @@ All contexts persist to localStorage.
 - `BottomTabBar` - 4 tabs: Home, Shop, Chat, Knowledge
 - `#modal-root` - Portal target for modals (inside `.app-layout`)
 
+Layout height calculation:
+```css
+--mobile-width: 390px;
+--mobile-height: 844px;
+--mobile-safe-top: 47px;
+--header-height: 56px;
+--tab-bar-height: 64px;
+--tab-bar-total-height: calc(var(--tab-bar-height) + var(--safe-area-bottom));
+--content-height: calc(
+  var(--mobile-height) - var(--mobile-safe-top) - var(--safe-area-top)
+  - var(--header-height) - var(--tab-bar-total-height)
+);
+```
+
 ### Navigation (4 main tabs)
 - `/` - Home (hero banner, featured products, collections)
 - `/shop` - Shop (catalog with search and filters)
-- `/chat` - Support chat (mocked conversation)
-- `/knowledge` - Knowledge base (FAQ, articles, policies)
+- `/chat` - Support chat (real-time messaging simulation)
+- `/knowledge` - Documentation hub (User Manuals)
+
+### Additional Routes
+**Account (`/account`):**
+- `/account/login` - Sign in
+- `/account/register` - Create account
+- `/account/settings` - Account settings
+- `/account/setup-guide` - Product setup guides
+
+**Knowledge Base (`/knowledge`):**
+- `/knowledge/manual` - PDF user manuals (8 products)
+- `/knowledge/video-guide` - YouTube video tutorials
+- `/knowledge/faq` - Frequently asked questions
+- `/knowledge/shipping-policy` - Shipping information
+- `/knowledge/return-policy` - Return & refund policy
+- `/knowledge/privacy-policy` - Privacy policy
+- `/knowledge/partnership` - Partnership program
+
+**Other:**
+- `/contact` - Contact form
+- `/cart` - Shopping cart
+- `/notifications` - Push notifications
+- `/product/:handle` - Product detail page
 
 ### Data
 All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.com Shopify CDN images.
@@ -66,6 +102,23 @@ All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.
 - 8px spacing grid: `--spacing-1` (4px) through `--spacing-16` (64px)
 - Typography: `--text-xs` (12px) through `--text-2xl` (24px)
 - Icons from `lucide-react` library (consistent 20-24px size)
+
+#### Page Rhythm Variables
+```css
+--page-padding: var(--spacing-4);  /* Horizontal padding for all pages */
+--section-gap: var(--spacing-6);   /* Vertical gap between sections */
+```
+Use these instead of hardcoding `--spacing-4` for page padding - keeps all pages consistent.
+
+#### iOS Safe Area Variables
+```css
+--safe-area-top: env(safe-area-inset-top, 0px);
+--safe-area-bottom: env(safe-area-inset-bottom, 0px);
+--safe-area-left: env(safe-area-inset-left, 0px);
+--safe-area-right: env(safe-area-inset-right, 0px);
+--mobile-safe-top: 47px;  /* iPhone notch area */
+```
+Bottom tab bar and content height calculations use these for proper iPhone X+ support.
 
 ### Modals & Overlays
 - **Always use React Portal** to `#modal-root`
@@ -90,8 +143,15 @@ This app MUST look and feel like a native iOS application. Follow these rules st
 
 #### Touch Targets
 - Minimum tap area: **44x44px** (iOS Human Interface Guidelines)
+- Use `--touch-target-min: 44px` variable for width/height
 - Recommended: 48x48px for primary actions
-- Header buttons, tab bar items must meet this requirement
+- Header buttons, tab bar items, icon buttons must meet this requirement
+```css
+.icon-button {
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+}
+```
 
 #### Animations & Transitions
 - Use `--ios-ease` for most animations (smooth deceleration)
@@ -194,16 +254,38 @@ Key CSS for smooth modal:
 }
 ```
 
-#### Press States
+#### Press States (Active)
+Different elements need different active states:
+
 ```css
-.interactive-element {
-  transition: transform 100ms var(--ios-ease);
+/* Text links - opacity fade */
+.text-link:active {
+  opacity: 0.7;
 }
-.interactive-element:active {
-  transform: scale(0.95);  /* Buttons */
-  /* or scale(0.98) for cards/larger elements */
+
+/* Icon buttons - scale + background */
+.icon-button:active {
+  background: var(--color-bg-secondary);
+  transform: scale(0.92);
+}
+
+/* Regular buttons - scale */
+.button:active {
+  transform: scale(0.95);
+}
+
+/* Cards/list items - background change */
+.card:active {
+  background: var(--color-bg-tertiary);
+}
+
+/* Large touch areas - subtle scale */
+.large-touch-area:active {
+  transform: scale(0.98);
 }
 ```
+
+Always add `transition: ... 100ms var(--ios-ease)` for smooth feedback.
 
 #### Badge Component
 ```css
@@ -216,6 +298,111 @@ Key CSS for smooth modal:
 }
 ```
 
+#### iOS Grouped Lists (Apple Settings Style)
+Used in AccountPage for menu organization:
+
+```
+SECTION HEADER                    ← Caption, uppercase, muted
+├─ 📖 Setup Guide              → ← Icon + label + chevron
+├─ 🎬 Video Guide              →
+└─ 📄 User Manuals             →
+
+ANOTHER SECTION
+├─ ❓ FAQ                      →
+└─ 💬 Contact Us               →
+```
+
+```css
+/* Section header */
+.section-title {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-tertiary);
+  padding: var(--spacing-2) var(--spacing-1);
+}
+
+/* Menu group container */
+.menu-group {
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Menu item row */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  min-height: var(--touch-target-min);
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+/* Minimal theme - no outer borders */
+[data-theme="minimal"] .menu-group {
+  border: none;
+  box-shadow: none;
+}
+```
+
+#### Contact Form Pattern
+Standard form layout with iOS styling:
+
+```css
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.form-field label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.form-field input,
+.form-field textarea {
+  padding: var(--spacing-3);
+  min-height: var(--touch-target-min);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* Required field marker */
+.required { color: var(--color-state-error); }
+```
+
+#### Product Context in Chat
+When navigating from product page to chat, pass product context via router state:
+
+```tsx
+// ProductPage - navigate with state
+navigate('/chat', {
+  state: {
+    productContext: {
+      title: product.title,
+      price: '$299.00',
+      image: product.images[0]?.url,
+    },
+  },
+});
+
+// ChatPage - receive and display context
+const location = useLocation();
+const state = location.state as { productContext?: ProductContext };
+```
+
 ---
 
 ### What NOT to Do
@@ -223,6 +410,9 @@ Key CSS for smooth modal:
 | Bad Practice | Why | Instead |
 |--------------|-----|---------|
 | `color: #339999` | Hardcoded color | `color: var(--color-primary)` |
+| `padding: 0 16px` | Hardcoded spacing | `padding: 0 var(--page-padding)` |
+| `width: 44px; height: 44px` | Magic number | `width: var(--touch-target-min)` |
+| `margin-bottom: 24px` | Inconsistent gaps | `margin-bottom: var(--section-gap)` |
 | `text-transform: uppercase` | Not iOS-native | Use normal case |
 | `letter-spacing: 2px` | Feels Android | Minimal or none |
 | `transform: translateY(-2px)` on hover | Desktop pattern | Use `:active` scale |
@@ -230,6 +420,7 @@ Key CSS for smooth modal:
 | Modal inside `.app-content` | Gets clipped | Use Portal to `#modal-root` |
 | Font size < 12px | Unreadable | Minimum 12px |
 | Gradient backgrounds | Not iOS (except Classic buttons) | Solid colors |
+| No `:active` state on clickables | No touch feedback | Add opacity/scale/background change |
 
 ---
 
@@ -238,8 +429,11 @@ Key CSS for smooth modal:
 Before committing UI changes:
 
 - [ ] Test in all 3 themes (Minimal, Shopify, Classic)
-- [ ] Check touch targets are at least 44x44px
+- [ ] Check touch targets use `--touch-target-min` (44x44px)
 - [ ] Verify no hardcoded colors (search for `#` in CSS)
+- [ ] Use `--page-padding` for page horizontal padding
+- [ ] Use `--section-gap` for spacing between sections
+- [ ] All clickable elements have `:active` states
 - [ ] Test animations are smooth (no jank)
 - [ ] Check modal overlays cover header
 - [ ] Verify consistent spacing (8px grid)
@@ -280,3 +474,14 @@ Base URL configured as `/4blanc-web/` in:
 | `ProductCard` | Product grid item |
 | `Header` | Top navigation bar |
 | `BottomTabBar` | Bottom tab navigation |
+
+### Key Pages
+| Page | Purpose |
+|------|---------|
+| `AccountPage` | iOS grouped lists menu (guest/authenticated) |
+| `ManualPage` | PDF manuals with external links |
+| `VideoGuidePage` | YouTube videos in BottomSheet |
+| `ContactPage` | Contact form (Name, Email, Phone, Comment) |
+| `ChatPage` | Support chat with product context support |
+| `ProductPage` | Product details with "Ask about this product" |
+| `SetupGuidePage` | Interactive setup guides with YouTube videos |

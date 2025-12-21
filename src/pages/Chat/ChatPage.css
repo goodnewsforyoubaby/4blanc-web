@@ -204,3 +204,64 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* Product Context Card */
+.chat-product-context {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--page-padding);
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.chat-product-context-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-product-context-image {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.chat-product-context-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-product-context-details p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-product-context-close {
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  transition: color var(--transition-fast), transform 100ms var(--ios-ease);
+}
+
+.chat-product-context-close:hover {
+  color: var(--color-text-primary);
+}
+
+.chat-product-context-close:active {
+  transform: scale(0.92);
+}

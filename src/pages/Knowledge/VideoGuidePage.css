@@ -1,0 +1,143 @@
+.video-guide-page {
+  padding: var(--page-padding);
+}
+
+.video-guide-header {
+  margin-bottom: var(--section-gap);
+}
+
+.video-guide-header h2 {
+  margin-bottom: var(--spacing-1);
+}
+
+/* Video List */
+.video-guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* Video Item - iOS list style */
+.video-guide-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  min-height: var(--touch-target-min);
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background 80ms var(--ios-ease), transform 100ms var(--ios-ease);
+  text-align: left;
+  width: 100%;
+}
+
+.video-guide-item:active {
+  background: var(--color-bg-tertiary);
+  transform: scale(0.98);
+}
+
+/* Icon */
+.video-guide-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Info */
+.video-guide-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.video-guide-info p {
+  margin: 0;
+}
+
+.video-guide-info p:first-child {
+  font-weight: var(--font-medium);
+}
+
+/* Arrow */
+.video-guide-arrow {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+/* =========================
+   Modal Content
+   ========================= */
+.video-guide-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  padding: var(--spacing-2) 0 var(--spacing-4);
+}
+
+.video-guide-video-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.video-guide-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.video-guide-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-guide-video-title {
+  text-align: center;
+  padding: 0 var(--spacing-2);
+}
+
+/* =========================
+   Theme: Minimal - iOS grouped list
+   ========================= */
+[data-theme="minimal"] .video-guide-page {
+  padding: var(--page-padding) 0;
+}
+
+[data-theme="minimal"] .video-guide-header {
+  padding: 0 var(--page-padding);
+}
+
+[data-theme="minimal"] .video-guide-list {
+  gap: 0;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  margin: 0 var(--page-padding);
+  overflow: hidden;
+}
+
+[data-theme="minimal"] .video-guide-item {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border-muted);
+  padding: var(--spacing-3) var(--spacing-4);
+}
+
+[data-theme="minimal"] .video-guide-item:last-child {
+  border-bottom: none;
+}

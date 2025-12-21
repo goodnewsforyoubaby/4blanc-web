@@ -11,10 +11,61 @@ import {
   BookOpen,
   LogOut,
   ChevronRight,
+  Play,
+  Truck,
+  RotateCcw,
+  Shield,
 } from 'lucide-react';
 import { Button, H3, Body, BodySmall, Caption } from '../../components/common';
 import { useAuth } from '../../contexts/AuthContext';
 import './AccountPage.css';
+
+// Menu group type
+interface MenuGroup {
+  title: string;
+  items: MenuItemData[];
+}
+
+interface MenuItemData {
+  icon: React.ReactNode;
+  label: string;
+  path?: string;
+  onClick?: () => void;
+  danger?: boolean;
+}
+
+// Menu groups for guest mode
+const guestMenuGroups: MenuGroup[] = [
+  {
+    title: 'PRODUCT SUPPORT',
+    items: [
+      { icon: <BookOpen size={22} />, label: 'Setup Guide', path: '/account/setup-guide' },
+      { icon: <Play size={22} />, label: 'Video Guide', path: '/knowledge/video-guide' },
+      { icon: <FileText size={22} />, label: 'User Manuals', path: '/knowledge/manual' },
+    ],
+  },
+  {
+    title: 'HELP',
+    items: [
+      { icon: <HelpCircle size={22} />, label: 'FAQ', path: '/knowledge/faq' },
+      { icon: <MessageCircle size={22} />, label: 'Contact Us', path: '/contact' },
+    ],
+  },
+  {
+    title: 'LEGAL',
+    items: [
+      { icon: <Truck size={22} />, label: 'Shipping Policy', path: '/knowledge/shipping-policy' },
+      { icon: <RotateCcw size={22} />, label: 'Return Policy', path: '/knowledge/return-policy' },
+      { icon: <Shield size={22} />, label: 'Privacy Policy', path: '/knowledge/privacy-policy' },
+    ],
+  },
+  {
+    title: 'PARTNERS',
+    items: [
+      { icon: <Handshake size={22} />, label: 'Partnership Program', path: '/knowledge/partnership' },
+    ],
+  },
+];
 
 export const AccountPage: React.FC = () => {
   const navigate = useNavigate();
@@ -25,6 +76,31 @@ export const AccountPage: React.FC = () => {
       logout();
     }
   };
+
+  const handleItemClick = (item: MenuItemData) => {
+    if (item.onClick) {
+      item.onClick();
+    } else if (item.path) {
+      navigate(item.path);
+    }
+  };
+
+  // Menu groups for authenticated mode
+  const authMenuGroups: MenuGroup[] = [
+    {
+      title: 'MY ORDERS',
+      items: [
+        { icon: <Package size={22} />, label: 'Order History', onClick: () => alert('Order history coming soon!') },
+      ],
+    },
+    {
+      title: 'SETTINGS',
+      items: [
+        { icon: <Settings size={22} />, label: 'Account Settings', path: '/account/settings' },
+      ],
+    },
+    ...guestMenuGroups,
+  ];
 
   if (!isAuthenticated) {
     return (
@@ -49,28 +125,13 @@ export const AccountPage: React.FC = () => {
           </Button>
         </div>
 
-        <div className="account-menu">
-          <MenuItem
-            icon={<BookOpen size={22} />}
-            label="Setup Guide"
-            onClick={() => navigate('/account/setup-guide')}
+        {guestMenuGroups.map((group) => (
+          <MenuSection
+            key={group.title}
+            group={group}
+            onItemClick={handleItemClick}
           />
-          <MenuItem
-            icon={<HelpCircle size={22} />}
-            label="FAQ"
-            onClick={() => navigate('/knowledge/faq')}
-          />
-          <MenuItem
-            icon={<MessageCircle size={22} />}
-            label="Contact Us"
-            onClick={() => navigate('/chat')}
-          />
-          <MenuItem
-            icon={<Handshake size={22} />}
-            label="Partnership"
-            onClick={() => navigate('/knowledge/partnership')}
-          />
-        </div>
+        ))}
       </div>
     );
   }
@@ -90,75 +151,52 @@ export const AccountPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Menu */}
-      <div className="account-menu">
-        <Caption className="account-menu-title">ORDERS</Caption>
-        <MenuItem
-          icon={<Package size={22} />}
-          label="Order History"
-          onClick={() => alert('Order history coming soon!')}
+      {/* Menu Groups */}
+      {authMenuGroups.map((group) => (
+        <MenuSection
+          key={group.title}
+          group={group}
+          onItemClick={handleItemClick}
         />
+      ))}
 
-        <Caption className="account-menu-title">ACCOUNT</Caption>
-        <MenuItem
-          icon={<Settings size={22} />}
-          label="Settings"
-          onClick={() => navigate('/account/settings')}
-        />
-
-        <Caption className="account-menu-title">INFORMATION</Caption>
-        <MenuItem
-          icon={<BookOpen size={22} />}
-          label="Setup Guide"
-          onClick={() => navigate('/account/setup-guide')}
-        />
-        <MenuItem
-          icon={<HelpCircle size={22} />}
-          label="FAQ"
-          onClick={() => navigate('/knowledge/faq')}
-        />
-        <MenuItem
-          icon={<MessageCircle size={22} />}
-          label="Contact Us"
-          onClick={() => navigate('/chat')}
-        />
-        <MenuItem
-          icon={<FileText size={22} />}
-          label="Policies"
-          onClick={() => navigate('/knowledge')}
-        />
-        <MenuItem
-          icon={<Handshake size={22} />}
-          label="Partnership"
-          onClick={() => navigate('/knowledge/partnership')}
-        />
-
-        <MenuItem
-          icon={<LogOut size={22} />}
-          label="Sign Out"
-          danger
+      {/* Sign Out - Separate from groups */}
+      <div className="account-signout">
+        <button
+          className="account-menu-item danger"
           onClick={handleLogout}
-        />
+        >
+          <span className="account-menu-icon">
+            <LogOut size={22} />
+          </span>
+          <span className="account-menu-label">Sign Out</span>
+        </button>
       </div>
     </div>
   );
 };
 
-interface MenuItemProps {
-  icon: React.ReactNode;
-  label: string;
-  badge?: number;
-  danger?: boolean;
-  onClick: () => void;
+// Menu Section Component
+interface MenuSectionProps {
+  group: MenuGroup;
+  onItemClick: (item: MenuItemData) => void;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ icon, label, badge, danger, onClick }) => (
-  <button className={`account-menu-item ${danger ? 'danger' : ''}`} onClick={onClick}>
-    <span className="account-menu-icon">{icon}</span>
-    <span className="account-menu-label">{label}</span>
-    {badge !== undefined && badge > 0 && (
-      <span className="account-menu-badge">{badge}</span>
-    )}
-    <ChevronRight size={20} className="account-menu-arrow" />
-  </button>
+const MenuSection: React.FC<MenuSectionProps> = ({ group, onItemClick }) => (
+  <div className="account-section">
+    <Caption className="account-section-title">{group.title}</Caption>
+    <div className="account-menu-group">
+      {group.items.map((item) => (
+        <button
+          key={item.label}
+          className={`account-menu-item ${item.danger ? 'danger' : ''}`}
+          onClick={() => onItemClick(item)}
+        >
+          <span className="account-menu-icon">{item.icon}</span>
+          <span className="account-menu-label">{item.label}</span>
+          <ChevronRight size={20} className="account-menu-arrow" />
+        </button>
+      ))}
+    </div>
+  </div>
 );

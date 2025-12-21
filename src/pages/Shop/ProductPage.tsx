@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Minus, Plus, ShoppingBag } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Minus, Plus, ShoppingBag, MessageCircle } from 'lucide-react';
 import { Button, H2, Body, BodySmall, Caption } from '../../components/common';
 import { useCart } from '../../contexts/CartContext';
 import { mockProductDetails, mockProducts } from '../../data';
@@ -8,6 +8,7 @@ import './ProductPage.css';
 
 export const ProductPage: React.FC = () => {
   const { handle } = useParams<{ handle: string }>();
+  const navigate = useNavigate();
   const { addItem } = useCart();
 
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
@@ -58,6 +59,18 @@ export const ProductPage: React.FC = () => {
       price: selectedVariant.price,
       quantity,
       image: displayProduct.images[0],
+    });
+  };
+
+  const handleAskAboutProduct = () => {
+    navigate('/chat', {
+      state: {
+        productContext: {
+          title: displayProduct.title,
+          price: `$${price.toFixed(2)}`,
+          image: displayProduct.images[0]?.url,
+        },
+      },
     });
   };
 
@@ -157,6 +170,17 @@ export const ProductPage: React.FC = () => {
             icon={<ShoppingBag size={20} />}
           >
             Add to Cart
+          </Button>
+        </div>
+
+        <div className="product-actions">
+          <Button
+            variant="secondary"
+            fullWidth
+            onClick={handleAskAboutProduct}
+            icon={<MessageCircle size={20} />}
+          >
+            Ask about this product
           </Button>
         </div>
 

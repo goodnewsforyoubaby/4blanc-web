@@ -1,0 +1,114 @@
+.manual-page {
+  padding: var(--page-padding);
+}
+
+.manual-header {
+  margin-bottom: var(--section-gap);
+}
+
+.manual-header h2 {
+  margin-bottom: var(--spacing-1);
+}
+
+/* Manual List */
+.manual-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* Manual Item - iOS list style */
+.manual-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  min-height: var(--touch-target-min);
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background 80ms var(--ios-ease), transform 100ms var(--ios-ease);
+  text-align: left;
+  width: 100%;
+}
+
+.manual-item:active {
+  background: var(--color-bg-tertiary);
+  transform: scale(0.98);
+}
+
+/* Icon */
+.manual-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Info */
+.manual-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.manual-info p {
+  margin: 0;
+}
+
+.manual-info p:first-child {
+  font-weight: var(--font-medium);
+}
+
+/* External Link Icon */
+.manual-external {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+/* Footer */
+.manual-footer {
+  margin-top: var(--section-gap);
+  text-align: center;
+}
+
+/* =========================
+   Theme: Minimal - iOS grouped list
+   ========================= */
+[data-theme="minimal"] .manual-page {
+  padding: var(--page-padding) 0;
+}
+
+[data-theme="minimal"] .manual-header {
+  padding: 0 var(--page-padding);
+}
+
+[data-theme="minimal"] .manual-list {
+  gap: 0;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  margin: 0 var(--page-padding);
+  overflow: hidden;
+}
+
+[data-theme="minimal"] .manual-item {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border-muted);
+  padding: var(--spacing-3) var(--spacing-4);
+}
+
+[data-theme="minimal"] .manual-item:last-child {
+  border-bottom: none;
+}
+
+[data-theme="minimal"] .manual-footer {
+  padding: 0 var(--page-padding);
+}
