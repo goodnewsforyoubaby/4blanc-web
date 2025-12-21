@@ -25,6 +25,7 @@ import {
   RegisterPage,
   WishlistPage,
   SettingsPage,
+  SetupGuidePage,
 } from './pages/Account';
 import { NotificationsPage } from './pages/Notifications';
 
@@ -67,6 +68,7 @@ function App() {
                     <Route path="/account/register" element={<RegisterPage />} />
                     <Route path="/account/wishlist" element={<WishlistPage />} />
                     <Route path="/account/settings" element={<SettingsPage />} />
+                    <Route path="/account/setup-guide" element={<SetupGuidePage />} />
 
                     {/* Notifications */}
                     <Route path="/notifications" element={<NotificationsPage />} />

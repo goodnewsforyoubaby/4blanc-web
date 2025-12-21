@@ -1,0 +1,191 @@
+.setup-guide-page {
+  padding: 0;
+}
+
+/* Banner Section */
+.setup-guide-banner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.setup-guide-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.setup-guide-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.setup-guide-banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  width: 90%;
+}
+
+.setup-guide-banner-content h2 {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+/* Introduction Section */
+.setup-guide-intro {
+  padding: var(--spacing-5) var(--spacing-4);
+  text-align: center;
+}
+
+.setup-guide-intro h3 {
+  margin-bottom: var(--spacing-3);
+}
+
+.setup-guide-intro p {
+  margin-bottom: var(--spacing-3);
+}
+
+.setup-guide-select-label {
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  margin-top: var(--spacing-4);
+}
+
+/* Product Selection Grid */
+.setup-guide-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3);
+  padding: 0 var(--spacing-4) var(--spacing-5);
+}
+
+.setup-guide-product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.setup-guide-product-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-2);
+}
+
+.setup-guide-product-button {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.setup-guide-product-button:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Accordion Section */
+.setup-guide-accordion {
+  padding: var(--spacing-4);
+}
+
+.setup-guide-accordion-header {
+  margin-bottom: var(--spacing-4);
+  text-align: center;
+}
+
+.setup-guide-section {
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--spacing-2);
+}
+
+.setup-guide-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.setup-guide-section-header p {
+  flex: 1;
+  padding-right: var(--spacing-2);
+  font-weight: var(--font-medium);
+}
+
+.setup-guide-section-header svg {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+.setup-guide-section-header.open {
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+/* Video Content */
+.setup-guide-section-content {
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.setup-guide-video-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.setup-guide-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.setup-guide-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.setup-guide-video-title {
+  text-align: center;
+  line-height: 1.4;
+}

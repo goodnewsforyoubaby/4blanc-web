@@ -9,6 +9,7 @@ import {
   MessageCircle,
   FileText,
   Handshake,
+  BookOpen,
   LogOut,
   ChevronRight,
 } from 'lucide-react';
@@ -57,6 +58,11 @@ export const AccountPage: React.FC = () => {
             label="Wishlist"
             badge={wishlistItems.length}
             onClick={() => navigate('/account/wishlist')}
+          />
+          <MenuItem
+            icon={<BookOpen size={22} />}
+            label="Setup Guide"
+            onClick={() => navigate('/account/setup-guide')}
           />
           <MenuItem
             icon={<HelpCircle size={22} />}
@@ -118,6 +124,11 @@ export const AccountPage: React.FC = () => {
         />
 
         <Caption className="account-menu-title">INFORMATION</Caption>
+        <MenuItem
+          icon={<BookOpen size={22} />}
+          label="Setup Guide"
+          onClick={() => navigate('/account/setup-guide')}
+        />
         <MenuItem
           icon={<HelpCircle size={22} />}
           label="FAQ"
