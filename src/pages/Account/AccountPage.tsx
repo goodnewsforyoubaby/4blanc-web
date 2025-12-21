@@ -8,6 +8,7 @@ import {
   HelpCircle,
   MessageCircle,
   FileText,
+  Handshake,
   LogOut,
   ChevronRight,
 } from 'lucide-react';
@@ -66,6 +67,11 @@ export const AccountPage: React.FC = () => {
             icon={<MessageCircle size={22} />}
             label="Contact Us"
             onClick={() => navigate('/chat')}
+          />
+          <MenuItem
+            icon={<Handshake size={22} />}
+            label="Partnership"
+            onClick={() => navigate('/knowledge/partnership')}
           />
         </div>
       </div>
@@ -126,6 +132,11 @@ export const AccountPage: React.FC = () => {
           icon={<FileText size={22} />}
           label="Policies"
           onClick={() => navigate('/knowledge')}
+        />
+        <MenuItem
+          icon={<Handshake size={22} />}
+          label="Partnership"
+          onClick={() => navigate('/knowledge/partnership')}
         />
 
         <MenuItem

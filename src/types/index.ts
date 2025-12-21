@@ -148,3 +148,33 @@ export interface ThemeOption {
   name: string;
   description: string;
 }
+
+// Partnership Types
+export interface PartnershipBenefit {
+  title: string;
+  description: string;
+}
+
+export interface PartnershipAudience {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface PartnershipProgram {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  description: string;
+  whyJoinTitle: string;
+  whyJoinDescription: string;
+  benefits: PartnershipBenefit[];
+  targetAudience: PartnershipAudience[];
+  howItWorks: string[];
+  ctaText: string;
+  ctaLink?: string;
+  image: string;
+}

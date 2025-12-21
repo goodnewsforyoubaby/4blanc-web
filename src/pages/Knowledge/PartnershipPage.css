@@ -1,0 +1,105 @@
+.partnership-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.partnership-hero {
+  background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%);
+  padding: var(--spacing-6) var(--spacing-4);
+  margin: calc(-1 * var(--spacing-4));
+  margin-bottom: var(--spacing-4);
+}
+
+.partnership-hero-content {
+  text-align: center;
+}
+
+.partnership-hero-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: #FFFFFF;
+  margin: 0 0 var(--spacing-2) 0;
+  font-family: var(--font-family-heading);
+}
+
+.partnership-hero-title strong {
+  color: #2C9942;
+}
+
+.partnership-hero-desc {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.partnership-hero-desc strong {
+  color: #2C9942;
+}
+
+/* Programs Section */
+.partnership-programs {
+  padding: 0 var(--spacing-4) var(--spacing-4);
+}
+
+.partnership-programs h2 {
+  margin-bottom: var(--spacing-4);
+}
+
+.partnership-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.partnership-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: var(--color-bg-primary);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.partnership-card:hover {
+  background: var(--color-bg-secondary);
+}
+
+.partnership-card-image {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.partnership-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.partnership-card-title {
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--spacing-1);
+}
+
+.partnership-card-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: var(--spacing-1);
+}
+
+.partnership-card-arrow {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+  margin-top: var(--spacing-2);
+}

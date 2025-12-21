@@ -1,0 +1,166 @@
+.partnership-detail-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.partnership-not-found {
+  padding: var(--spacing-8) var(--spacing-4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+/* Hero Section */
+.pd-hero {
+  background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%);
+  padding: var(--spacing-6) var(--spacing-4);
+  text-align: center;
+}
+
+.pd-hero-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: #FFFFFF;
+  margin: 0 0 var(--spacing-2) 0;
+  font-family: var(--font-family-heading);
+}
+
+.pd-hero-subtitle {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 var(--spacing-4) 0;
+  line-height: 1.5;
+}
+
+.pd-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Section Styles */
+.pd-section {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.pd-section:last-of-type {
+  border-bottom: none;
+}
+
+.pd-section h2,
+.pd-section h3 {
+  margin-bottom: var(--spacing-3);
+}
+
+/* Benefits */
+.pd-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.pd-benefit {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+}
+
+.pd-benefit-icon {
+  color: var(--color-state-success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pd-benefit-content {
+  flex: 1;
+}
+
+.pd-benefit-title {
+  font-weight: var(--font-medium);
+  margin-bottom: var(--spacing-1);
+}
+
+/* Target Audience */
+.pd-audience {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.pd-audience-item {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+  padding: var(--spacing-3);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.pd-audience-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+.pd-audience-content {
+  flex: 1;
+}
+
+.pd-audience-title {
+  font-weight: var(--font-medium);
+  margin-bottom: var(--spacing-1);
+}
+
+/* How It Works Steps */
+.pd-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.pd-step {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+}
+
+.pd-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  flex-shrink: 0;
+}
+
+.pd-step p {
+  flex: 1;
+  padding-top: 2px;
+}
+
+/* CTA Section */
+.pd-cta-section {
+  padding: var(--spacing-4);
+  background: var(--color-bg-secondary);
+}
+
+.pd-cta-section button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+}

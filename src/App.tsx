@@ -16,6 +16,8 @@ import {
   ArticleDetailPage,
   ShippingPolicyPage,
   ReturnPolicyPage,
+  PartnershipPage,
+  PartnershipDetailPage,
 } from './pages/Knowledge';
 import {
   AccountPage,
@@ -54,6 +56,8 @@ function App() {
                     <Route path="/knowledge/faq" element={<FAQPage />} />
                     <Route path="/knowledge/articles" element={<ArticlesPage />} />
                     <Route path="/knowledge/articles/:slug" element={<ArticleDetailPage />} />
+                    <Route path="/knowledge/partnership" element={<PartnershipPage />} />
+                    <Route path="/knowledge/partnership/:slug" element={<PartnershipDetailPage />} />
                     <Route path="/knowledge/shipping-policy" element={<ShippingPolicyPage />} />
                     <Route path="/knowledge/return-policy" element={<ReturnPolicyPage />} />
 
