@@ -148,6 +148,12 @@
   color: var(--color-text-tertiary);
 }
 
+/* Minimal theme - iOS list */
+[data-theme="minimal"] .home-products-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
 @media (max-width: 430px) {
   .home-page {
     --home-hero-height: calc(

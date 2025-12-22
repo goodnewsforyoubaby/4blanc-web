@@ -1,32 +1,26 @@
+/* CollectionCard - Grid Style для Shopify/Classic, iOS List для Minimal */
+
 .collection-card {
   display: flex;
-  align-items: center;
-  gap: var(--spacing-3);
-  padding: var(--spacing-3);
+  flex-direction: column;
   background: var(--surface-card);
   border: var(--card-border);
   border-image: var(--card-border-image);
   box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
+  overflow: hidden;
   cursor: pointer;
-  transition: background var(--transition-fast);
-}
-
-.collection-card:hover {
-  background: var(--color-bg-secondary);
+  transition: transform 100ms var(--ios-ease), opacity var(--transition-fast);
 }
 
 .collection-card:active {
-  background: var(--color-bg-tertiary);
+  transform: scale(0.98);
 }
 
 .collection-card-image {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  aspect-ratio: 1;
   background: var(--surface-card-muted);
-  flex-shrink: 0;
+  overflow: hidden;
 }
 
 .collection-card-image img {
@@ -42,27 +36,110 @@
 }
 
 .collection-card-info {
-  flex: 1;
-  min-width: 0;
+  padding: var(--spacing-3);
 }
 
 .collection-card-title {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: var(--font-medium);
   color: var(--color-text-primary);
   margin: 0;
-}
-
-.collection-card-description {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  margin: var(--spacing-1) 0 0;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+/* Скрыть стрелку по умолчанию (для grid тем) */
 .collection-card-arrow {
+  display: none;
   color: var(--color-text-tertiary);
   flex-shrink: 0;
+}
+
+/* ========== SHOPIFY THEME - LIST STYLE ========== */
+[data-theme="shopify"] .collection-card {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-lg);
+}
+
+[data-theme="shopify"] .collection-card-image {
+  width: 64px;
+  height: 64px;
+  aspect-ratio: auto;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+[data-theme="shopify"] .collection-card-info {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+[data-theme="shopify"] .collection-card-title {
+  font-size: var(--text-base);
+  text-align: left;
+}
+
+[data-theme="shopify"] .collection-card-arrow {
+  display: block;
+}
+
+/* ========== CLASSIC THEME ========== */
+[data-theme="classic"] .collection-card {
+  border-radius: var(--radius-lg);
+}
+
+[data-theme="classic"] .collection-card-title {
+  font-family: var(--font-family-heading);
+}
+
+/* ========== MINIMAL THEME - iOS LIST STYLE ========== */
+[data-theme="minimal"] .collection-card {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-3);
+  background: transparent;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border-muted);
+  padding: var(--spacing-3) var(--spacing-1);
+}
+
+[data-theme="minimal"] .collection-card:last-child {
+  border-bottom: none;
+}
+
+[data-theme="minimal"] .collection-card:active {
+  transform: none;
+  background: var(--color-bg-tertiary);
+}
+
+[data-theme="minimal"] .collection-card-image {
+  width: 64px;
+  height: 64px;
+  aspect-ratio: auto;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+[data-theme="minimal"] .collection-card-info {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+[data-theme="minimal"] .collection-card-title {
+  font-size: var(--text-base);
+  text-align: left;
+}
+
+[data-theme="minimal"] .collection-card-arrow {
+  display: block;
 }

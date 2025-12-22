@@ -25,9 +25,6 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ collection }) =>
       </div>
       <div className="collection-card-info">
         <h3 className="collection-card-title">{collection.title}</h3>
-        {collection.description && (
-          <p className="collection-card-description">{collection.description}</p>
-        )}
       </div>
       <ChevronRight size={20} className="collection-card-arrow" />
     </div>
