@@ -93,11 +93,13 @@ src/
 
 Switch between themes using the theme switcher in the bottom-right corner:
 
-| Theme | Style | Shadows | Best For |
-|-------|-------|---------|----------|
-| Minimal | iOS Settings style | None, borders only | Clean, modern look |
-| Shopify | 4BLANC brand teal | Subtle | Brand consistency |
-| Classic | Luxury Warmth (cream/gold) | Warm, pronounced | Premium feel |
+| Theme | Style | Shadows | Collections | Products |
+|-------|-------|---------|-------------|----------|
+| Minimal | iOS Settings style | None | iOS list with chevron | iOS list (rows) |
+| Shopify | 4BLANC brand teal | Subtle | List cards with chevron | Grid 2 columns |
+| Classic | Luxury Warmth (cream/gold) | Warm | Grid 2 columns | Grid 2 columns |
+
+Each theme has unique search input styling with theme-specific focus states.
 
 ## Design Philosophy
 

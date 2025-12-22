@@ -214,6 +214,14 @@ classic:  --color-primary: #8B6914 (Gold)
 
 ### Theme-Specific Behaviors
 
+#### Shop Page Layouts by Theme
+
+| Element | Minimal | Shopify | Classic |
+|---------|---------|---------|---------|
+| **Collections** | iOS list (transparent, chevron) | List cards (shadow, chevron) | Grid 2 columns |
+| **Products** | iOS list (64px rows) | Grid 2 columns | Grid 2 columns |
+| **Search input** | No border, gray bg, 10px radius | White bg, shadow, teal focus ring | Cream bg, shadow, gold focus ring |
+
 #### Minimal Theme (iOS Settings style)
 Use `[data-theme="minimal"]` selector for overrides:
 ```css
@@ -233,12 +241,19 @@ Use `[data-theme="minimal"]` selector for overrides:
 }
 ```
 
-Applied to: FAQ items, Setup Guide items, Knowledge menu, Articles list, Notifications list
+Applied to: FAQ items, Setup Guide items, Knowledge menu, Articles list, Notifications list, **Collections**, **Products**
 
-#### Shopify & Classic Themes
-- Keep card borders and shadows
-- Traditional card-based layout
-- No special overrides needed
+#### Shopify Theme (4BLANC Brand)
+- Collections: horizontal list cards with shadow and chevron
+- Products: 2-column grid with card styling
+- Search: white background with teal focus ring
+- Brand color accents on interactive elements
+
+#### Classic Theme (Luxury Warmth)
+- Collections and Products: 2-column grid with larger radius (16px)
+- Warm cream backgrounds
+- Gold accent on focus states
+- Serif font (Playfair Display) for collection titles
 
 ---
 
@@ -477,7 +492,8 @@ Base URL configured as `/4blanc-web/` in:
 | `BottomSheet` | iOS-style modal from bottom |
 | `Button` | Primary/secondary buttons |
 | `Badge` | Notification count indicator |
-| `ProductCard` | Product grid item |
+| `ProductCard` | Product display (grid or list per theme) |
+| `CollectionCard` | Collection display (grid or list per theme) |
 | `Header` | Top navigation bar |
 | `BottomTabBar` | Bottom tab navigation |
 
