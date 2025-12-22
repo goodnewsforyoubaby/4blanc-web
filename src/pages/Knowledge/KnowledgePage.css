@@ -39,7 +39,7 @@
 .knowledge-menu {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: var(--list-gap);
 }
 
 .knowledge-menu-item {
@@ -88,7 +88,7 @@
 .knowledge-articles {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3);
+  gap: var(--list-gap);
 }
 
 .knowledge-article-card {

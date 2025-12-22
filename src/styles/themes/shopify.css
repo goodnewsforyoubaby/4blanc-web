@@ -4,6 +4,15 @@
    ========================= */
 
 [data-theme="shopify"] {
+  /* Typography - Modern e-commerce (slightly smaller for density) */
+  --text-base: 15px;
+  --text-sm: 13px;
+  --leading-normal: 1.45;
+
+  /* Spacing - moderate gaps */
+  --section-gap: 28px;
+  --list-gap: 8px;
+
   /* Backgrounds - Clean neutrals */
   --color-bg-primary: #FFFFFF;
   --color-bg-secondary: #F7F7F8;

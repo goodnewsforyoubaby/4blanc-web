@@ -5,9 +5,21 @@
    ========================= */
 
 [data-theme="classic"] {
-  /* Typography - Elegant editorial */
+  /* Typography - Luxury generous sizing */
   --font-family: var(--font-sans);
   --font-family-heading: var(--font-serif-heading);
+  --text-base: 17px;
+  --text-sm: 15px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 28px;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Spacing - generous luxury whitespace */
+  --page-padding: 20px;
+  --section-gap: 40px;
+  --list-gap: 12px;
 
   /* Backgrounds - Warm cream/ivory palette */
   --color-bg-primary: #FFFDF9;

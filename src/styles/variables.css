@@ -26,9 +26,10 @@
   --safe-area-left: env(safe-area-inset-left, 0px);
   --safe-area-right: env(safe-area-inset-right, 0px);
 
-  /* Page rhythm */
+  /* Page rhythm - overrideable by themes */
   --page-padding: var(--spacing-4);
   --section-gap: var(--spacing-6);
+  --list-gap: var(--spacing-2);  /* 8px default, themes override */
 
   /* =========================
      SURFACES & COMPONENT TOKENS

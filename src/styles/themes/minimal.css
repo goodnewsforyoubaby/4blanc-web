@@ -51,6 +51,9 @@
   --card-border: 1px solid var(--color-border-muted);
   --card-shadow: none;
 
+  /* Spacing - compact iOS feel */
+  --list-gap: 0;  /* divider style, no gaps */
+
   /* Button specifics */
   --btn-primary-bg: #000000;
   --btn-primary-text: #FFFFFF;

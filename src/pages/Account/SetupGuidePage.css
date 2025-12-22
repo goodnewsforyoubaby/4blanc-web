@@ -148,7 +148,7 @@ a.setup-guide-product-card {
 .setup-guide-items {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: var(--list-gap);
 }
 
 .setup-guide-item {
