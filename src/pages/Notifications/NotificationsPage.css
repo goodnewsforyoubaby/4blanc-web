@@ -65,8 +65,8 @@
 }
 
 .notification-icon {
-  width: 40px;
-  height: 40px;
+  width: var(--spacing-10);
+  height: var(--spacing-10);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,17 +75,17 @@
 }
 
 .notification-icon.order {
-  background: rgba(26, 127, 55, 0.1);
+  background: var(--color-state-success-light);
   color: var(--color-state-success);
 }
 
 .notification-icon.promo {
-  background: rgba(154, 103, 0, 0.1);
+  background: var(--color-state-warning-light);
   color: var(--color-state-warning);
 }
 
 .notification-icon.chat {
-  background: rgba(9, 105, 218, 0.1);
+  background: var(--color-link-light);
   color: var(--color-text-link);
 }
 

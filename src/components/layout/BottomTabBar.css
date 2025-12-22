@@ -106,8 +106,8 @@
 
 [data-theme="shopify"] .tab-active .tab-icon {
   background: var(--color-bg-tertiary);
-  padding: 6px 12px;
-  border-radius: 20px;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
 }
 
 [data-theme="shopify"] .tab-active .tab-icon svg {
@@ -130,7 +130,7 @@
 
 [data-theme="classic"] .tab-active .tab-icon svg {
   stroke-width: 2.5;
-  fill: rgba(139, 105, 20, 0.1);
+  fill: var(--color-primary-light);
 }
 
 [data-theme="classic"] .tab-active .tab-label {

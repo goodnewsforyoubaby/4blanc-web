@@ -124,6 +124,7 @@
   background: var(--surface-card);
   border: var(--card-border);
   border-image: var(--card-border-image);
+  box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
   cursor: pointer;
   transition: background var(--transition-fast);
@@ -139,7 +140,7 @@
 }
 
 .home-quick-icon {
-  font-size: 32px;
+  font-size: var(--icon-lg);
   margin-bottom: var(--spacing-1);
 }
 

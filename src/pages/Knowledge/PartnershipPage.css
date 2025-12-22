@@ -78,8 +78,8 @@
 }
 
 .partnership-card-image {
-  width: 60px;
-  height: 60px;
+  width: var(--thumbnail-size);
+  height: var(--thumbnail-size);
   border-radius: var(--radius-md);
   object-fit: cover;
   flex-shrink: 0;

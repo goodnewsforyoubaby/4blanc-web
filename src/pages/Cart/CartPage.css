@@ -79,8 +79,8 @@
 }
 
 .cart-item-image {
-  width: 80px;
-  height: 80px;
+  width: var(--card-image-size);
+  height: var(--card-image-size);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--surface-card-muted);

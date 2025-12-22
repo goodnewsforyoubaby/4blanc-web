@@ -13,8 +13,8 @@
 }
 
 .chat-support-avatar {
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   border-radius: var(--radius-full);
   object-fit: cover;
 }
@@ -224,8 +224,8 @@
 }
 
 .chat-product-context-image {
-  width: 48px;
-  height: 48px;
+  width: var(--spacing-12);
+  height: var(--spacing-12);
   border-radius: var(--radius-md);
   object-fit: cover;
   flex-shrink: 0;

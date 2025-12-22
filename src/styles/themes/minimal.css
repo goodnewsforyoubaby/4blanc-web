@@ -62,4 +62,7 @@
   --btn-secondary-text: #1F2328;
   --btn-secondary-border: #D1D9E0;
   --btn-secondary-hover: #F6F8FA;
+
+  /* Primary light - black with alpha */
+  --color-primary-light: rgba(0, 0, 0, 0.06);
 }

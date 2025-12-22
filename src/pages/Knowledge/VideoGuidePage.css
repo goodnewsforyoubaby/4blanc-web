@@ -14,7 +14,7 @@
 .video-guide-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: var(--list-gap);
 }
 
 /* Video Item - iOS list style */
@@ -45,8 +45,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: var(--icon-md);
+  height: var(--icon-md);
   background: var(--list-icon-color);
   border-radius: var(--radius-full);
   color: var(--color-text-inverse);

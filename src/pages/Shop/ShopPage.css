@@ -101,7 +101,7 @@
 
 [data-theme="shopify"] .shop-search-input:focus-within {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(51, 153, 153, 0.1);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
 }
 
 [data-theme="shopify"] .shop-search-input:focus-within svg {
@@ -125,7 +125,7 @@
 
 [data-theme="classic"] .shop-search-input:focus-within {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
 }
 
 [data-theme="classic"] .shop-search-input:focus-within svg {

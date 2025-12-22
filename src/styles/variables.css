@@ -119,4 +119,27 @@
      iOS TOUCH TARGETS
      ========================= */
   --touch-target-min: 44px;
+
+  /* =========================
+     ELEMENT SIZES
+     ========================= */
+  --icon-lg: 32px;
+  --icon-md: 36px;
+  --icon-sm: 24px;
+  --avatar-size-lg: 80px;
+  --avatar-size-md: 56px;
+  --banner-height: 200px;
+  --thumbnail-size: 60px;
+  --card-image-size: 80px;
+  --toggle-width: 44px;
+  --toggle-height: 24px;
+
+  /* =========================
+     STATE COLORS (Light variants for backgrounds)
+     ========================= */
+  --color-state-success-light: rgba(52, 199, 89, 0.1);
+  --color-state-error-light: rgba(255, 59, 48, 0.1);
+  --color-state-warning-light: rgba(255, 149, 0, 0.1);
+  --color-link-light: rgba(9, 105, 218, 0.1);
+  --color-primary-light: rgba(51, 153, 153, 0.1);
 }

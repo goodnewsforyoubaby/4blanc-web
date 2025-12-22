@@ -49,8 +49,8 @@
 }
 
 .hero-banner__badge {
-  width: 60px;
-  height: 60px;
+  width: var(--thumbnail-size);
+  height: var(--thumbnail-size);
   object-fit: contain;
 }
 
@@ -82,6 +82,7 @@
 
 .hero-banner__button {
   margin-top: var(--spacing-2);
+  min-height: var(--touch-target-min);
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-weight: var(--font-semibold);

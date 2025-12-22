@@ -16,8 +16,8 @@
 }
 
 .account-guest-icon {
-  width: 80px;
-  height: 80px;
+  width: var(--avatar-size-lg);
+  height: var(--avatar-size-lg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,13 +44,13 @@
 }
 
 .account-avatar {
-  width: 56px;
-  height: 56px;
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-primary);
-  color: white;
+  color: var(--color-text-inverse);
   border-radius: var(--radius-full);
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);

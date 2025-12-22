@@ -55,6 +55,7 @@
   flex-shrink: 0;
 }
 
+/* Theme previews - using actual theme colors from theme files */
 .settings-theme-preview[data-theme="minimal"] {
   background: #FFFFFF;
   border: 1px solid #E6EBF1;
@@ -77,60 +78,63 @@
 
 .settings-theme-preview[data-theme="shopify"] {
   background: #FFFFFF;
-  border: 1px solid #EBEBEB;
+  border: 1px solid #EEEEEE;
 }
 
 .settings-theme-preview[data-theme="shopify"] .settings-theme-header {
   background: #FFFFFF;
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EEEEEE;
 }
 
 .settings-theme-preview[data-theme="shopify"] .settings-theme-card {
-  background: #F7F7F7;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  background: #F7F7F8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .settings-theme-preview[data-theme="shopify"] .settings-theme-tabs {
   background: #FFFFFF;
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #EEEEEE;
 }
 
 .settings-theme-preview[data-theme="classic"] {
-  background: #FFFFFF;
+  background: #FFFDF9;
+  border: 1px solid #E5DFD0;
 }
 
 .settings-theme-preview[data-theme="classic"] .settings-theme-header {
-  background: #FAFAFA;
+  background: #FAF7F2;
+  border-bottom: 1px solid #E5DFD0;
 }
 
 .settings-theme-preview[data-theme="classic"] .settings-theme-card {
-  background: #FFFFFF;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: #FFFDF9;
+  box-shadow: 0 2px 8px rgba(44, 36, 22, 0.08);
 }
 
 .settings-theme-preview[data-theme="classic"] .settings-theme-tabs {
-  background: #FAFAFA;
+  background: #FAF7F2;
+  border-top: 1px solid #E5DFD0;
 }
 
 .settings-theme-header {
-  height: 12px;
+  height: var(--spacing-3);
 }
 
 .settings-theme-content {
   flex: 1;
-  padding: 4px;
+  padding: var(--spacing-1);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-1);
 }
 
 .settings-theme-card {
   flex: 1;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .settings-theme-tabs {
-  height: 12px;
+  height: var(--spacing-3);
 }
 
 .settings-theme-info {
@@ -183,7 +187,7 @@
 }
 
 .settings-toggle input {
-  width: 44px;
-  height: 24px;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
   accent-color: var(--color-accent-primary);
 }

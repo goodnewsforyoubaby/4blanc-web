@@ -95,4 +95,7 @@
   --input-focus-border: #8B6914;
   --input-focus-ring: rgba(139, 105, 20, 0.15);
   --attachment-bg: #F5F1E8;
+
+  /* Primary light - gold with alpha */
+  --color-primary-light: rgba(139, 105, 20, 0.1);
 }

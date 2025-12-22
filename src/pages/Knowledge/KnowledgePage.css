@@ -70,8 +70,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   background: var(--list-icon-bg);
   border-radius: var(--radius-md);
   color: var(--list-icon-color);
@@ -115,8 +115,8 @@
 }
 
 .knowledge-article-card img {
-  width: 80px;
-  height: 80px;
+  width: var(--card-image-size);
+  height: var(--card-image-size);
   border-radius: var(--radius-md);
   object-fit: cover;
 }
