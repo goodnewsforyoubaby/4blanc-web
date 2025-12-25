@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User, Mail, Lock } from 'lucide-react';
 import { Button, Input, H2, BodySmall, Caption } from '../../components/common';
 import { useAuth } from '../../contexts/AuthContext';
 import './AuthPage.css';
@@ -56,7 +55,6 @@ export const RegisterPage: React.FC = () => {
             label="First Name"
             type="text"
             placeholder="First name"
-            icon={<User size={20} />}
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             autoComplete="given-name"
@@ -75,7 +73,6 @@ export const RegisterPage: React.FC = () => {
           label="Email"
           type="email"
           placeholder="your@email.com"
-          icon={<Mail size={20} />}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           autoComplete="email"
@@ -85,7 +82,6 @@ export const RegisterPage: React.FC = () => {
           label="Password"
           type="password"
           placeholder="At least 6 characters"
-          icon={<Lock size={20} />}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="new-password"
@@ -95,7 +91,6 @@ export const RegisterPage: React.FC = () => {
           label="Confirm Password"
           type="password"
           placeholder="Confirm your password"
-          icon={<Lock size={20} />}
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           error={

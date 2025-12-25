@@ -44,8 +44,8 @@
   --btn-secondary-border-image: none;
   --input-bg: var(--color-bg-primary);
   --input-border: var(--color-border-default);
-  --input-focus-border: var(--color-text-link);
-  --input-focus-ring: rgba(0, 122, 255, 0.15);
+  --input-focus-border: var(--color-primary);
+  --input-focus-ring: rgba(65, 117, 5, 0.15);
   --attachment-bg: var(--color-bg-inset);
 
   /* =========================
@@ -139,5 +139,5 @@
   --color-state-error-light: rgba(255, 59, 48, 0.1);
   --color-state-warning-light: rgba(255, 149, 0, 0.1);
   --color-link-light: rgba(9, 105, 218, 0.1);
-  --color-primary-light: rgba(51, 153, 153, 0.1);
+  --color-primary-light: rgba(65, 117, 5, 0.1);
 }

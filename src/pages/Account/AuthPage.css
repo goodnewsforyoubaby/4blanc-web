@@ -15,7 +15,7 @@
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
+  gap: var(--spacing-5);
 }
 
 .auth-row {
@@ -52,12 +52,14 @@
   align-items: flex-start;
   gap: var(--spacing-2);
   cursor: pointer;
+  min-height: var(--touch-target-min);
+  padding: var(--spacing-2) 0;
 }
 
 .auth-checkbox input {
   margin-top: 2px;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   accent-color: var(--color-accent-primary);
 }
 

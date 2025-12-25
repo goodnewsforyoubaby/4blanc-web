@@ -75,8 +75,7 @@
 
 .account-section-title {
   font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: var(--font-medium);
   color: var(--color-text-tertiary);
   padding: var(--spacing-2) var(--spacing-1);
 }

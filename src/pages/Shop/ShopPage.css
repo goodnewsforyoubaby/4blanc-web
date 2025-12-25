@@ -75,6 +75,12 @@
   background: var(--color-bg-secondary);
   border: none;
   border-radius: var(--radius-md);
+  transition: background 150ms var(--ios-ease), box-shadow 150ms var(--ios-ease);
+}
+
+[data-theme="minimal"] .shop-search-input:focus-within {
+  background: var(--color-bg-primary);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
 }
 
 /* Collections: iOS list (1 колонка) */

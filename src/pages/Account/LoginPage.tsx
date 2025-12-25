@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock } from 'lucide-react';
-import { Button, Input, H2, Body, BodySmall, Caption } from '../../components/common';
+import { Button, Input, H2, BodySmall, Caption } from '../../components/common';
 import { useAuth } from '../../contexts/AuthContext';
 import './AuthPage.css';
 
@@ -42,7 +41,6 @@ export const LoginPage: React.FC = () => {
           label="Email"
           type="email"
           placeholder="your@email.com"
-          icon={<Mail size={20} />}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           autoComplete="email"
@@ -52,7 +50,6 @@ export const LoginPage: React.FC = () => {
           label="Password"
           type="password"
           placeholder="Enter your password"
-          icon={<Lock size={20} />}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
