@@ -8,6 +8,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Goal:** Create a polished, iOS-native looking mobile app prototype that could be shown to stakeholders and used as a reference for native development.
 
+**Design Style:** iOS Settings style - clean, minimal, no shadows, borders only, iOS-style lists.
+
 ## Commands
 
 ```bash
@@ -19,17 +21,16 @@ npm run preview  # Preview production build
 
 ## Architecture
 
-### Theme System
-Three switchable themes via CSS variables (`data-theme` attribute on `<html>`):
-- `minimal` - iOS Settings style, no shadows, borders only, iOS-style lists
-- `shopify` - 4BLANC brand identity with teal (#339999), subtle shadows
-- `classic` - Luxury Warmth with cream/ivory backgrounds, gold accents (#8B6914)
-
-Theme switching: `ThemeContext.tsx` → sets `data-theme` → CSS variables in `styles/themes/*.css` apply.
+### Design System
+Single theme: **Minimal** (iOS Settings style)
+- CSS variables via `data-theme="minimal"` attribute on `<html>`
+- Theme file: `src/styles/themes/minimal.css`
+- No shadows, borders only, iOS-style lists
+- Clean white backgrounds with subtle gray borders
 
 ### State Management
 React Context providers wrap the app in this order (outermost first):
-1. `ThemeProvider` - theme selection
+1. `ThemeProvider` - theme management (minimal only)
 2. `AuthProvider` - mock authentication
 3. `CartProvider` - shopping cart
 4. `NotificationProvider` - push notifications
@@ -40,7 +41,7 @@ All contexts persist to localStorage.
 `AppLayout` wraps all routes with:
 - `MobileContainer` - phone frame wrapper (390x844px)
 - `Header` - top bar with back button, title, notifications, cart
-- `BottomTabBar` - 4 tabs: Home, Shop, Chat, Knowledge
+- `BottomTabBar` - 4 tabs: Home, Shop, Chat, Knowledge (icons only, no labels)
 - `#modal-root` - Portal target for modals (inside `.app-layout`)
 
 Layout height calculation:
@@ -109,7 +110,7 @@ All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.
 ```css
 --page-padding: var(--spacing-4);  /* Horizontal padding for all pages */
 --section-gap: var(--spacing-6);   /* Vertical gap between sections */
---list-gap: var(--spacing-2);      /* Gap between list items (theme-specific) */
+--list-gap: 0;                     /* No gap between list items (divider style) */
 ```
 Use these instead of hardcoding spacing values - keeps all pages consistent.
 
@@ -201,69 +202,39 @@ This app MUST look and feel like a native iOS application. Follow these rules st
 - Minimal letter-spacing (avoid `letter-spacing: 2px`)
 - Font weights: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
 
-#### Shadows (iOS-style, subtle)
+#### Shadows
+Minimal theme uses NO shadows:
 ```css
-/* Minimal theme: NO shadows */
 --shadow-sm: none;
 --shadow-md: none;
-
-/* Shopify theme: subtle */
---shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
---shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
-
-/* Classic theme: pronounced */
---shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
---shadow-md: 0 3px 6px rgba(0, 0, 0, 0.15);
 ```
 
-#### Colors - Theme-Specific
+#### Colors
 ```css
-/* Badge colors per theme */
-minimal:  --color-badge: #FF3B30 (iOS red)
-shopify:  --color-badge: #339999 (4BLANC teal)
-classic:  --color-badge: #8B6914 (Gold)
+/* Badge color */
+--color-badge: #FF3B30 (iOS red)
 
-/* Primary brand color (all themes) */
+/* Primary brand color */
 --color-primary: #339999 (4BLANC teal)
 --color-primary-hover: #2a7a7a
 
-/* Classic theme special colors */
-classic:  --color-bg-primary: #FFFDF8 (Warm cream)
-classic:  --color-primary: #8B6914 (Gold)
+/* Background colors */
+--color-bg-primary: #FFFFFF
+--color-bg-secondary: #F6F8FA
+--color-bg-tertiary: #F0F2F5
 ```
 
 ---
 
-### Theme-Specific Behaviors
+### iOS Settings Style
 
-#### Typography & Spacing by Theme
+The app uses iOS Settings style throughout:
+- **Collections & Products**: Single column iOS list (transparent backgrounds, border-bottom dividers)
+- **Bottom Tab Bar**: Icons only, no labels
+- **Search Input**: No border, subtle gray background, 10px radius
+- **Menus**: Full-width list with dividers, no card containers
 
-Each theme has unique typography sizing and spacing for distinct feel:
-
-| Setting | Minimal | Shopify | Classic |
-|---------|---------|---------|---------|
-| `--text-base` | 16px (default) | 15px | 17px |
-| `--text-sm` | 14px (default) | 13px | 15px |
-| `--section-gap` | 24px (default) | 28px | 40px |
-| `--page-padding` | 16px (default) | 16px | 20px |
-| `--list-gap` | 0 (dividers) | 8px | 12px |
-| `--leading-normal` | 1.5 (default) | 1.45 | 1.6 |
-| `--font-family-heading` | Sans-serif | Sans-serif | Playfair Display (serif) |
-
-- **Minimal**: Compact iOS feel, no gaps between list items (divider style)
-- **Shopify**: Slightly smaller text for information density, moderate spacing
-- **Classic**: Generous luxury sizing with extra whitespace
-
-#### Shop Page Layouts by Theme
-
-| Element | Minimal | Shopify | Classic |
-|---------|---------|---------|---------|
-| **Collections** | iOS list (transparent, chevron) | List cards (shadow, chevron) | Grid 2 columns |
-| **Products** | iOS list (64px rows) | Grid 2 columns | Grid 2 columns |
-| **Search input** | No border, gray bg, 10px radius | White bg, shadow, teal focus ring | Cream bg, shadow, gold focus ring |
-
-#### Minimal Theme (iOS Settings style)
-Use `[data-theme="minimal"]` selector for overrides:
+Use `[data-theme="minimal"]` selector for iOS list style overrides:
 ```css
 /* Default card style */
 .my-card {
@@ -272,7 +243,7 @@ Use `[data-theme="minimal"]` selector for overrides:
   border-radius: var(--radius-lg);
 }
 
-/* Minimal theme override - iOS list style */
+/* iOS list style override */
 [data-theme="minimal"] .my-card {
   background: transparent;
   border: none;
@@ -281,19 +252,7 @@ Use `[data-theme="minimal"]` selector for overrides:
 }
 ```
 
-Applied to: FAQ items, Setup Guide items, Knowledge menu, Articles list, Notifications list, **Collections**, **Products**
-
-#### Shopify Theme (4BLANC Brand)
-- Collections: horizontal list cards with shadow and chevron
-- Products: 2-column grid with card styling
-- Search: white background with teal focus ring
-- Brand color accents on interactive elements
-
-#### Classic Theme (Luxury Warmth)
-- Collections and Products: 2-column grid with larger radius (16px)
-- Warm cream backgrounds
-- Gold accent on focus states
-- Serif font (Playfair Display) for collection titles
+Applied to: FAQ items, Setup Guide items, Knowledge menu, Articles list, Notifications list, Collections, Products
 
 ---
 
@@ -364,13 +323,13 @@ Used in AccountPage for menu organization:
 
 ```
 SECTION HEADER                    ← Caption, uppercase, muted
-├─ 📖 Setup Guide              → ← Icon + label + chevron
-├─ 🎬 Video Guide              →
-└─ 📄 User Manuals             →
+├─ Setup Guide                 → ← Icon + label + chevron
+├─ Video Guide                 →
+└─ User Manuals                →
 
 ANOTHER SECTION
-├─ ❓ FAQ                      →
-└─ 💬 Contact Us               →
+├─ FAQ                         →
+└─ Contact Us                  →
 ```
 
 ```css
@@ -405,7 +364,7 @@ ANOTHER SECTION
   border-bottom: none;
 }
 
-/* Minimal theme - no outer borders */
+/* iOS style - no outer borders */
 [data-theme="minimal"] .menu-group {
   border: none;
   box-shadow: none;
@@ -480,7 +439,7 @@ const state = location.state as { productContext?: ProductContext };
 | Spring animation on modals | Causes "jumping" | Use `--ios-ease` |
 | Modal inside `.app-content` | Gets clipped | Use Portal to `#modal-root` |
 | Font size < 12px | Unreadable | Minimum 12px |
-| Gradient backgrounds | Not iOS (except Classic buttons) | Solid colors |
+| Gradient backgrounds | Not iOS | Solid colors |
 | No `:active` state on clickables | No touch feedback | Add opacity/scale/background change |
 
 ---
@@ -489,7 +448,6 @@ const state = location.state as { productContext?: ProductContext };
 
 Before committing UI changes:
 
-- [ ] Test in all 3 themes (Minimal, Shopify, Classic)
 - [ ] Check touch targets use `--touch-target-min` (44x44px)
 - [ ] Verify no hardcoded colors (search for `#` in CSS)
 - [ ] Use `--page-padding` for page horizontal padding
@@ -518,7 +476,7 @@ Base URL configured as `/4blanc-web/` in:
 ### File Locations
 | What | Where |
 |------|-------|
-| Theme variables | `src/styles/themes/*.css` |
+| Theme variables | `src/styles/themes/minimal.css` |
 | Global variables | `src/styles/variables.css` |
 | Base styles | `src/styles/base.css` |
 | Common components | `src/components/common/` |
@@ -532,10 +490,10 @@ Base URL configured as `/4blanc-web/` in:
 | `BottomSheet` | iOS-style modal from bottom |
 | `Button` | Primary/secondary buttons |
 | `Badge` | Notification count indicator |
-| `ProductCard` | Product display (grid or list per theme) |
-| `CollectionCard` | Collection display (grid or list per theme) |
+| `ProductCard` | Product display (iOS list style) |
+| `CollectionCard` | Collection display (iOS list style) |
 | `Header` | Top navigation bar |
-| `BottomTabBar` | Bottom tab navigation |
+| `BottomTabBar` | Bottom tab navigation (icons only) |
 
 ### Key Pages
 | Page | Purpose |

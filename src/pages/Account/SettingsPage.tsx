@@ -1,48 +1,11 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { H3, Body, BodySmall, Caption } from '../../components/common';
-import { useTheme } from '../../contexts/ThemeContext';
 import './SettingsPage.css';
 
 export const SettingsPage: React.FC = () => {
-  const { theme, setTheme, themes } = useTheme();
-
   return (
     <div className="settings-page">
-      {/* Theme Selection */}
-      <section className="settings-section">
-        <H3>Appearance</H3>
-        <BodySmall color="secondary">Choose your preferred theme</BodySmall>
-
-        <div className="settings-themes">
-          {themes.map((t) => (
-            <button
-              key={t.id}
-              className={`settings-theme ${theme === t.id ? 'active' : ''}`}
-              onClick={() => setTheme(t.id)}
-            >
-              <div className="settings-theme-preview" data-theme={t.id}>
-                <div className="settings-theme-header" />
-                <div className="settings-theme-content">
-                  <div className="settings-theme-card" />
-                  <div className="settings-theme-card" />
-                </div>
-                <div className="settings-theme-tabs" />
-              </div>
-              <div className="settings-theme-info">
-                <Body>{t.name}</Body>
-                <Caption color="tertiary">{t.description}</Caption>
-              </div>
-              {theme === t.id && (
-                <div className="settings-theme-check">
-                  <Check size={16} />
-                </div>
-              )}
-            </button>
-          ))}
-        </div>
-      </section>
-
       {/* Language (Mock) */}
       <section className="settings-section">
         <H3>Language</H3>

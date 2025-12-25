@@ -1,5 +1,4 @@
 import React from 'react';
-import { ThemeSwitcher } from './ThemeSwitcher';
 import './MobileContainer.css';
 
 interface MobileContainerProps {
@@ -8,15 +7,12 @@ interface MobileContainerProps {
 
 export const MobileContainer: React.FC<MobileContainerProps> = ({ children }) => {
   return (
-    <>
-      <ThemeSwitcher />
-      <div className="mobile-container">
-        <div className="mobile-frame">
-          <div className="mobile-notch" />
-          <div className="mobile-content">{children}</div>
-          <div className="mobile-home-indicator" />
-        </div>
+    <div className="mobile-container">
+      <div className="mobile-frame">
+        <div className="mobile-notch" />
+        <div className="mobile-content">{children}</div>
+        <div className="mobile-home-indicator" />
       </div>
-    </>
+    </div>
   );
 };

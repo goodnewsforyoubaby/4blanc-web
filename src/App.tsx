@@ -34,8 +34,6 @@ import { NotificationsPage } from './pages/Notifications';
 import './styles/variables.css';
 import './styles/base.css';
 import './styles/themes/minimal.css';
-import './styles/themes/shopify.css';
-import './styles/themes/classic.css';
 
 function App() {
   return (

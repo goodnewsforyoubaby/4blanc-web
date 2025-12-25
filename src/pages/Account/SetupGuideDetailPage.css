@@ -187,12 +187,3 @@
   background: var(--color-state-error-light);
 }
 
-/* Theme: Classic - Warm tones */
-[data-theme="classic"] .guide-detail-tip {
-  background: var(--color-bg-tertiary);
-  border-left-color: var(--color-primary);
-}
-
-[data-theme="classic"] .guide-detail-warning {
-  background: var(--color-state-error-light);
-}

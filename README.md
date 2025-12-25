@@ -6,6 +6,8 @@ Mobile e-commerce prototype for 4BLANC professional nail equipment. Built with R
 
 This is a design/UX prototype that simulates a native iOS mobile shopping experience. The app renders in a phone-sized frame (390x844px) and is used to test UI/UX patterns before native mobile implementation.
 
+**Design Style:** iOS Settings style - clean, minimal, no shadows, borders only, iOS-style lists.
+
 **Live Demo:** [https://your-username.github.io/4blanc-web/](https://your-username.github.io/4blanc-web/)
 
 ## Features
@@ -33,10 +35,10 @@ This is a design/UX prototype that simulates a native iOS mobile shopping experi
 - Partnership program information
 
 ### Design System
-- 3 switchable themes (Minimal, Shopify, Classic)
+- iOS Settings style (clean, minimal, no shadows)
 - iOS-native animations and interactions
 - Push notifications (mocked)
-- Full dark/light mode support per theme
+- Bottom tab bar with icons only (no labels)
 
 ## Quick Start
 
@@ -89,22 +91,6 @@ src/
 └── types/           # TypeScript interfaces
 ```
 
-## Themes
-
-Switch between themes using the theme switcher in the bottom-right corner:
-
-| Theme | Style | Typography | Spacing | Shadows |
-|-------|-------|------------|---------|---------|
-| Minimal | iOS Settings style | Default (16px) | Compact (dividers) | None |
-| Shopify | 4BLANC brand teal | Compact (15px) | Moderate (8px gaps) | Subtle |
-| Classic | Luxury Warmth (cream/gold) | Generous (17px) | Spacious (12px gaps) | Warm |
-
-Each theme has:
-- Unique typography sizing and line heights
-- Theme-specific spacing between sections and list items
-- Custom search input styling with theme-specific focus states
-- Classic theme uses Playfair Display serif font for headings
-
 ## Design Philosophy
 
 This prototype follows **iOS Human Interface Guidelines**:
@@ -112,14 +98,18 @@ This prototype follows **iOS Human Interface Guidelines**:
 - Touch targets minimum 44x44px
 - Native iOS easing curves (`cubic-bezier(0.2, 0.0, 0.0, 1.0)`)
 - System font stack (-apple-system, SF Pro)
-- Subtle shadows and clean layouts
+- No shadows, clean borders, iOS-style list layouts
 - Touch-first design (no hover effects)
 - iOS grouped list pattern for menus
+- Bottom tab bar with icons only
 
 ## Key Patterns
 
-### iOS Grouped Lists
-Used in Account page - Apple Settings style with section headers and grouped items.
+### iOS Settings Style
+- Single column iOS list for products and collections
+- Transparent backgrounds with border-bottom dividers
+- No card shadows, clean minimal look
+- Full-width list items with chevron arrows
 
 ### BottomSheet Modal
 iOS-style modal that slides up from bottom, used for video playback and filters.

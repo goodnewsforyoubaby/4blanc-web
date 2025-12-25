@@ -130,7 +130,7 @@ export interface User {
 }
 
 // Theme Types
-export type ThemeName = 'minimal' | 'shopify' | 'classic';
+export type ThemeName = 'minimal';
 
 export interface ThemeOption {
   id: ThemeName;
