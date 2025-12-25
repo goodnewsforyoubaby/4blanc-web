@@ -93,13 +93,17 @@ src/
 
 Switch between themes using the theme switcher in the bottom-right corner:
 
-| Theme | Style | Shadows | Collections | Products |
-|-------|-------|---------|-------------|----------|
-| Minimal | iOS Settings style | None | iOS list with chevron | iOS list (rows) |
-| Shopify | 4BLANC brand teal | Subtle | List cards with chevron | Grid 2 columns |
-| Classic | Luxury Warmth (cream/gold) | Warm | Grid 2 columns | Grid 2 columns |
+| Theme | Style | Typography | Spacing | Shadows |
+|-------|-------|------------|---------|---------|
+| Minimal | iOS Settings style | Default (16px) | Compact (dividers) | None |
+| Shopify | 4BLANC brand teal | Compact (15px) | Moderate (8px gaps) | Subtle |
+| Classic | Luxury Warmth (cream/gold) | Generous (17px) | Spacious (12px gaps) | Warm |
 
-Each theme has unique search input styling with theme-specific focus states.
+Each theme has:
+- Unique typography sizing and line heights
+- Theme-specific spacing between sections and list items
+- Custom search input styling with theme-specific focus states
+- Classic theme uses Playfair Display serif font for headings
 
 ## Design Philosophy
 

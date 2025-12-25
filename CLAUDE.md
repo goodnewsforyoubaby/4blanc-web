@@ -109,8 +109,30 @@ All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.
 ```css
 --page-padding: var(--spacing-4);  /* Horizontal padding for all pages */
 --section-gap: var(--spacing-6);   /* Vertical gap between sections */
+--list-gap: var(--spacing-2);      /* Gap between list items (theme-specific) */
 ```
-Use these instead of hardcoding `--spacing-4` for page padding - keeps all pages consistent.
+Use these instead of hardcoding spacing values - keeps all pages consistent.
+
+#### Surface & Component Tokens
+Semantic tokens for consistent component styling:
+```css
+/* Surface backgrounds */
+--surface-card: var(--color-bg-primary);
+--surface-card-muted: var(--color-bg-secondary);
+--surface-card-inset: var(--color-bg-tertiary);
+
+/* List styling */
+--list-item-padding-x: var(--page-padding);
+--list-icon-bg: var(--color-bg-secondary);
+--list-icon-color: var(--color-primary);
+
+/* Input styling */
+--input-bg: var(--color-bg-primary);
+--input-border: var(--color-border-default);
+--input-focus-border: var(--color-text-link);
+--input-focus-ring: rgba(0, 122, 255, 0.15);
+--attachment-bg: var(--color-bg-inset);
+```
 
 #### iOS Safe Area Variables
 ```css
@@ -213,6 +235,24 @@ classic:  --color-primary: #8B6914 (Gold)
 ---
 
 ### Theme-Specific Behaviors
+
+#### Typography & Spacing by Theme
+
+Each theme has unique typography sizing and spacing for distinct feel:
+
+| Setting | Minimal | Shopify | Classic |
+|---------|---------|---------|---------|
+| `--text-base` | 16px (default) | 15px | 17px |
+| `--text-sm` | 14px (default) | 13px | 15px |
+| `--section-gap` | 24px (default) | 28px | 40px |
+| `--page-padding` | 16px (default) | 16px | 20px |
+| `--list-gap` | 0 (dividers) | 8px | 12px |
+| `--leading-normal` | 1.5 (default) | 1.45 | 1.6 |
+| `--font-family-heading` | Sans-serif | Sans-serif | Playfair Display (serif) |
+
+- **Minimal**: Compact iOS feel, no gaps between list items (divider style)
+- **Shopify**: Slightly smaller text for information density, moderate spacing
+- **Classic**: Generous luxury sizing with extra whitespace
 
 #### Shop Page Layouts by Theme
 
