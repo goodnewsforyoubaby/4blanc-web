@@ -16,7 +16,15 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeName>(() => {
     const saved = localStorage.getItem('4blanc-theme');
-    return (saved as ThemeName) || 'minimal';
+    // Only accept 'minimal' as valid theme, reset any old values
+    if (saved === 'minimal') {
+      return 'minimal';
+    }
+    // Clear invalid theme from localStorage
+    if (saved) {
+      localStorage.removeItem('4blanc-theme');
+    }
+    return 'minimal';
   });
 
   const setTheme = (newTheme: ThemeName) => {
