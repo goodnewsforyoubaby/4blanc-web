@@ -45,7 +45,7 @@
   --input-bg: var(--color-bg-primary);
   --input-border: var(--color-border-default);
   --input-focus-border: var(--color-primary);
-  --input-focus-ring: rgba(65, 117, 5, 0.15);
+  --input-focus-ring: rgba(1, 208, 78, 0.15);
   --attachment-bg: var(--color-bg-inset);
 
   /* =========================
@@ -139,5 +139,5 @@
   --color-state-error-light: rgba(255, 59, 48, 0.1);
   --color-state-warning-light: rgba(255, 149, 0, 0.1);
   --color-link-light: rgba(9, 105, 218, 0.1);
-  --color-primary-light: rgba(65, 117, 5, 0.1);
+  --color-primary-light: rgba(1, 208, 78, 0.1);
 }

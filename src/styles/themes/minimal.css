@@ -25,9 +25,9 @@
   --color-state-error: #FF3B30;
   --color-state-warning: #FF9500;
 
-  /* Brand color - 4BLANC green */
-  --color-primary: #417505;
-  --color-primary-hover: #365f04;
+  /* Brand color - 4BLANC lime green (from logo) */
+  --color-primary: #01d04e;
+  --color-primary-hover: #01b142;
 
   /* Accent */
   --color-accent-primary: #000000;
