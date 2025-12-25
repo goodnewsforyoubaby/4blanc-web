@@ -19,15 +19,15 @@ import {
   PrivacyPolicyPage,
   PartnershipPage,
   PartnershipDetailPage,
+  SetupGuidePage,
+  MaestroSetupGuidePage,
+  AlizeSetupGuidePage,
 } from './pages/Knowledge';
 import {
   AccountPage,
   LoginPage,
   RegisterPage,
   SettingsPage,
-  SetupGuidePage,
-  MaestroSetupGuidePage,
-  AlizeSetupGuidePage,
 } from './pages/Account';
 import { NotificationsPage } from './pages/Notifications';
 
@@ -57,6 +57,9 @@ function App() {
                     <Route path="/knowledge/faq" element={<FAQPage />} />
                     <Route path="/knowledge/manual" element={<ManualPage />} />
                     <Route path="/knowledge/video-guide" element={<VideoGuidePage />} />
+                    <Route path="/knowledge/setup-guide" element={<SetupGuidePage />} />
+                    <Route path="/knowledge/setup-guide/maestro" element={<MaestroSetupGuidePage />} />
+                    <Route path="/knowledge/setup-guide/alize" element={<AlizeSetupGuidePage />} />
                     <Route path="/knowledge/partnership" element={<PartnershipPage />} />
                     <Route path="/knowledge/partnership/:slug" element={<PartnershipDetailPage />} />
                     <Route path="/knowledge/shipping-policy" element={<ShippingPolicyPage />} />
@@ -68,9 +71,6 @@ function App() {
                     <Route path="/account/login" element={<LoginPage />} />
                     <Route path="/account/register" element={<RegisterPage />} />
                     <Route path="/account/settings" element={<SettingsPage />} />
-                    <Route path="/account/setup-guide" element={<SetupGuidePage />} />
-                    <Route path="/account/setup-guide/maestro" element={<MaestroSetupGuidePage />} />
-                    <Route path="/account/setup-guide/alize" element={<AlizeSetupGuidePage />} />
 
                     {/* Notifications */}
                     <Route path="/notifications" element={<NotificationsPage />} />

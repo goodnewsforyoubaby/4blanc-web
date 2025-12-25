@@ -6,12 +6,9 @@ import {
   Package,
   HelpCircle,
   MessageCircle,
-  FileText,
   Handshake,
-  BookOpen,
   LogOut,
   ChevronRight,
-  Play,
   Truck,
   RotateCcw,
   Shield,
@@ -36,14 +33,6 @@ interface MenuItemData {
 
 // Menu groups for guest mode
 const guestMenuGroups: MenuGroup[] = [
-  {
-    title: 'PRODUCT SUPPORT',
-    items: [
-      { icon: <BookOpen size={22} />, label: 'Setup Guide', path: '/account/setup-guide' },
-      { icon: <Play size={22} />, label: 'Video Guide', path: '/knowledge/video-guide' },
-      { icon: <FileText size={22} />, label: 'User Manuals', path: '/knowledge/manual' },
-    ],
-  },
   {
     title: 'HELP',
     items: [

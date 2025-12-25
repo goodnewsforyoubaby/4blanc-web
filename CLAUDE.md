@@ -62,20 +62,20 @@ Layout height calculation:
 - `/` - Home (hero banner, featured products, collections)
 - `/shop` - Shop (catalog with search and filters)
 - `/chat` - Support chat (real-time messaging simulation)
-- `/knowledge` - Documentation hub (User Manuals)
+- `/knowledge` - Knowledge Base (guides, manuals)
 
 ### Additional Routes
 **Account (`/account`):**
 - `/account/login` - Sign in
 - `/account/register` - Create account
 - `/account/settings` - Account settings
-- `/account/setup-guide` - Product setup guides
-- `/account/setup-guide/maestro` - Maéstro setup guide (full page)
-- `/account/setup-guide/alize` - Alizé setup guide (full page)
 
 **Knowledge Base (`/knowledge`):**
-- `/knowledge/manual` - PDF user manuals (8 products)
+- `/knowledge/setup-guide` - Product setup guides
+- `/knowledge/setup-guide/maestro` - Maéstro setup guide (full page)
+- `/knowledge/setup-guide/alize` - Alizé setup guide (full page)
 - `/knowledge/video-guide` - YouTube video tutorials
+- `/knowledge/manual` - PDF user manuals (8 products)
 - `/knowledge/faq` - Frequently asked questions
 - `/knowledge/shipping-policy` - Shipping information
 - `/knowledge/return-policy` - Return & refund policy

@@ -13,10 +13,12 @@ const getTitleByPath = (pathname: string): string => {
   if (pathname.startsWith('/chat')) return 'Support Chat';
   if (pathname === '/contact') return 'Contact';
   // Knowledge Base pages
-  if (pathname === '/knowledge') return 'Documentation';
+  if (pathname === '/knowledge') return 'Knowledge Base';
   if (pathname === '/knowledge/faq') return 'FAQ';
   if (pathname === '/knowledge/manual') return 'User Manuals';
   if (pathname === '/knowledge/video-guide') return 'Video Guide';
+  if (pathname === '/knowledge/setup-guide') return 'Setup Guide';
+  if (pathname.startsWith('/knowledge/setup-guide/')) return 'Setup Guide';
   if (pathname === '/knowledge/shipping-policy') return 'Shipping Policy';
   if (pathname === '/knowledge/return-policy') return 'Return Policy';
   if (pathname === '/knowledge/privacy-policy') return 'Privacy Policy';
@@ -26,7 +28,6 @@ const getTitleByPath = (pathname: string): string => {
   if (pathname === '/account/login') return 'Sign In';
   if (pathname === '/account/register') return 'Create Account';
   if (pathname === '/account/settings') return 'Settings';
-  if (pathname === '/account/setup-guide') return 'Setup Guide';
   if (pathname.startsWith('/account')) return 'Account';
   if (pathname.startsWith('/notifications')) return 'Notifications';
   if (pathname.startsWith('/cart')) return 'Cart';

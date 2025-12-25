@@ -134,14 +134,14 @@ export const SetupGuidePage: React.FC = () => {
 
       {/* Product Selection Grid */}
       <section className="setup-guide-products">
-        <Link to="/account/setup-guide/alize" className="setup-guide-product-card">
+        <Link to="/knowledge/setup-guide/alize" className="setup-guide-product-card">
           <div className="setup-guide-product-image-wrapper">
             <img src={IMAGES.alizeProduct} alt="Alizé™" className="setup-guide-product-image" />
           </div>
           <span className="setup-guide-product-name">Alizé™</span>
           <span className="setup-guide-product-button">View Guide</span>
         </Link>
-        <Link to="/account/setup-guide/maestro" className="setup-guide-product-card">
+        <Link to="/knowledge/setup-guide/maestro" className="setup-guide-product-card">
           <div className="setup-guide-product-image-wrapper">
             <img src={IMAGES.maestroProduct} alt="Maéstro™" className="setup-guide-product-image" />
           </div>
