@@ -8,7 +8,7 @@ This is a design/UX prototype that simulates a native iOS mobile shopping experi
 
 **Design Style:** iOS Settings style - clean, minimal, no shadows, borders only, iOS-style lists.
 
-**Live Demo:** [https://your-username.github.io/4blanc-web/](https://your-username.github.io/4blanc-web/)
+**Live Demo:** [https://goodnewsforyoubaby.github.io/4blanc-web/](https://goodnewsforyoubaby.github.io/4blanc-web/)
 
 ## Features
 
@@ -32,6 +32,8 @@ This is a design/UX prototype that simulates a native iOS mobile shopping experi
 ### Account
 - iOS-style grouped menu (Apple Settings pattern)
 - Guest and authenticated modes
+- Order history with status tracking
+- Order details with status timeline and tracking
 - Partnership program information
 
 ### Design System
@@ -77,9 +79,9 @@ src/
 │   ├── layout/      # App layout (Header, BottomTabBar, MobileContainer)
 │   └── product/     # Product-related components (ProductCard)
 ├── contexts/        # React Context (Theme, Auth, Cart, Notifications)
-├── data/            # Mock data (products, chat, faq, etc.)
+├── data/            # Mock data (products, orders, chat, faq, etc.)
 ├── pages/
-│   ├── Account/     # Account, Login, Register, Settings, SetupGuide
+│   ├── Account/     # Account, Login, Register, Settings, Orders
 │   ├── Cart/        # Shopping cart
 │   ├── Chat/        # Support chat
 │   ├── Contact/     # Contact form

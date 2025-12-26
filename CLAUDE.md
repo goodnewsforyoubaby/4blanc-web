@@ -69,6 +69,8 @@ Layout height calculation:
 - `/account/login` - Sign in
 - `/account/register` - Create account
 - `/account/settings` - Account settings
+- `/account/orders` - Order history list
+- `/account/orders/:id` - Order details with status timeline
 
 **Knowledge Base (`/knowledge`):**
 - `/knowledge/setup-guide` - Product setup guides
@@ -91,6 +93,15 @@ Layout height calculation:
 
 ### Data
 All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.com Shopify CDN images.
+
+**Data modules:**
+- `products.ts` - Products and collections
+- `orders.ts` - Mock orders with helper functions (`getOrderById`, `getOrderByNumber`)
+- `chat.ts` - Chat messages
+- `faq.ts` - FAQ items
+- `notifications.ts` - Push notifications
+- `partnerships.ts` - Partnership programs
+- `setupGuides.ts` - Product setup guides
 
 ---
 
@@ -216,8 +227,8 @@ Minimal theme uses NO shadows:
 --color-badge: #FF3B30 (iOS red)
 
 /* Primary brand color */
---color-primary: #339999 (4BLANC teal)
---color-primary-hover: #2a7a7a
+--color-primary: #01d04e (4BLANC lime green from logo)
+--color-primary-hover: #01b142
 
 /* Background colors */
 --color-bg-primary: #FFFFFF
@@ -424,6 +435,44 @@ const location = useLocation();
 const state = location.state as { productContext?: ProductContext };
 ```
 
+#### Order Card with Stacked Thumbnails
+Orders list displays product thumbnails with overlap effect:
+
+```css
+/* Thumbnails container - fixed width for alignment */
+.order-thumbnails {
+  width: 80px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Individual thumbnail */
+.order-thumbnail {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--color-bg-primary);
+}
+
+/* Overlap effect */
+.order-thumbnail:not(:first-child) {
+  margin-left: -16px;
+}
+
+/* Single item gets larger thumbnail */
+.order-thumbnail:only-child {
+  width: 64px;
+  height: 64px;
+}
+```
+
+**Status badge colors:**
+| Status | Background | Text Color |
+|--------|------------|------------|
+| processing | `--color-state-warning-light` | `--color-state-warning` |
+| shipped | `--color-link-light` | `--color-text-link` |
+| delivered | `--color-state-success-light` | `--color-state-success` |
+| cancelled | `--color-state-error-light` | `--color-state-error` |
+
 ---
 
 ### What NOT to Do
@@ -509,3 +558,5 @@ Base URL configured as `/4blanc-web/` in:
 | `SetupGuideDetailPage` | Full setup guide with sections, images, videos |
 | `MaestroSetupGuidePage` | Maéstro product setup guide |
 | `AlizeSetupGuidePage` | Alizé product setup guide |
+| `OrdersPage` | Order history list with product thumbnails |
+| `OrderDetailPage` | Order details with status timeline and tracking |
