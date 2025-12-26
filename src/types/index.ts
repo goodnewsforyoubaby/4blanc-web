@@ -138,6 +138,46 @@ export interface ThemeOption {
   description: string;
 }
 
+// Order Types
+export type OrderStatus = 'processing' | 'shipped' | 'delivered' | 'cancelled';
+
+export interface OrderItem {
+  id: string;
+  productId: string;
+  productHandle: string;
+  title: string;
+  variantTitle?: string;
+  price: ProductPrice;
+  quantity: number;
+  image?: ProductImage;
+}
+
+export interface ShippingAddress {
+  firstName: string;
+  lastName: string;
+  address1: string;
+  address2?: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
+}
+
+export interface Order {
+  id: string;
+  orderNumber: string;
+  status: OrderStatus;
+  createdAt: Date;
+  updatedAt: Date;
+  items: OrderItem[];
+  subtotal: ProductPrice;
+  shippingCost: ProductPrice;
+  total: ProductPrice;
+  shippingAddress: ShippingAddress;
+  trackingNumber?: string;
+  estimatedDelivery?: Date;
+}
+
 // Partnership Types
 export interface PartnershipBenefit {
   title: string;

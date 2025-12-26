@@ -28,6 +28,8 @@ const getTitleByPath = (pathname: string): string => {
   if (pathname === '/account/login') return 'Sign In';
   if (pathname === '/account/register') return 'Create Account';
   if (pathname === '/account/settings') return 'Settings';
+  if (pathname === '/account/orders') return 'Order History';
+  if (pathname.startsWith('/account/orders/')) return 'Order Details';
   if (pathname.startsWith('/account')) return 'Account';
   if (pathname.startsWith('/notifications')) return 'Notifications';
   if (pathname.startsWith('/cart')) return 'Cart';

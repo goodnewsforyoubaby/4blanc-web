@@ -73,7 +73,7 @@ export const AccountPage: React.FC = () => {
     {
       title: 'MY ORDERS',
       items: [
-        { icon: <Package size={22} />, label: 'Order History', onClick: () => alert('Order history coming soon!') },
+        { icon: <Package size={22} />, label: 'Order History', path: '/account/orders' },
       ],
     },
     {
