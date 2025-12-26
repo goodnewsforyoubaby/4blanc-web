@@ -23,19 +23,18 @@ npm run preview  # Preview production build
 
 ### Design System
 Single theme: **Minimal** (iOS Settings style)
-- CSS variables via `data-theme="minimal"` attribute on `<html>`
+- Theme is hardcoded via `data-theme="minimal"` attribute on `<html>` in `index.html`
 - Theme file: `src/styles/themes/minimal.css`
 - No shadows, borders only, iOS-style lists
 - Clean white backgrounds with subtle gray borders
 
 ### State Management
 React Context providers wrap the app in this order (outermost first):
-1. `ThemeProvider` - theme management (minimal only)
-2. `AuthProvider` - mock authentication
-3. `CartProvider` - shopping cart
-4. `NotificationProvider` - push notifications
+1. `AuthProvider` - mock authentication
+2. `CartProvider` - shopping cart
+3. `NotificationProvider` - push notifications
 
-All contexts persist to localStorage.
+All contexts persist to localStorage. Theme is not managed via context (hardcoded in HTML).
 
 ### Layout Structure
 `AppLayout` wraps all routes with:
@@ -142,9 +141,24 @@ Semantic tokens for consistent component styling:
 /* Input styling */
 --input-bg: var(--color-bg-primary);
 --input-border: var(--color-border-default);
---input-focus-border: var(--color-text-link);
---input-focus-ring: rgba(0, 122, 255, 0.15);
+--input-focus-border: var(--color-primary);
+--input-focus-ring: var(--color-primary-strong);
 --attachment-bg: var(--color-bg-inset);
+
+/* Overlays and scrims */
+--color-overlay-dark: rgba(0, 0, 0, 0.35);
+--color-overlay-light: rgba(255, 255, 255, 0.9);
+--color-scrim: rgba(0, 0, 0, 0.4);
+
+/* Device frame (MobileContainer) */
+--color-device-frame: #0a0a0a;
+--color-device-border: #1a1a1a;
+--color-device-shadow: rgba(0, 0, 0, 0.15);
+
+/* Primary color tints */
+--color-primary-soft: rgba(1, 208, 78, 0.08);
+--color-primary-light: rgba(1, 208, 78, 0.12);
+--color-primary-strong: rgba(1, 208, 78, 0.15);
 ```
 
 #### iOS Safe Area Variables
@@ -324,7 +338,7 @@ Always add `transition: ... 100ms var(--ios-ease)` for smooth feedback.
 .badge {
   min-width: 16px;
   height: 16px;
-  font-size: 10px;
+  font-size: var(--text-xs);  /* 12px - minimum readable size */
   background: var(--color-badge);
   color: var(--color-badge-text);
 }
@@ -491,6 +505,8 @@ Orders list displays product thumbnails with overlap effect:
 | Font size < 12px | Unreadable | Minimum 12px |
 | Gradient backgrounds | Not iOS | Solid colors |
 | No `:active` state on clickables | No touch feedback | Add opacity/scale/background change |
+| `rgba(0,0,0,0.4)` for overlays | Hardcoded value | Use `var(--color-scrim)` |
+| `background: linear-gradient(...)` | Not minimal | Use `var(--color-overlay-dark)` |
 
 ---
 

@@ -78,7 +78,7 @@ src/
 │   ├── home/        # Home page components
 │   ├── layout/      # App layout (Header, BottomTabBar, MobileContainer)
 │   └── product/     # Product-related components (ProductCard)
-├── contexts/        # React Context (Theme, Auth, Cart, Notifications)
+├── contexts/        # React Context (Auth, Cart, Notifications)
 ├── data/            # Mock data (products, orders, chat, faq, etc.)
 ├── pages/
 │   ├── Account/     # Account, Login, Register, Settings, Orders
