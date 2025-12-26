@@ -64,6 +64,100 @@
   resize: vertical;
 }
 
+/* Attachments Section */
+.contact-attachments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* Individual attached file */
+.contact-attachment-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  color: var(--color-text-tertiary);
+}
+
+.contact-attachment-name {
+  flex: 1;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-attachment-remove {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast), transform 100ms var(--ios-ease);
+}
+
+.contact-attachment-remove:hover {
+  color: var(--color-state-error);
+  background: var(--color-bg-tertiary);
+}
+
+.contact-attachment-remove:focus-visible {
+  outline: none;
+  color: var(--color-state-error);
+  background: var(--color-bg-tertiary);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.contact-attachment-remove:active {
+  transform: scale(0.92);
+  color: var(--color-state-error);
+}
+
+/* Add file button */
+.contact-attach-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  min-height: var(--touch-target-min);
+  background: transparent;
+  border: 1px dashed var(--color-border-default);
+  border-radius: var(--radius-md);
+  color: var(--color-text-tertiary);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-attach-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text-secondary);
+}
+
+.contact-attach-btn:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-bg-secondary);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.contact-attach-btn:active {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 /* Theme: Minimal */
 [data-theme="minimal"] .contact-field input,
 [data-theme="minimal"] .contact-field textarea {
@@ -75,4 +169,8 @@
 [data-theme="minimal"] .contact-field textarea:focus {
   border-color: var(--color-primary);
   background: var(--color-bg-primary);
+}
+
+[data-theme="minimal"] .contact-attach-btn:active {
+  background: var(--color-primary-soft);
 }

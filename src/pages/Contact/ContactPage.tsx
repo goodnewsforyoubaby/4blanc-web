@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Paperclip, X } from 'lucide-react';
 import { H2, BodySmall, Button } from '../../components/common';
 import './ContactPage.css';
 
 interface ContactFormData {
   name: string;
   email: string;
-  phone: string;
+  orderNumber: string;
   comment: string;
 }
 
@@ -13,10 +14,12 @@ export const ContactPage: React.FC = () => {
   const [form, setForm] = useState<ContactFormData>({
     name: '',
     email: '',
-    phone: '',
+    orderNumber: '',
     comment: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,12 +30,25 @@ export const ContactPage: React.FC = () => {
     // Mock submit
     setSubmitted(true);
     setTimeout(() => {
-      setForm({ name: '', email: '', phone: '', comment: '' });
+      setForm({ name: '', email: '', orderNumber: '', comment: '' });
+      setAttachedFiles([]);
       setSubmitted(false);
     }, 3000);
   };
 
-  const isValid = form.email.trim() !== '';
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    setAttachedFiles(prev => [...prev, ...files].slice(0, 3));
+    // Reset input to allow selecting the same file again
+    e.target.value = '';
+  };
+
+  const handleRemoveFile = (index: number) => {
+    setAttachedFiles(prev => prev.filter((_, i) => i !== index));
+  };
+
+  // Valid if comment or files attached
+  const isValid = form.comment.trim() !== '' || attachedFiles.length > 0;
 
   return (
     <div className="contact-page">
@@ -57,9 +73,7 @@ export const ContactPage: React.FC = () => {
         </div>
 
         <div className="contact-field">
-          <label htmlFor="email">
-            Email <span className="required">*</span>
-          </label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
@@ -67,19 +81,18 @@ export const ContactPage: React.FC = () => {
             value={form.email}
             onChange={handleChange}
             placeholder="your@email.com"
-            required
           />
         </div>
 
         <div className="contact-field">
-          <label htmlFor="phone">Phone number</label>
+          <label htmlFor="orderNumber">Order Number</label>
           <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={form.phone}
+            type="text"
+            id="orderNumber"
+            name="orderNumber"
+            value={form.orderNumber}
             onChange={handleChange}
-            placeholder="+1 (555) 123-4567"
+            placeholder="#4BL-12345"
           />
         </div>
 
@@ -92,6 +105,43 @@ export const ContactPage: React.FC = () => {
             onChange={handleChange}
             placeholder="How can we help you?"
             rows={5}
+          />
+        </div>
+
+        {/* File Attachments */}
+        <div className="contact-attachments">
+          {attachedFiles.map((file, index) => (
+            <div key={index} className="contact-attachment-item">
+              <Paperclip size={16} />
+              <span className="contact-attachment-name">{file.name}</span>
+              <button
+                type="button"
+                className="contact-attachment-remove"
+                onClick={() => handleRemoveFile(index)}
+                aria-label="Remove file"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          ))}
+
+          {attachedFiles.length < 3 && (
+            <button
+              type="button"
+              className="contact-attach-btn"
+              onClick={() => fileInputRef.current?.click()}
+            >
+              <Paperclip size={20} />
+              <span>Attach file</span>
+            </button>
+          )}
+
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileSelect}
+            style={{ display: 'none' }}
+            multiple
           />
         </div>
 
