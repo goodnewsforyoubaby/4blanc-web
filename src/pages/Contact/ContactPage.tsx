@@ -104,26 +104,30 @@ export const ContactPage: React.FC = () => {
             value={form.comment}
             onChange={handleChange}
             placeholder="How can we help you?"
-            rows={5}
+            rows={4}
           />
         </div>
 
-        {/* File Attachments */}
-        <div className="contact-attachments">
-          {attachedFiles.map((file, index) => (
-            <div key={index} className="contact-attachment-item">
-              <Paperclip size={16} />
-              <span className="contact-attachment-name">{file.name}</span>
-              <button
-                type="button"
-                className="contact-attachment-remove"
-                onClick={() => handleRemoveFile(index)}
-                aria-label="Remove file"
-              >
-                <X size={16} />
-              </button>
+        {/* Attachments section */}
+        <div className="contact-attachments-section">
+          {attachedFiles.length > 0 && (
+            <div className="contact-attachments">
+              {attachedFiles.map((file, index) => (
+                <div key={index} className="contact-attachment-item">
+                  <Paperclip size={16} />
+                  <span className="contact-attachment-name">{file.name}</span>
+                  <button
+                    type="button"
+                    className="contact-attachment-remove"
+                    onClick={() => handleRemoveFile(index)}
+                    aria-label="Remove file"
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
 
           {attachedFiles.length < 3 && (
             <button
@@ -131,8 +135,8 @@ export const ContactPage: React.FC = () => {
               className="contact-attach-btn"
               onClick={() => fileInputRef.current?.click()}
             >
-              <Paperclip size={20} />
-              <span>Attach file</span>
+              <Paperclip size={18} />
+              <span>Attach{attachedFiles.length > 0 && ` (${attachedFiles.length}/3)`}</span>
             </button>
           )}
 

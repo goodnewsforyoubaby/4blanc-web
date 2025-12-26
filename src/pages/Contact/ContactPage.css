@@ -65,9 +65,15 @@
 }
 
 /* Attachments Section */
-.contact-attachments {
+.contact-attachments-section {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.contact-attachments {
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-2);
 }
 
@@ -83,9 +89,9 @@
 }
 
 .contact-attachment-name {
-  flex: 1;
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
+  max-width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -102,19 +108,7 @@
   color: var(--color-text-tertiary);
   cursor: pointer;
   border-radius: var(--radius-full);
-  transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast), transform 100ms var(--ios-ease);
-}
-
-.contact-attachment-remove:hover {
-  color: var(--color-state-error);
-  background: var(--color-bg-tertiary);
-}
-
-.contact-attachment-remove:focus-visible {
-  outline: none;
-  color: var(--color-state-error);
-  background: var(--color-bg-tertiary);
-  box-shadow: 0 0 0 3px var(--input-focus-ring);
+  transition: color var(--transition-fast), transform 100ms var(--ios-ease);
 }
 
 .contact-attachment-remove:active {
@@ -122,40 +116,26 @@
   color: var(--color-state-error);
 }
 
-/* Add file button */
+/* iOS pill button style */
 .contact-attach-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  align-self: flex-start;
   gap: var(--spacing-2);
-  padding: var(--spacing-3);
-  min-height: var(--touch-target-min);
-  background: transparent;
-  border: 1px dashed var(--color-border-default);
-  border-radius: var(--radius-md);
-  color: var(--color-text-tertiary);
-  font-size: var(--text-sm);
-  cursor: pointer;
-  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.contact-attach-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-text-secondary);
-}
-
-.contact-attach-btn:focus-visible {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  padding: var(--spacing-2) var(--spacing-4);
   background: var(--color-bg-secondary);
-  outline: none;
-  box-shadow: 0 0 0 3px var(--input-focus-ring);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform 100ms var(--ios-ease);
 }
 
 .contact-attach-btn:active {
-  background: var(--color-bg-secondary);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  background: var(--color-bg-tertiary);
+  transform: scale(0.96);
 }
 
 /* Theme: Minimal */
@@ -169,8 +149,4 @@
 [data-theme="minimal"] .contact-field textarea:focus {
   border-color: var(--color-primary);
   background: var(--color-bg-primary);
-}
-
-[data-theme="minimal"] .contact-attach-btn:active {
-  background: var(--color-primary-soft);
 }
