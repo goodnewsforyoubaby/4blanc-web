@@ -89,7 +89,7 @@ export const CartPage: React.FC = () => {
               <BodySmall color="secondary">Shipping</BodySmall>
               <BodySmall color="secondary">Calculated at checkout</BodySmall>
             </div>
-            <Button fullWidth onClick={() => alert('Checkout coming soon!')}>
+            <Button fullWidth onClick={() => navigate('/checkout')}>
               Proceed to Checkout
             </Button>
           </div>

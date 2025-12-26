@@ -8,6 +8,7 @@ import { ShopPage, CollectionPage, ProductPage } from './pages/Shop';
 import { ChatPage } from './pages/Chat';
 import { ContactPage } from './pages/Contact';
 import { CartPage } from './pages/Cart';
+import { CheckoutPage, OrderSuccessPage } from './pages/Checkout';
 import {
   KnowledgePage,
   FAQPage,
@@ -81,6 +82,10 @@ function App() {
 
                 {/* Cart */}
                 <Route path="/cart" element={<CartPage />} />
+
+                {/* Checkout */}
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/checkout/success" element={<OrderSuccessPage />} />
               </Route>
             </Routes>
           </NotificationProvider>
