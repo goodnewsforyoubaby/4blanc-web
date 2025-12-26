@@ -80,7 +80,7 @@
 
 .chat-time {
   margin-top: var(--spacing-1);
-  font-size: var(--text-2xs);
+  font-size: var(--text-xs);
 }
 
 .chat-attachment {

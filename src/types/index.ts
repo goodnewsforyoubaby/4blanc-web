@@ -129,15 +129,6 @@ export interface User {
   avatar?: string;
 }
 
-// Theme Types
-export type ThemeName = 'minimal';
-
-export interface ThemeOption {
-  id: ThemeName;
-  name: string;
-  description: string;
-}
-
 // Order Types
 export type OrderStatus = 'processing' | 'shipped' | 'delivered' | 'cancelled';
 

@@ -5,7 +5,7 @@
 
 /* Hero Section */
 .partnership-hero {
-  background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%);
+  background: var(--color-bg-secondary);
   padding: var(--spacing-6) var(--page-padding);
   margin: calc(-1 * var(--page-padding));
   margin-bottom: var(--spacing-4);
@@ -18,24 +18,24 @@
 .partnership-hero-title {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
-  color: #FFFFFF;
+  color: var(--color-text-primary);
   margin: 0 0 var(--spacing-2) 0;
   font-family: var(--font-family-heading);
 }
 
 .partnership-hero-title strong {
-  color: #2C9942;
+  color: var(--color-primary);
 }
 
 .partnership-hero-desc {
   font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.5;
 }
 
 .partnership-hero-desc strong {
-  color: #2C9942;
+  color: var(--color-primary);
 }
 
 /* Programs Section */

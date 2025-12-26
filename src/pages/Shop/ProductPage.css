@@ -39,10 +39,15 @@
   cursor: pointer;
   padding: 0;
   background: none;
+  transition: transform 100ms var(--ios-ease), border-color var(--transition-fast);
 }
 
 .product-gallery-thumb.active {
   border-color: var(--color-accent-primary);
+}
+
+.product-gallery-thumb:active {
+  transform: scale(0.96);
 }
 
 .product-gallery-thumb img {
@@ -108,6 +113,11 @@
   border-color: var(--color-text-primary);
 }
 
+.product-variant-option:active:not(:disabled) {
+  background: var(--color-bg-tertiary);
+  transform: scale(0.98);
+}
+
 .product-variant-option.active {
   border-color: var(--color-accent-primary);
   background: var(--color-accent-primary);
@@ -140,6 +150,11 @@
 
 .product-quantity-btn:hover:not(:disabled) {
   border-color: var(--color-text-primary);
+}
+
+.product-quantity-btn:active:not(:disabled) {
+  background: var(--color-bg-secondary);
+  transform: scale(0.92);
 }
 
 .product-quantity-btn:disabled {

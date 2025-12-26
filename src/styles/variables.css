@@ -45,8 +45,15 @@
   --input-bg: var(--color-bg-primary);
   --input-border: var(--color-border-default);
   --input-focus-border: var(--color-primary);
-  --input-focus-ring: rgba(1, 208, 78, 0.15);
+  --input-focus-ring: var(--color-primary-strong);
   --attachment-bg: var(--color-bg-inset);
+  --color-app-bg: var(--color-bg-tertiary);
+  --color-overlay-dark: rgba(0, 0, 0, 0.35);
+  --color-overlay-light: rgba(255, 255, 255, 0.9);
+  --color-scrim: rgba(0, 0, 0, 0.4);
+  --color-device-frame: #0a0a0a;
+  --color-device-border: #1a1a1a;
+  --color-device-shadow: rgba(0, 0, 0, 0.15);
 
   /* =========================
      BORDER RADIUS (iOS-style)
@@ -69,7 +76,7 @@
   --font-family: var(--font-sans);
   --font-family-heading: var(--font-sans);
 
-  --text-2xs: 10px;
+  --text-2xs: 12px;
   --text-xs: 12px;
   --text-sm: 14px;
   --text-base: 16px;
@@ -139,5 +146,7 @@
   --color-state-error-light: rgba(255, 59, 48, 0.1);
   --color-state-warning-light: rgba(255, 149, 0, 0.1);
   --color-link-light: rgba(9, 105, 218, 0.1);
-  --color-primary-light: rgba(1, 208, 78, 0.1);
+  --color-primary-soft: rgba(1, 208, 78, 0.08);
+  --color-primary-light: rgba(1, 208, 78, 0.12);
+  --color-primary-strong: rgba(1, 208, 78, 0.15);
 }

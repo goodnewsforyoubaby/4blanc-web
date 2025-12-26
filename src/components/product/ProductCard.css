@@ -100,7 +100,7 @@
   box-shadow: none;
   border-radius: 0;
   border-bottom: 1px solid var(--color-border-muted);
-  padding: var(--spacing-3) var(--spacing-1);
+  padding: var(--spacing-3) var(--list-item-padding-x);
 }
 
 [data-theme="minimal"] .product-card:last-child {
@@ -123,8 +123,8 @@
 [data-theme="minimal"] .product-card-sale {
   top: var(--spacing-1);
   left: var(--spacing-1);
-  padding: 2px var(--spacing-1);
-  font-size: 10px;
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--text-xs);
 }
 
 [data-theme="minimal"] .product-card-info {

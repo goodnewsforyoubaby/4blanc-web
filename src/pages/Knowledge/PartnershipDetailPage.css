@@ -14,7 +14,7 @@
 
 /* Hero Section */
 .pd-hero {
-  background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%);
+  background: var(--color-bg-secondary);
   padding: var(--spacing-6) var(--page-padding);
   text-align: center;
 }
@@ -22,14 +22,14 @@
 .pd-hero-title {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
-  color: #FFFFFF;
+  color: var(--color-text-primary);
   margin: 0 0 var(--spacing-2) 0;
   font-family: var(--font-family-heading);
 }
 
 .pd-hero-subtitle {
   font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-secondary);
   margin: 0 0 var(--spacing-4) 0;
   line-height: 1.5;
 }
@@ -71,7 +71,7 @@
 .pd-benefit-icon {
   color: var(--color-state-success);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0;
 }
 
 .pd-benefit-content {
@@ -149,7 +149,7 @@
 
 .pd-step p {
   flex: 1;
-  padding-top: 2px;
+  padding-top: 0;
 }
 
 /* CTA Section */

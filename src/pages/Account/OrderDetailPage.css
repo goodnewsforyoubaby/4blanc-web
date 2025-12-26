@@ -31,8 +31,7 @@
   font-weight: var(--font-medium);
   color: var(--color-text-tertiary);
   margin-bottom: var(--spacing-3);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: var(--text-xs);
 }
 
 /* Status Timeline */
@@ -59,6 +58,7 @@
   align-items: center;
   justify-content: center;
   background: var(--color-bg-tertiary);
+  border: 2px solid transparent;
   color: var(--color-text-tertiary);
   margin-bottom: var(--spacing-2);
   z-index: 1;
@@ -70,9 +70,9 @@
 }
 
 .timeline-step.current .timeline-icon {
-  background: rgba(1, 208, 78, 0.15);
+  background: var(--color-primary-light);
   color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(1, 208, 78, 0.15);
+  border: 2px solid var(--color-primary);
 }
 
 .timeline-content {
@@ -230,7 +230,7 @@
 .address-icon {
   color: var(--color-text-tertiary);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0;
 }
 
 .address-content {
