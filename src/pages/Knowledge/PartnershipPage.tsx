@@ -30,7 +30,7 @@ export const PartnershipPage: React.FC = () => {
             <button
               key={program.id}
               className="partnership-card"
-              onClick={() => navigate(`/knowledge/partnership/${program.slug}`)}
+              onClick={() => navigate(`/partnership/${program.slug}`)}
             >
               <img
                 src={program.image}

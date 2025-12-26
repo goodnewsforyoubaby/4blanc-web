@@ -80,9 +80,10 @@ Layout height calculation:
 - `/knowledge/shipping-policy` - Shipping information
 - `/knowledge/return-policy` - Return & refund policy
 - `/knowledge/privacy-policy` - Privacy policy
-- `/knowledge/partnership` - Partnership program
 
 **Other:**
+- `/partnership` - Partnership program hub
+- `/partnership/:slug` - Partnership program details
 - `/contact` - Contact form
 - `/cart` - Shopping cart
 - `/notifications` - Push notifications

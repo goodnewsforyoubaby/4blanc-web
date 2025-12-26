@@ -22,7 +22,7 @@ const getTitleByPath = (pathname: string): string => {
   if (pathname === '/knowledge/shipping-policy') return 'Shipping Policy';
   if (pathname === '/knowledge/return-policy') return 'Return Policy';
   if (pathname === '/knowledge/privacy-policy') return 'Privacy Policy';
-  if (pathname.startsWith('/knowledge/partnership')) return 'Partnership';
+  if (pathname.startsWith('/partnership')) return 'Partnership';
   if (pathname.startsWith('/knowledge')) return 'Knowledge Base';
   // Account pages
   if (pathname === '/account/login') return 'Sign In';

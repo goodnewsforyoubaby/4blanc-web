@@ -38,7 +38,7 @@ export const PartnershipDetailPage: React.FC = () => {
         <div className="partnership-not-found">
           <H2>Program Not Found</H2>
           <Body>The partnership program you're looking for doesn't exist.</Body>
-          <Button onClick={() => navigate('/knowledge/partnership')}>
+          <Button onClick={() => navigate('/partnership')}>
             Back to Partnership
           </Button>
         </div>

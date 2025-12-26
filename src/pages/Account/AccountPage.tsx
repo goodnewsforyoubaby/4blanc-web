@@ -48,12 +48,6 @@ const guestMenuGroups: MenuGroup[] = [
       { icon: <Shield size={22} />, label: 'Privacy Policy', path: '/knowledge/privacy-policy' },
     ],
   },
-  {
-    title: 'PARTNERS',
-    items: [
-      { icon: <Handshake size={22} />, label: 'Partnership Program', path: '/knowledge/partnership' },
-    ],
-  },
 ];
 
 export const AccountPage: React.FC = () => {
@@ -114,6 +108,8 @@ export const AccountPage: React.FC = () => {
           </Button>
         </div>
 
+        <PartnershipBanner onClick={() => navigate('/partnership')} />
+
         {guestMenuGroups.map((group) => (
           <MenuSection
             key={group.title}
@@ -140,6 +136,8 @@ export const AccountPage: React.FC = () => {
         </div>
       </div>
 
+      <PartnershipBanner onClick={() => navigate('/partnership')} />
+
       {/* Menu Groups */}
       {authMenuGroups.map((group) => (
         <MenuSection
@@ -164,6 +162,24 @@ export const AccountPage: React.FC = () => {
     </div>
   );
 };
+
+// Partnership Banner Component
+interface PartnershipBannerProps {
+  onClick: () => void;
+}
+
+const PartnershipBanner: React.FC<PartnershipBannerProps> = ({ onClick }) => (
+  <button className="partnership-banner" onClick={onClick}>
+    <span className="partnership-banner-icon">
+      <Handshake size={20} />
+    </span>
+    <div className="partnership-banner-content">
+      <p className="partnership-banner-title">Become a Partner</p>
+      <p className="partnership-banner-subtitle">Grow your business with 4BLANC</p>
+    </div>
+    <ChevronRight size={20} className="partnership-banner-arrow" />
+  </button>
+);
 
 // Menu Section Component
 interface MenuSectionProps {

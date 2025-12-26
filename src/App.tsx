@@ -60,8 +60,8 @@ function App() {
                     <Route path="/knowledge/setup-guide" element={<SetupGuidePage />} />
                     <Route path="/knowledge/setup-guide/maestro" element={<MaestroSetupGuidePage />} />
                     <Route path="/knowledge/setup-guide/alize" element={<AlizeSetupGuidePage />} />
-                    <Route path="/knowledge/partnership" element={<PartnershipPage />} />
-                    <Route path="/knowledge/partnership/:slug" element={<PartnershipDetailPage />} />
+                    <Route path="/partnership" element={<PartnershipPage />} />
+                    <Route path="/partnership/:slug" element={<PartnershipDetailPage />} />
                     <Route path="/knowledge/shipping-policy" element={<ShippingPolicyPage />} />
                     <Route path="/knowledge/return-policy" element={<ReturnPolicyPage />} />
                     <Route path="/knowledge/privacy-policy" element={<PrivacyPolicyPage />} />
