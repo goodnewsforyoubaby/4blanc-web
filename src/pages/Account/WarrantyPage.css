@@ -1,0 +1,216 @@
+.warranty-page {
+  padding: var(--page-padding);
+}
+
+/* Header */
+.warranty-header {
+  margin-bottom: var(--section-gap);
+}
+
+.warranty-header h2 {
+  margin-bottom: var(--spacing-1);
+}
+
+/* Serial Number Section (no extra margin - header already has margin-bottom) */
+.warranty-sn-section {
+  margin-bottom: var(--section-gap);
+}
+
+/* Legal Section */
+.warranty-legal-section {
+  margin-top: var(--section-gap);
+}
+
+.warranty-section-title {
+  display: block;
+  font-weight: var(--font-medium);
+  margin-bottom: var(--spacing-2);
+}
+
+/* Serial Number Help */
+.warranty-sn-help {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.warranty-sn-icon {
+  color: var(--color-text-tertiary);
+}
+
+.warranty-sn-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3);
+}
+
+.warranty-sn-image {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  text-align: center;
+}
+
+.warranty-sn-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+}
+
+/* Form */
+.warranty-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+/* Field */
+.warranty-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.warranty-field label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.warranty-field .required {
+  color: var(--color-state-error);
+}
+
+.warranty-field input,
+.warranty-field textarea,
+.warranty-field select {
+  width: 100%;
+  padding: var(--spacing-3);
+  min-height: var(--touch-target-min);
+  font-size: var(--text-base);
+  font-family: inherit;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  color: var(--color-text-primary);
+}
+
+.warranty-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-3) center;
+  padding-right: var(--spacing-10);
+}
+
+.warranty-field input:focus,
+.warranty-field textarea:focus,
+.warranty-field select:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.warranty-field input::placeholder,
+.warranty-field textarea::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.warranty-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Links Section (iOS style) */
+.warranty-links {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-card);
+  border: var(--card-border);
+  border-image: var(--card-border-image);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.warranty-link-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--list-item-padding-x);
+  min-height: var(--touch-target-min);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  cursor: pointer;
+  transition: background 80ms var(--ios-ease);
+  width: 100%;
+  text-align: left;
+}
+
+.warranty-link-item:last-child {
+  border-bottom: none;
+}
+
+.warranty-link-item:active {
+  background: var(--color-bg-tertiary);
+}
+
+.warranty-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--list-icon-color);
+  flex-shrink: 0;
+}
+
+.warranty-link-item p {
+  flex: 1;
+  margin: 0;
+}
+
+.warranty-link-arrow {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+/* Legal Content in BottomSheet */
+.warranty-legal-content {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.warranty-legal-content p {
+  margin-bottom: var(--spacing-3);
+}
+
+.warranty-legal-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   Theme: Minimal
+   ========================= */
+[data-theme="minimal"] .warranty-field input,
+[data-theme="minimal"] .warranty-field textarea,
+[data-theme="minimal"] .warranty-field select {
+  background: var(--color-bg-secondary);
+  border-color: transparent;
+}
+
+[data-theme="minimal"] .warranty-field input:focus,
+[data-theme="minimal"] .warranty-field textarea:focus,
+[data-theme="minimal"] .warranty-field select:focus {
+  border-color: var(--color-primary);
+  background: var(--color-bg-primary);
+}
+
+[data-theme="minimal"] .warranty-links {
+  border: none;
+  box-shadow: none;
+}

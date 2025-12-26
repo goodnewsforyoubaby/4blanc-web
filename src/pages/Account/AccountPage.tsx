@@ -12,6 +12,7 @@ import {
   Truck,
   RotateCcw,
   Shield,
+  Lock,
 } from 'lucide-react';
 import { Button, H3, Body, BodySmall, Caption } from '../../components/common';
 import { useAuth } from '../../contexts/AuthContext';
@@ -34,6 +35,12 @@ interface MenuItemData {
 // Menu groups for guest mode
 const guestMenuGroups: MenuGroup[] = [
   {
+    title: 'WARRANTY',
+    items: [
+      { icon: <Shield size={22} />, label: 'Register Product', path: '/account/warranty' },
+    ],
+  },
+  {
     title: 'HELP',
     items: [
       { icon: <HelpCircle size={22} />, label: 'FAQ', path: '/knowledge/faq' },
@@ -45,7 +52,7 @@ const guestMenuGroups: MenuGroup[] = [
     items: [
       { icon: <Truck size={22} />, label: 'Shipping Policy', path: '/knowledge/shipping-policy' },
       { icon: <RotateCcw size={22} />, label: 'Return Policy', path: '/knowledge/return-policy' },
-      { icon: <Shield size={22} />, label: 'Privacy Policy', path: '/knowledge/privacy-policy' },
+      { icon: <Lock size={22} />, label: 'Privacy Policy', path: '/knowledge/privacy-policy' },
     ],
   },
 ];

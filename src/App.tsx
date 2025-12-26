@@ -29,6 +29,7 @@ import {
   SettingsPage,
   OrdersPage,
   OrderDetailPage,
+  WarrantyPage,
 } from './pages/Account';
 import { NotificationsPage } from './pages/Notifications';
 
@@ -73,6 +74,7 @@ function App() {
                 <Route path="/account/settings" element={<SettingsPage />} />
                 <Route path="/account/orders" element={<OrdersPage />} />
                 <Route path="/account/orders/:id" element={<OrderDetailPage />} />
+                <Route path="/account/warranty" element={<WarrantyPage />} />
 
                 {/* Notifications */}
                 <Route path="/notifications" element={<NotificationsPage />} />

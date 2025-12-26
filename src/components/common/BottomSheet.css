@@ -42,25 +42,22 @@
   flex-shrink: 0;
 }
 
-.bottom-sheet-back {
+.bottom-sheet-close {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--touch-target-min);
-  height: var(--touch-target-min);
-  background: none;
+  width: 30px;
+  height: 30px;
+  background: var(--color-bg-tertiary);
   border: none;
   cursor: pointer;
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   border-radius: var(--radius-full);
   transition: background var(--transition-fast), transform 100ms var(--ios-ease);
 }
 
-.bottom-sheet-back:hover {
-  background: var(--color-bg-secondary);
-}
-
-.bottom-sheet-back:active {
+.bottom-sheet-close:active {
+  background: var(--color-border-default);
   transform: scale(0.92);
 }
 
