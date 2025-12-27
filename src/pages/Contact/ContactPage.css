@@ -98,8 +98,9 @@
 }
 
 .contact-attachment-remove {
-  width: 24px;
-  height: 24px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  margin: calc(-1 * var(--spacing-2));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,6 +124,7 @@
   align-self: flex-start;
   gap: var(--spacing-2);
   padding: var(--spacing-2) var(--spacing-4);
+  min-height: var(--touch-target-min);
   background: var(--color-bg-secondary);
   border: none;
   border-radius: var(--radius-full);

@@ -152,6 +152,7 @@ a.setup-guide-product-card {
   justify-content: space-between;
   width: 100%;
   padding: var(--spacing-3) var(--list-item-padding-x);
+  min-height: var(--touch-target-min);
   background: var(--surface-card);
   border: var(--card-border);
   border-image: var(--card-border-image);

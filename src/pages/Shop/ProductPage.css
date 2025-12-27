@@ -101,6 +101,10 @@
 
 .product-variant-option {
   padding: var(--spacing-2) var(--spacing-4);
+  min-height: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-md);
   background: var(--surface-card);

@@ -16,6 +16,9 @@ This is a design/UX prototype that simulates a native iOS mobile shopping experi
 - Product catalog with search and filters
 - Product details with image gallery
 - Shopping cart functionality
+- Checkout with shipping form and methods
+- Apple Pay payment (mocked)
+- Order confirmation
 - "Ask about this product" - opens chat with product context
 
 ### Support
@@ -84,9 +87,10 @@ src/
 │   ├── Account/     # Account, Login, Register, Settings, Orders
 │   ├── Cart/        # Shopping cart
 │   ├── Chat/        # Support chat
+│   ├── Checkout/    # Checkout flow and order confirmation
 │   ├── Contact/     # Contact form
 │   ├── Home/        # Landing page
-│   ├── Knowledge/   # FAQ, Manuals, Videos, Policies
+│   ├── Knowledge/   # FAQ, Manuals, Videos, Policies, Partnership
 │   ├── Notifications/
 │   └── Shop/        # Catalog, Collection, Product detail
 ├── styles/          # Global styles and theme variables

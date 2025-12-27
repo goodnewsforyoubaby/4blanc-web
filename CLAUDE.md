@@ -82,6 +82,10 @@ Layout height calculation:
 - `/knowledge/return-policy` - Return & refund policy
 - `/knowledge/privacy-policy` - Privacy policy
 
+**Checkout:**
+- `/checkout` - Checkout with shipping form, shipping methods, FAQ
+- `/checkout/success` - Order confirmation page
+
 **Other:**
 - `/partnership` - Partnership program hub
 - `/partnership/:slug` - Partnership program details
@@ -576,3 +580,5 @@ Base URL configured as `/4blanc-web/` in:
 | `AlizeSetupGuidePage` | Alizé product setup guide |
 | `OrdersPage` | Order history list with product thumbnails |
 | `OrderDetailPage` | Order details with status timeline and tracking |
+| `CheckoutPage` | Checkout form with shipping methods and Apple Pay |
+| `OrderSuccessPage` | Order confirmation with animation |
