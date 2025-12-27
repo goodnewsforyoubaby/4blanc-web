@@ -107,6 +107,13 @@ export interface FAQItem {
   category: string;
 }
 
+// Product-specific FAQ (no category needed)
+export interface ProductFAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
 // Notification Types
 export type NotificationType = 'order' | 'promo' | 'system' | 'chat';
 

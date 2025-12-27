@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Minus, Plus, ShoppingBag, MessageCircle } from 'lucide-react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import { Minus, Plus, ShoppingBag, MessageCircle, ChevronRight, BookOpen } from 'lucide-react';
 import { Button, H2, Body, BodySmall, Caption } from '../../components/common';
 import { useCart } from '../../contexts/CartContext';
-import { mockProductDetails, mockProducts } from '../../data';
+import { mockProductDetails, mockProducts, getProductFAQ, getProductGuideId } from '../../data';
 import './ProductPage.css';
 
 export const ProductPage: React.FC = () => {
@@ -14,6 +14,11 @@ export const ProductPage: React.FC = () => {
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
+
+  const toggleFAQ = (id: string) => {
+    setExpandedFAQ(expandedFAQ === id ? null : id);
+  };
 
   const product = handle ? mockProductDetails[handle] : undefined;
   const fallbackProduct = mockProducts.find((p) => p.handle === handle);
@@ -49,6 +54,10 @@ export const ProductPage: React.FC = () => {
     ? parseFloat(selectedVariant.compareAtPrice.amount)
     : null;
   const hasDiscount = comparePrice && comparePrice > price;
+
+  // Get product-specific data
+  const guideId = handle ? getProductGuideId(handle) : null;
+  const productFAQs = handle ? getProductFAQ(handle) : [];
 
   const handleAddToCart = () => {
     addItem({
@@ -110,12 +119,7 @@ export const ProductPage: React.FC = () => {
         <div className="product-price">
           <span className="product-price-current">${price.toFixed(2)}</span>
           {hasDiscount && (
-            <>
-              <span className="product-price-compare">${comparePrice?.toFixed(2)}</span>
-              <span className="product-price-discount">
-                {Math.round(((comparePrice! - price) / comparePrice!) * 100)}% off
-              </span>
-            </>
+            <span className="product-price-compare">${comparePrice?.toFixed(2)}</span>
           )}
         </div>
 
@@ -162,7 +166,7 @@ export const ProductPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Actions */}
+        {/* Add to Cart */}
         <div className="product-actions">
           <Button
             fullWidth
@@ -173,6 +177,62 @@ export const ProductPage: React.FC = () => {
           </Button>
         </div>
 
+        {/* Promo Banner (if has discount) */}
+        {hasDiscount && (
+          <div className="product-promo-banner">
+            <img
+              src={displayProduct.images[0]?.url}
+              alt=""
+              className="product-promo-banner-bg"
+            />
+            <div className="product-promo-banner-overlay" />
+            <div className="product-promo-banner-content">
+              <span className="product-promo-banner-label">Special Offer</span>
+              <span className="product-promo-banner-savings">
+                Save ${(comparePrice! - price).toFixed(0)} ({Math.round(((comparePrice! - price) / comparePrice!) * 100)}% off)
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Setup Guide Link (if has guide) */}
+        {guideId && (
+          <Link to={`/knowledge/setup-guide/${guideId}`} className="product-guide-link">
+            <BookOpen size={20} />
+            <span>View Setup Guide</span>
+            <ChevronRight size={20} />
+          </Link>
+        )}
+
+        {/* Product FAQ Section - Accordion (if has FAQs) */}
+        {productFAQs.length > 0 && (
+          <section className="product-faq-section">
+            <Caption className="product-faq-title">Frequently Asked Questions</Caption>
+            <div className="product-faq-accordion">
+              {productFAQs.map((faq) => (
+                <div key={faq.id} className="product-faq-accordion-item">
+                  <button
+                    className="product-faq-question"
+                    onClick={() => toggleFAQ(faq.id)}
+                  >
+                    <Body>{faq.question}</Body>
+                    <ChevronRight
+                      size={18}
+                      className={`product-faq-chevron ${expandedFAQ === faq.id ? 'expanded' : ''}`}
+                    />
+                  </button>
+                  {expandedFAQ === faq.id && (
+                    <div className="product-faq-answer">
+                      <BodySmall color="secondary">{faq.answer}</BodySmall>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Ask about this product */}
         <div className="product-actions">
           <Button
             variant="secondary"
@@ -189,6 +249,7 @@ export const ProductPage: React.FC = () => {
           <BodySmall color="secondary">{displayProduct.description}</BodySmall>
         </div>
       </div>
+
     </div>
   );
 };

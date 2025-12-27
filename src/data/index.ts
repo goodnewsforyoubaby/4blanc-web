@@ -6,3 +6,5 @@ export * from './partnerships';
 export * from './orders';
 export * from './warranty';
 export * from './shippingFAQ';
+export * from './productFAQ';
+export * from './productGuideMapping';
