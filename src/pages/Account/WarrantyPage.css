@@ -213,4 +213,10 @@
 [data-theme="minimal"] .warranty-links {
   border: none;
   box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-theme="minimal"] .warranty-link-item:active {
+  background: var(--color-bg-secondary);
 }
