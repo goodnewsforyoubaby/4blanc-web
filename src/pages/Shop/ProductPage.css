@@ -198,7 +198,7 @@
 .product-promo-banner {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 96px;
   margin-top: var(--spacing-4);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -359,4 +359,3 @@
   padding: 0 0 var(--spacing-3) 0;
   line-height: 1.6;
 }
-
