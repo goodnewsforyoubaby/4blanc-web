@@ -123,58 +123,66 @@ export const ProductPage: React.FC = () => {
           )}
         </div>
 
-        {/* Variants */}
-        {displayProduct.options.length > 0 && (
-          <div className="product-variants">
-            {displayProduct.options.map((option) => (
-              <div key={option.name} className="product-variant-group">
-                <Caption>{option.name}</Caption>
-                <div className="product-variant-options">
-                  {option.values.map((value, idx) => (
-                    <button
-                      key={value}
-                      className={`product-variant-option ${idx === selectedVariantIndex ? 'active' : ''}`}
-                      onClick={() => setSelectedVariantIndex(idx)}
-                    >
-                      {value}
-                    </button>
-                  ))}
+        {/* Purchase Section */}
+        <div className="product-purchase-section">
+          {/* Variants */}
+          {displayProduct.options.length > 0 && (
+            <div className="product-variants">
+              {displayProduct.options.map((option) => (
+                <div key={option.name} className="product-variant-group">
+                  <Caption>{option.name}</Caption>
+                  <div className="product-variant-options">
+                    {option.values.map((value, idx) => (
+                      <button
+                        key={value}
+                        className={`product-variant-option ${idx === selectedVariantIndex ? 'active' : ''}`}
+                        onClick={() => setSelectedVariantIndex(idx)}
+                      >
+                        {value}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
 
-        {/* Quantity */}
-        <div className="product-quantity">
-          <Caption>Quantity</Caption>
-          <div className="product-quantity-controls">
-            <button
-              className="product-quantity-btn"
-              onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              disabled={quantity <= 1}
+          {/* Quantity */}
+          <div className="product-quantity">
+            <Caption>Quantity</Caption>
+            <div className="product-quantity-controls">
+              <button
+                className="product-quantity-btn"
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                disabled={quantity <= 1}
+              >
+                <Minus size={20} />
+              </button>
+              <span className="product-quantity-value">{quantity}</span>
+              <button
+                className="product-quantity-btn"
+                onClick={() => setQuantity(quantity + 1)}
+              >
+                <Plus size={20} />
+              </button>
+            </div>
+          </div>
+
+          {/* Add to Cart */}
+          <div className="product-actions">
+            <Button
+              fullWidth
+              onClick={handleAddToCart}
+              icon={<ShoppingBag size={20} />}
             >
-              <Minus size={18} />
-            </button>
-            <span className="product-quantity-value">{quantity}</span>
-            <button
-              className="product-quantity-btn"
-              onClick={() => setQuantity(quantity + 1)}
-            >
-              <Plus size={18} />
-            </button>
+              Add to Cart
+            </Button>
           </div>
         </div>
 
-        {/* Add to Cart */}
-        <div className="product-actions">
-          <Button
-            fullWidth
-            onClick={handleAddToCart}
-            icon={<ShoppingBag size={20} />}
-          >
-            Add to Cart
-          </Button>
+        {/* Description */}
+        <div className="product-description">
+          <BodySmall color="secondary">{displayProduct.description}</BodySmall>
         </div>
 
         {/* Promo Banner (if has discount) */}
@@ -242,11 +250,6 @@ export const ProductPage: React.FC = () => {
           >
             Ask about this product
           </Button>
-        </div>
-
-        {/* Description */}
-        <div className="product-description">
-          <BodySmall color="secondary">{displayProduct.description}</BodySmall>
         </div>
       </div>
 

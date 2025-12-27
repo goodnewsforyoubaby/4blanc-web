@@ -79,6 +79,25 @@
   text-decoration: line-through;
 }
 
+/* =========================
+   Purchase Section Container
+   ========================= */
+.product-purchase-section {
+  margin-top: var(--spacing-4);
+}
+
+.product-purchase-section .product-variants {
+  margin-top: 0;
+}
+
+.product-purchase-section .product-quantity {
+  margin-top: var(--spacing-4);
+}
+
+.product-purchase-section .product-actions {
+  margin-top: var(--spacing-4);
+}
+
 .product-variants {
   margin-top: var(--spacing-4);
 }
@@ -215,8 +234,6 @@
 .product-promo-banner-label {
   font-size: var(--text-xs);
   font-weight: var(--font-medium);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   opacity: 0.9;
 }
 
@@ -228,8 +245,10 @@
 
 .product-description {
   margin-top: var(--spacing-4);
-  padding-top: var(--spacing-4);
-  border-top: 1px solid var(--color-border-muted);
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--surface-card-muted);
+  border-radius: var(--radius-lg);
+  line-height: 1.6;
 }
 
 .product-empty {
@@ -253,8 +272,6 @@
   padding: var(--spacing-3) 0;
   margin-top: var(--spacing-4);
   min-height: var(--touch-target-min);
-  border-top: 1px solid var(--color-border-muted);
-  border-bottom: 1px solid var(--color-border-muted);
   text-decoration: none;
   color: var(--color-text-primary);
   transition: background 80ms var(--ios-ease);
@@ -282,7 +299,7 @@
    Product FAQ Section - Accordion
    ========================= */
 .product-faq-section {
-  margin-top: var(--spacing-4);
+  margin-top: var(--spacing-2);
 }
 
 .product-faq-title {
