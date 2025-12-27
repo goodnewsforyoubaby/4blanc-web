@@ -206,13 +206,15 @@ export const CheckoutPage: React.FC = () => {
                 key={method.id}
                 className={`shipping-method ${selectedShipping === method.id ? 'selected' : ''}`}
               >
-                <input
-                  type="radio"
-                  name="shipping"
-                  value={method.id}
-                  checked={selectedShipping === method.id}
-                  onChange={() => setSelectedShipping(method.id)}
-                />
+                <span className="shipping-method-radio">
+                  <input
+                    type="radio"
+                    name="shipping"
+                    value={method.id}
+                    checked={selectedShipping === method.id}
+                    onChange={() => setSelectedShipping(method.id)}
+                  />
+                </span>
                 <div className="shipping-method-info">
                   <Body>{method.name}</Body>
                   <Caption color="secondary">{method.duration}</Caption>

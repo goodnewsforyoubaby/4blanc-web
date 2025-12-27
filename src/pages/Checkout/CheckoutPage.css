@@ -114,11 +114,19 @@
   background: var(--color-primary-soft);
 }
 
-.shipping-method input[type="radio"] {
-  width: 22px;
-  height: 22px;
-  accent-color: var(--color-primary);
+.shipping-method-radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
   flex-shrink: 0;
+}
+
+.shipping-method input[type="radio"] {
+  width: var(--spacing-6);
+  height: var(--spacing-6);
+  accent-color: var(--color-primary);
 }
 
 .shipping-method-info {
