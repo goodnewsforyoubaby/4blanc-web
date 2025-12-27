@@ -115,17 +115,31 @@
 }
 
 .product-carousel__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-text-tertiary);
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  display: grid;
+  place-items: center;
+  background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: transform var(--transition-fast);
 }
 
-.product-carousel__dot--active {
+.product-carousel__dot::before {
+  content: '';
+  width: var(--spacing-2);
+  height: var(--spacing-2);
+  border-radius: 50%;
+  background: var(--color-text-tertiary);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.product-carousel__dot:active::before {
+  transform: scale(1.25);
+}
+
+.product-carousel__dot--active::before {
   background: var(--color-primary);
   transform: scale(1.25);
 }
