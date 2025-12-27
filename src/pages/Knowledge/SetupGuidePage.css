@@ -189,7 +189,7 @@ a.setup-guide-product-card {
   box-shadow: none;
   border-bottom: 1px solid var(--color-border-muted);
   border-radius: 0;
-  padding: var(--spacing-3) var(--page-padding);
+  padding: var(--spacing-3) var(--list-item-padding-x);
   transition: background 80ms var(--ios-ease);
 }
 

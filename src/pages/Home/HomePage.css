@@ -153,6 +153,11 @@
 [data-theme="minimal"] .home-products-grid {
   grid-template-columns: 1fr;
   gap: 0;
+  padding: 0;
+}
+
+[data-theme="minimal"] .home-products-scroll {
+  padding: 0;
 }
 
 @media (max-width: 430px) {
