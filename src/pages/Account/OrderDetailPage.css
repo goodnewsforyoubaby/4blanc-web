@@ -310,16 +310,3 @@
 [data-theme="minimal"] .order-detail-empty {
   padding: var(--spacing-8) var(--page-padding);
 }
-
-[data-theme="minimal"] .order-detail-page {
-  padding: 0;
-}
-
-[data-theme="minimal"] .order-detail-header,
-[data-theme="minimal"] .order-detail-section {
-  padding: 0 var(--page-padding);
-}
-
-[data-theme="minimal"] .order-detail-empty {
-  padding: var(--spacing-8) var(--page-padding);
-}
