@@ -244,7 +244,6 @@
 }
 
 .product-description {
-  margin-top: var(--spacing-4);
   line-height: 1.5;
 }
 
@@ -267,7 +266,6 @@
   gap: var(--spacing-3);
   width: 100%;
   padding: var(--spacing-3) 0;
-  margin-top: var(--spacing-4);
   min-height: var(--touch-target-min);
   text-decoration: none;
   color: var(--color-text-primary);
@@ -296,7 +294,12 @@
    Product FAQ Section - Accordion
    ========================= */
 .product-faq-section {
-  margin-top: var(--spacing-8);
+  margin-top: var(--spacing-4);
+}
+
+/* If FAQ is first/only item in resources zone */
+.product-resources-zone .product-faq-section:first-child {
+  margin-top: 0;
 }
 
 .product-faq-title {
@@ -355,4 +358,23 @@
 .product-faq-answer {
   padding: 0 0 var(--spacing-3) 0;
   line-height: 1.6;
+}
+
+/* =========================
+   Content Zones
+   ========================= */
+
+/* Details Zone: Description + Promo Banner */
+.product-details-zone {
+  margin-top: var(--section-gap);
+}
+
+/* Resources Zone: Setup Guide + FAQ */
+.product-resources-zone {
+  margin-top: var(--section-gap);
+}
+
+/* Actions Zone: Ask about product */
+.product-actions-zone {
+  margin-top: var(--section-gap);
 }

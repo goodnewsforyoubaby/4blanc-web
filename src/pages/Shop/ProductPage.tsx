@@ -180,68 +180,72 @@ export const ProductPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Description */}
-        <div className="product-description">
-          <BodySmall color="secondary">{displayProduct.description}</BodySmall>
+        {/* Details Zone: Description + Promo Banner */}
+        <div className="product-details-zone">
+          <div className="product-description">
+            <BodySmall color="secondary">{displayProduct.description}</BodySmall>
+          </div>
+
+          {hasDiscount && (
+            <div className="product-promo-banner">
+              <img
+                src={displayProduct.images[0]?.url}
+                alt=""
+                className="product-promo-banner-bg"
+              />
+              <div className="product-promo-banner-overlay" />
+              <div className="product-promo-banner-content">
+                <span className="product-promo-banner-label">Special Offer</span>
+                <span className="product-promo-banner-savings">
+                  Save ${(comparePrice! - price).toFixed(0)} ({Math.round(((comparePrice! - price) / comparePrice!) * 100)}% off)
+                </span>
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Promo Banner (if has discount) */}
-        {hasDiscount && (
-          <div className="product-promo-banner">
-            <img
-              src={displayProduct.images[0]?.url}
-              alt=""
-              className="product-promo-banner-bg"
-            />
-            <div className="product-promo-banner-overlay" />
-            <div className="product-promo-banner-content">
-              <span className="product-promo-banner-label">Special Offer</span>
-              <span className="product-promo-banner-savings">
-                Save ${(comparePrice! - price).toFixed(0)} ({Math.round(((comparePrice! - price) / comparePrice!) * 100)}% off)
-              </span>
-            </div>
+        {/* Resources Zone: Setup Guide + FAQ (only if has content) */}
+        {(guideId || productFAQs.length > 0) && (
+          <div className="product-resources-zone">
+            {guideId && (
+              <Link to={`/knowledge/setup-guide/${guideId}`} className="product-guide-link">
+                <BookOpen size={20} />
+                <span>View Setup Guide</span>
+                <ChevronRight size={20} />
+              </Link>
+            )}
+
+            {productFAQs.length > 0 && (
+              <section className="product-faq-section">
+                <Caption className="product-faq-title">Frequently Asked Questions</Caption>
+                <div className="product-faq-accordion">
+                  {productFAQs.map((faq) => (
+                    <div key={faq.id} className="product-faq-accordion-item">
+                      <button
+                        className="product-faq-question"
+                        onClick={() => toggleFAQ(faq.id)}
+                      >
+                        <Body>{faq.question}</Body>
+                        <ChevronRight
+                          size={18}
+                          className={`product-faq-chevron ${expandedFAQ === faq.id ? 'expanded' : ''}`}
+                        />
+                      </button>
+                      {expandedFAQ === faq.id && (
+                        <div className="product-faq-answer">
+                          <BodySmall color="secondary">{faq.answer}</BodySmall>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         )}
 
-        {/* Setup Guide Link (if has guide) */}
-        {guideId && (
-          <Link to={`/knowledge/setup-guide/${guideId}`} className="product-guide-link">
-            <BookOpen size={20} />
-            <span>View Setup Guide</span>
-            <ChevronRight size={20} />
-          </Link>
-        )}
-
-        {/* Product FAQ Section - Accordion (if has FAQs) */}
-        {productFAQs.length > 0 && (
-          <section className="product-faq-section">
-            <Caption className="product-faq-title">Frequently Asked Questions</Caption>
-            <div className="product-faq-accordion">
-              {productFAQs.map((faq) => (
-                <div key={faq.id} className="product-faq-accordion-item">
-                  <button
-                    className="product-faq-question"
-                    onClick={() => toggleFAQ(faq.id)}
-                  >
-                    <Body>{faq.question}</Body>
-                    <ChevronRight
-                      size={18}
-                      className={`product-faq-chevron ${expandedFAQ === faq.id ? 'expanded' : ''}`}
-                    />
-                  </button>
-                  {expandedFAQ === faq.id && (
-                    <div className="product-faq-answer">
-                      <BodySmall color="secondary">{faq.answer}</BodySmall>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Ask about this product */}
-        <div className="product-actions">
+        {/* Actions Zone: Ask about product */}
+        <div className="product-actions-zone">
           <Button
             variant="secondary"
             fullWidth
