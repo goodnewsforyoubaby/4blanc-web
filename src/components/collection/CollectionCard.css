@@ -68,7 +68,7 @@
   box-shadow: none;
   border-radius: 0;
   border-bottom: 1px solid var(--color-border-muted);
-  padding: var(--spacing-3) var(--spacing-1);
+  padding: var(--spacing-3) var(--list-item-padding-x);
 }
 
 [data-theme="minimal"] .collection-card:last-child {

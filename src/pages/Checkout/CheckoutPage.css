@@ -400,8 +400,11 @@
 
 /* Minimal theme overrides */
 [data-theme="minimal"] .checkout-shipping-methods {
+  margin: 0 calc(-1 * var(--page-padding));
+  background: transparent;
   border: none;
   box-shadow: none;
+  border-radius: 0;
 }
 
 [data-theme="minimal"] .checkout-field input,
@@ -417,6 +420,23 @@
 }
 
 [data-theme="minimal"] .checkout-summary {
+  margin: 0 calc(-1 * var(--page-padding));
+  background: transparent;
+  border-radius: 0;
   border: none;
   box-shadow: none;
+}
+
+[data-theme="minimal"] .checkout-page {
+  padding: var(--page-padding) 0;
+  padding-bottom: calc(var(--spacing-6) + var(--safe-area-bottom));
+}
+
+[data-theme="minimal"] .checkout-section,
+[data-theme="minimal"] .checkout-info-section {
+  padding: 0 var(--page-padding);
+}
+
+[data-theme="minimal"] .checkout-empty {
+  padding: var(--spacing-16) var(--page-padding);
 }

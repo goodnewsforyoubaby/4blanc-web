@@ -213,4 +213,21 @@
 [data-theme="minimal"] .warranty-links {
   border: none;
   box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+[data-theme="minimal"] .warranty-link-item:active {
+  background: var(--color-bg-secondary);
+}
+
+[data-theme="minimal"] .warranty-page {
+  padding: var(--page-padding) 0;
+}
+
+[data-theme="minimal"] .warranty-header,
+[data-theme="minimal"] .warranty-sn-section,
+[data-theme="minimal"] .warranty-form,
+[data-theme="minimal"] .warranty-legal-section {
+  padding: 0 var(--page-padding);
 }
