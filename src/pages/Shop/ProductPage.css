@@ -245,10 +245,7 @@
 
 .product-description {
   margin-top: var(--spacing-4);
-  padding: var(--spacing-3) var(--spacing-4);
-  background: var(--surface-card-muted);
-  border-radius: var(--radius-lg);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .product-empty {
@@ -299,7 +296,7 @@
    Product FAQ Section - Accordion
    ========================= */
 .product-faq-section {
-  margin-top: var(--spacing-2);
+  margin-top: var(--spacing-8);
 }
 
 .product-faq-title {
