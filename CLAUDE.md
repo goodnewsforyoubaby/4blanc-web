@@ -123,11 +123,44 @@ All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.
 
 #### Page Rhythm Variables
 ```css
---page-padding: var(--spacing-4);  /* Horizontal padding for all pages */
---section-gap: var(--spacing-6);   /* Vertical gap between sections */
---list-gap: 0;                     /* No gap between list items (divider style) */
+--page-padding: var(--spacing-4);       /* 16px - page-level horizontal padding */
+--list-item-padding-x: var(--page-padding); /* List item horizontal padding */
+--section-gap: var(--spacing-6);        /* 24px - vertical gap between sections */
+--list-gap: 0;                          /* No gap between list items (divider style) */
 ```
-Use these instead of hardcoding spacing values - keeps all pages consistent.
+
+**When to use `--page-padding`:**
+- Page container padding: `.my-page { padding: var(--page-padding); }`
+- Empty states: `.empty-state { padding: var(--spacing-8) var(--page-padding); }`
+- Section headers: `.section-title { padding: 0 var(--page-padding); }`
+- Full-width sections (negative margin): `margin: 0 calc(-1 * var(--page-padding));`
+
+**When to use `--list-item-padding-x`:**
+- List items in minimal theme: `.list-item { padding: var(--spacing-3) var(--list-item-padding-x); }`
+- Cards, notifications, orders - any repeating list items
+
+**Pattern for iOS-style full-width lists in minimal theme:**
+```css
+/* Page removes horizontal padding */
+[data-theme="minimal"] .my-page {
+  padding: var(--page-padding) 0;  /* vertical only */
+}
+
+/* Headers/sections get their own padding */
+[data-theme="minimal"] .my-section-title {
+  padding: 0 var(--page-padding);
+}
+
+/* List items use list-item-padding-x */
+[data-theme="minimal"] .my-list-item {
+  padding: var(--spacing-3) var(--list-item-padding-x);
+}
+
+/* Empty states get full padding */
+[data-theme="minimal"] .my-empty {
+  padding: var(--spacing-8) var(--page-padding);
+}
+```
 
 #### Surface & Component Tokens
 Semantic tokens for consistent component styling:
@@ -138,7 +171,6 @@ Semantic tokens for consistent component styling:
 --surface-card-inset: var(--color-bg-tertiary);
 
 /* List styling */
---list-item-padding-x: var(--page-padding);
 --list-icon-bg: var(--color-bg-secondary);
 --list-icon-color: var(--color-primary);
 
@@ -520,7 +552,8 @@ Before committing UI changes:
 
 - [ ] Check touch targets use `--touch-target-min` (44x44px)
 - [ ] Verify no hardcoded colors (search for `#` in CSS)
-- [ ] Use `--page-padding` for page horizontal padding
+- [ ] Use `--page-padding` for page/section padding
+- [ ] Use `--list-item-padding-x` for list items in minimal theme
 - [ ] Use `--section-gap` for spacing between sections
 - [ ] All clickable elements have `:active` states
 - [ ] Test animations are smooth (no jank)
