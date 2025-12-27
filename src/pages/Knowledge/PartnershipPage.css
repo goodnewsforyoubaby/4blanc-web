@@ -1,6 +1,7 @@
 .partnership-page {
   display: flex;
   flex-direction: column;
+  padding: var(--page-padding);
 }
 
 /* Hero Section */
@@ -113,6 +114,10 @@
 /* =========================
    Theme: Minimal - iOS-style list
    ========================= */
+[data-theme="minimal"] .partnership-page {
+  padding: var(--page-padding) 0;
+}
+
 [data-theme="minimal"] .partnership-programs {
   padding: 0 0 var(--spacing-4) 0;
 }
@@ -141,4 +146,10 @@
 
 [data-theme="minimal"] .partnership-card:active {
   background: var(--color-bg-secondary);
+}
+
+[data-theme="minimal"] .partnership-hero {
+  margin: 0;
+  margin-bottom: var(--spacing-2);
+  padding: var(--spacing-6) var(--page-padding);
 }

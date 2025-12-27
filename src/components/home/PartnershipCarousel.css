@@ -1,0 +1,72 @@
+.partnership-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: var(--spacing-3);
+  padding: 0 var(--page-padding);
+  -webkit-overflow-scrolling: touch;
+}
+
+.partnership-carousel-card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background: var(--surface-card);
+  border: 1px solid var(--color-border-muted);
+  border-radius: var(--radius-lg);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform 100ms var(--ios-ease);
+}
+
+.partnership-carousel-card:active {
+  background: var(--color-bg-secondary);
+  transform: scale(0.98);
+}
+
+.partnership-carousel-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.partnership-carousel-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.partnership-carousel-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.partnership-carousel-subtitle {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  margin-top: var(--spacing-1);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.partnership-carousel-chevron {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+}

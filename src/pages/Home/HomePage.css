@@ -1,11 +1,12 @@
 .home-page {
   --home-hero-height: calc(
-    var(--mobile-height) - var(--mobile-safe-top) - var(--safe-area-top) - var(--header-height) -
-    var(--tab-bar-total-height)
+    var(--mobile-height) - var(--mobile-safe-top) - var(--safe-area-top)
+    - var(--header-height) - var(--tab-bar-total-height)
   );
   padding: 0;
 }
 
+/* Full-screen Hero Banner Stack */
 .home-hero-stack {
   display: flex;
   flex-direction: column;
@@ -149,21 +150,24 @@
   color: var(--color-text-tertiary);
 }
 
+/* Products List (New Arrivals) - iOS style */
+.home-products-list {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="minimal"] .home-products-list {
+  padding: 0;
+}
+
 /* Minimal theme - iOS list */
 [data-theme="minimal"] .home-products-grid {
   grid-template-columns: 1fr;
   gap: 0;
-  padding: 0;
+  padding: 0 var(--page-padding);
 }
 
 [data-theme="minimal"] .home-products-scroll {
-  padding: 0;
+  padding: 0 var(--page-padding);
 }
 
-@media (max-width: 430px) {
-  .home-page {
-    --home-hero-height: calc(
-      100vh - var(--safe-area-top) - var(--header-height) - var(--tab-bar-total-height)
-    );
-  }
-}

@@ -276,26 +276,26 @@
    Theme: Minimal
    ========================= */
 [data-theme="minimal"] .order-items {
-  margin: 0 calc(-1 * var(--page-padding));
+  margin: 0;
   background: transparent;
   border: none;
   box-shadow: none;
 }
 
 [data-theme="minimal"] .order-address {
-  margin: 0 calc(-1 * var(--page-padding));
+  margin: 0;
   background: transparent;
   border: none;
   box-shadow: none;
   border-radius: 0;
-  padding: var(--spacing-3) var(--list-item-padding-x);
+  padding: var(--spacing-3) var(--page-padding);
 }
 
 [data-theme="minimal"] .order-summary {
-  margin: 0 calc(-1 * var(--page-padding));
+  margin: 0;
   background: transparent;
   border-radius: 0;
-  padding: var(--spacing-3) var(--list-item-padding-x);
+  padding: var(--spacing-4) var(--page-padding);
 }
 
 [data-theme="minimal"] .order-detail-page {
@@ -303,7 +303,8 @@
 }
 
 [data-theme="minimal"] .order-detail-header,
-[data-theme="minimal"] .order-detail-section {
+[data-theme="minimal"] .order-detail-section,
+[data-theme="minimal"] .order-detail-actions {
   padding: 0 var(--page-padding);
 }
 

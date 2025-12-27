@@ -258,3 +258,12 @@ export const searchProducts = (query: string): ProductListItem[] => {
       p.handle.toLowerCase().includes(lowerQuery)
   );
 };
+
+// New arrivals - products marked as new for home page
+const NEW_ARRIVALS_HANDLES = ['uv-led-nail-lamp', 'macro-lens'];
+
+export const getNewArrivals = (limit = 3): ProductListItem[] => {
+  return mockProducts
+    .filter((p) => NEW_ARRIVALS_HANDLES.includes(p.handle))
+    .slice(0, limit);
+};
