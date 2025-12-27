@@ -154,6 +154,10 @@
   padding: var(--page-padding) 0;
 }
 
+[data-theme="minimal"] .orders-empty {
+  padding: var(--spacing-8) var(--page-padding);
+}
+
 [data-theme="minimal"] .orders-list {
   gap: 0;
 }
@@ -164,7 +168,7 @@
   box-shadow: none;
   border-bottom: 1px solid var(--color-border-muted);
   border-radius: 0;
-  padding: var(--spacing-3) var(--page-padding);
+  padding: var(--spacing-3) var(--list-item-padding-x);
 }
 
 [data-theme="minimal"] .order-card:last-child {

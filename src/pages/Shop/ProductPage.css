@@ -189,3 +189,7 @@
   text-align: center;
   padding: var(--spacing-8);
 }
+
+[data-theme="minimal"] .product-empty {
+  padding: var(--spacing-8) var(--page-padding);
+}
