@@ -83,6 +83,24 @@
   box-shadow: 0 0 0 3px var(--input-focus-ring);
 }
 
+[data-theme="minimal"] .shop-page {
+  padding: var(--page-padding) 0;
+}
+
+[data-theme="minimal"] .shop-search,
+[data-theme="minimal"] .shop-section-header,
+[data-theme="minimal"] .shop-section-title {
+  padding: 0 var(--page-padding);
+}
+
+[data-theme="minimal"] .shop-section-header .shop-section-title {
+  padding: 0;
+}
+
+[data-theme="minimal"] .shop-empty {
+  padding: var(--spacing-8) var(--page-padding);
+}
+
 /* Collections: iOS list (1 колонка) */
 [data-theme="minimal"] .shop-collections {
   grid-template-columns: 1fr;
@@ -94,4 +112,3 @@
   grid-template-columns: 1fr;
   gap: 0;
 }
-
