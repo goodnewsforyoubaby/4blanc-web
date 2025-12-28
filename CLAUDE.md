@@ -16,7 +16,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev      # Start dev server at http://localhost:5173/4blanc-web/
 npm run build    # TypeScript check + production build
 npm run lint     # ESLint check
-npm run preview  # Preview production build
 ```
 
 ## Architecture
@@ -26,7 +25,6 @@ Single theme: **Minimal** (iOS Settings style)
 - Theme is hardcoded via `data-theme="minimal"` attribute on `<html>` in `index.html`
 - Theme file: `src/styles/themes/minimal.css`
 - No shadows, borders only, iOS-style lists
-- Clean white backgrounds with subtle gray borders
 
 ### State Management
 React Context providers wrap the app in this order (outermost first):
@@ -47,7 +45,7 @@ Layout height calculation:
 ```css
 --mobile-width: 390px;
 --mobile-height: 844px;
---mobile-safe-top: 47px;
+--mobile-safe-top: 47px;  /* iPhone notch area */
 --header-height: 56px;
 --tab-bar-height: 64px;
 --tab-bar-total-height: calc(var(--tab-bar-height) + var(--safe-area-bottom));
@@ -57,54 +55,17 @@ Layout height calculation:
 );
 ```
 
-### Navigation (4 main tabs)
-- `/` - Home (hero banner, featured products, collections)
-- `/shop` - Shop (catalog with search and filters)
-- `/chat` - Support chat (real-time messaging simulation)
-- `/knowledge` - Knowledge Base (guides, manuals)
+### Navigation
+**Main tabs:** `/` Home, `/shop` Shop, `/chat` Chat, `/knowledge` Knowledge Base
 
-### Additional Routes
-**Account (`/account`):**
-- `/account/login` - Sign in
-- `/account/register` - Create account
-- `/account/settings` - Account settings
-- `/account/orders` - Order history list
-- `/account/orders/:id` - Order details with status timeline
+**Account:** `/account`, `/account/login`, `/account/register`, `/account/settings`, `/account/orders`, `/account/orders/:id`
 
-**Knowledge Base (`/knowledge`):**
-- `/knowledge/setup-guide` - Product setup guides
-- `/knowledge/setup-guide/maestro` - Maéstro setup guide (full page)
-- `/knowledge/setup-guide/alize` - Alizé setup guide (full page)
-- `/knowledge/video-guide` - YouTube video tutorials
-- `/knowledge/manual` - PDF user manuals (8 products)
-- `/knowledge/faq` - Frequently asked questions
-- `/knowledge/shipping-policy` - Shipping information
-- `/knowledge/return-policy` - Return & refund policy
-- `/knowledge/privacy-policy` - Privacy policy
+**Knowledge:** `/knowledge/setup-guide`, `/knowledge/setup-guide/:slug`, `/knowledge/video-guide`, `/knowledge/manual`, `/knowledge/faq`, `/knowledge/*-policy`
 
-**Checkout:**
-- `/checkout` - Checkout with shipping form, shipping methods, FAQ
-- `/checkout/success` - Order confirmation page
-
-**Other:**
-- `/partnership` - Partnership program hub
-- `/partnership/:slug` - Partnership program details
-- `/contact` - Contact form
-- `/cart` - Shopping cart
-- `/notifications` - Push notifications
-- `/product/:handle` - Product detail page
+**Other:** `/product/:handle`, `/cart`, `/checkout`, `/checkout/success`, `/partnership`, `/partnership/:slug`, `/contact`, `/notifications`
 
 ### Data
 All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.com Shopify CDN images.
-
-**Data modules:**
-- `products.ts` - Products and collections
-- `orders.ts` - Mock orders with helper functions (`getOrderById`, `getOrderByNumber`)
-- `chat.ts` - Chat messages
-- `faq.ts` - FAQ items
-- `notifications.ts` - Push notifications
-- `partnerships.ts` - Partnership programs
-- `setupGuides.ts` - Product setup guides
 
 ---
 
@@ -120,6 +81,7 @@ All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.
 - 8px spacing grid: `--spacing-1` (4px) through `--spacing-16` (64px)
 - Typography: `--text-xs` (12px) through `--text-2xl` (24px)
 - Icons from `lucide-react` library (consistent 20-24px size)
+- See `src/styles/variables.css` for all available tokens
 
 #### Page Rhythm Variables
 ```css
@@ -129,83 +91,17 @@ All data is mocked in `src/data/`. No real API calls. Products reference 4blanc.
 --list-gap: 0;                          /* No gap between list items (divider style) */
 ```
 
-**When to use `--page-padding`:**
-- Page container padding: `.my-page { padding: var(--page-padding); }`
-- Empty states: `.empty-state { padding: var(--spacing-8) var(--page-padding); }`
-- Section headers: `.section-title { padding: 0 var(--page-padding); }`
-- Full-width sections (negative margin): `margin: 0 calc(-1 * var(--page-padding));`
-
-**When to use `--list-item-padding-x`:**
-- List items in minimal theme: `.list-item { padding: var(--spacing-3) var(--list-item-padding-x); }`
-- Cards, notifications, orders - any repeating list items
+**When to use:**
+- `--page-padding`: Page containers, empty states, section headers, negative margins for full-width
+- `--list-item-padding-x`: List items, cards, notifications, orders
 
 **Pattern for iOS-style full-width lists in minimal theme:**
 ```css
-/* Page removes horizontal padding */
-[data-theme="minimal"] .my-page {
-  padding: var(--page-padding) 0;  /* vertical only */
-}
-
-/* Headers/sections get their own padding */
-[data-theme="minimal"] .my-section-title {
-  padding: 0 var(--page-padding);
-}
-
-/* List items use list-item-padding-x */
-[data-theme="minimal"] .my-list-item {
-  padding: var(--spacing-3) var(--list-item-padding-x);
-}
-
-/* Empty states get full padding */
-[data-theme="minimal"] .my-empty {
-  padding: var(--spacing-8) var(--page-padding);
-}
+[data-theme="minimal"] .my-page { padding: var(--page-padding) 0; } /* vertical only */
+[data-theme="minimal"] .my-section-title { padding: 0 var(--page-padding); }
+[data-theme="minimal"] .my-list-item { padding: var(--spacing-3) var(--list-item-padding-x); }
+[data-theme="minimal"] .my-empty { padding: var(--spacing-8) var(--page-padding); }
 ```
-
-#### Surface & Component Tokens
-Semantic tokens for consistent component styling:
-```css
-/* Surface backgrounds */
---surface-card: var(--color-bg-primary);
---surface-card-muted: var(--color-bg-secondary);
---surface-card-inset: var(--color-bg-tertiary);
-
-/* List styling */
---list-icon-bg: var(--color-bg-secondary);
---list-icon-color: var(--color-primary);
-
-/* Input styling */
---input-bg: var(--color-bg-primary);
---input-border: var(--color-border-default);
---input-focus-border: var(--color-primary);
---input-focus-ring: var(--color-primary-strong);
---attachment-bg: var(--color-bg-inset);
-
-/* Overlays and scrims */
---color-overlay-dark: rgba(0, 0, 0, 0.35);
---color-overlay-light: rgba(255, 255, 255, 0.9);
---color-scrim: rgba(0, 0, 0, 0.4);
-
-/* Device frame (MobileContainer) */
---color-device-frame: #0a0a0a;
---color-device-border: #1a1a1a;
---color-device-shadow: rgba(0, 0, 0, 0.15);
-
-/* Primary color tints */
---color-primary-soft: rgba(1, 208, 78, 0.08);
---color-primary-light: rgba(1, 208, 78, 0.12);
---color-primary-strong: rgba(1, 208, 78, 0.15);
-```
-
-#### iOS Safe Area Variables
-```css
---safe-area-top: env(safe-area-inset-top, 0px);
---safe-area-bottom: env(safe-area-inset-bottom, 0px);
---safe-area-left: env(safe-area-inset-left, 0px);
---safe-area-right: env(safe-area-inset-right, 0px);
---mobile-safe-top: 47px;  /* iPhone notch area */
-```
-Bottom tab bar and content height calculations use these for proper iPhone X+ support.
 
 ### Modals & Overlays
 - **Always use React Portal** to `#modal-root`
@@ -230,15 +126,8 @@ This app MUST look and feel like a native iOS application. Follow these rules st
 
 #### Touch Targets
 - Minimum tap area: **44x44px** (iOS Human Interface Guidelines)
-- Use `--touch-target-min: 44px` variable for width/height
-- Recommended: 48x48px for primary actions
+- Use `--touch-target-min: 44px` variable
 - Header buttons, tab bar items, icon buttons must meet this requirement
-```css
-.icon-button {
-  width: var(--touch-target-min);
-  height: var(--touch-target-min);
-}
-```
 
 #### Animations & Transitions
 - Use `--ios-ease` for most animations (smooth deceleration)
@@ -246,7 +135,6 @@ This app MUST look and feel like a native iOS application. Follow these rules st
 - Duration: 200-300ms for most transitions
 - Button press: `transform: scale(0.95)` on `:active`
 - Card press: `transform: scale(0.98)` on `:active`
-- List item press: subtle background change + scale(0.98)
 
 #### Border Radius Reference
 | Element | Radius |
@@ -262,28 +150,16 @@ This app MUST look and feel like a native iOS application. Follow these rules st
 - System font stack: `-apple-system, BlinkMacSystemFont, 'SF Pro'...`
 - **NO `text-transform: uppercase`** - not iOS-native
 - Minimal letter-spacing (avoid `letter-spacing: 2px`)
-- Font weights: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
 
-#### Shadows
-Minimal theme uses NO shadows:
+#### Shadows & Colors
+Minimal theme uses NO shadows (`--shadow-sm: none; --shadow-md: none;`)
+
 ```css
---shadow-sm: none;
---shadow-md: none;
-```
-
-#### Colors
-```css
-/* Badge color */
---color-badge: #FF3B30 (iOS red)
-
-/* Primary brand color */
---color-primary: #01d04e (4BLANC lime green from logo)
---color-primary-hover: #01b142
-
-/* Background colors */
---color-bg-primary: #FFFFFF
---color-bg-secondary: #F6F8FA
---color-bg-tertiary: #F0F2F5
+--color-primary: #01d04e;        /* 4BLANC lime green */
+--color-badge: #FF3B30;          /* iOS red */
+--color-bg-primary: #FFFFFF;
+--color-bg-secondary: #F6F8FA;
+--color-bg-tertiary: #F0F2F5;
 ```
 
 ---
@@ -291,20 +167,12 @@ Minimal theme uses NO shadows:
 ### iOS Settings Style
 
 The app uses iOS Settings style throughout:
-- **Collections & Products**: Single column iOS list (transparent backgrounds, border-bottom dividers)
+- **Lists**: Single column, transparent backgrounds, border-bottom dividers
 - **Bottom Tab Bar**: Icons only, no labels
 - **Search Input**: No border, subtle gray background, 10px radius
 - **Menus**: Full-width list with dividers, no card containers
 
-Use `[data-theme="minimal"]` selector for iOS list style overrides:
 ```css
-/* Default card style */
-.my-card {
-  background: var(--color-bg-primary);
-  border: var(--card-border);
-  border-radius: var(--radius-lg);
-}
-
 /* iOS list style override */
 [data-theme="minimal"] .my-card {
   background: transparent;
@@ -314,208 +182,34 @@ Use `[data-theme="minimal"]` selector for iOS list style overrides:
 }
 ```
 
-Applied to: FAQ items, Setup Guide items, Knowledge menu, Articles list, Notifications list, Collections, Products
-
 ---
 
 ### Common Patterns
 
 #### BottomSheet Modal
-```tsx
-// Uses Portal to render outside .app-content (which has overflow)
-// Extends 20px below visible area to hide bottom edges
-// Animation: 280ms var(--ios-ease) - NO spring!
-```
-
-Key CSS for smooth modal:
 ```css
 .bottom-sheet {
   bottom: -20px;           /* Extend below to hide edges */
   padding-bottom: 20px;    /* Compensate for extension */
-  animation: slideUp 280ms var(--ios-ease);  /* Not spring! */
+  animation: slideUp 280ms var(--ios-ease);  /* NOT spring! */
 }
 ```
+Uses Portal to render outside `.app-content` (which has overflow).
 
 #### Press States (Active)
-Different elements need different active states:
-
 ```css
-/* Text links - opacity fade */
-.text-link:active {
-  opacity: 0.7;
-}
-
-/* Icon buttons - scale + background */
-.icon-button:active {
-  background: var(--color-bg-secondary);
-  transform: scale(0.92);
-}
-
-/* Regular buttons - scale */
-.button:active {
-  transform: scale(0.95);
-}
-
-/* Cards/list items - background change */
-.card:active {
-  background: var(--color-bg-tertiary);
-}
-
-/* Large touch areas - subtle scale */
-.large-touch-area:active {
-  transform: scale(0.98);
-}
+.text-link:active { opacity: 0.7; }
+.icon-button:active { background: var(--color-bg-secondary); transform: scale(0.92); }
+.button:active { transform: scale(0.95); }
+.card:active { background: var(--color-bg-tertiary); }
+.large-touch-area:active { transform: scale(0.98); }
 ```
-
 Always add `transition: ... 100ms var(--ios-ease)` for smooth feedback.
 
-#### Badge Component
-```css
-.badge {
-  min-width: 16px;
-  height: 16px;
-  font-size: var(--text-xs);  /* 12px - minimum readable size */
-  background: var(--color-badge);
-  color: var(--color-badge-text);
-}
-```
-
 #### iOS Grouped Lists (Apple Settings Style)
-Used in AccountPage for menu organization:
+Used in AccountPage - section headers with grouped menu items. See `AccountPage.tsx` for implementation.
 
-```
-SECTION HEADER                    ← Caption, uppercase, muted
-├─ Setup Guide                 → ← Icon + label + chevron
-├─ Video Guide                 →
-└─ User Manuals                →
-
-ANOTHER SECTION
-├─ FAQ                         →
-└─ Contact Us                  →
-```
-
-```css
-/* Section header */
-.section-title {
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-tertiary);
-  padding: var(--spacing-2) var(--spacing-1);
-}
-
-/* Menu group container */
-.menu-group {
-  background: var(--color-bg-primary);
-  border: var(--card-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-/* Menu item row */
-.menu-item {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-3);
-  padding: var(--spacing-3) var(--spacing-4);
-  min-height: var(--touch-target-min);
-  border-bottom: 1px solid var(--color-border-muted);
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-/* iOS style - no outer borders */
-[data-theme="minimal"] .menu-group {
-  border: none;
-  box-shadow: none;
-}
-```
-
-#### Contact Form Pattern
-Standard form layout with iOS styling:
-
-```css
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-}
-
-.form-field label {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-}
-
-.form-field input,
-.form-field textarea {
-  padding: var(--spacing-3);
-  min-height: var(--touch-target-min);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-md);
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-  border-color: var(--color-primary);
-}
-
-/* Required field marker */
-.required { color: var(--color-state-error); }
-```
-
-#### Product Context in Chat
-When navigating from product page to chat, pass product context via router state:
-
-```tsx
-// ProductPage - navigate with state
-navigate('/chat', {
-  state: {
-    productContext: {
-      title: product.title,
-      price: '$299.00',
-      image: product.images[0]?.url,
-    },
-  },
-});
-
-// ChatPage - receive and display context
-const location = useLocation();
-const state = location.state as { productContext?: ProductContext };
-```
-
-#### Order Card with Stacked Thumbnails
-Orders list displays product thumbnails with overlap effect:
-
-```css
-/* Thumbnails container - fixed width for alignment */
-.order-thumbnails {
-  width: 80px;
-  display: flex;
-  flex-shrink: 0;
-}
-
-/* Individual thumbnail */
-.order-thumbnail {
-  width: 48px;
-  height: 48px;
-  border: 2px solid var(--color-bg-primary);
-}
-
-/* Overlap effect */
-.order-thumbnail:not(:first-child) {
-  margin-left: -16px;
-}
-
-/* Single item gets larger thumbnail */
-.order-thumbnail:only-child {
-  width: 64px;
-  height: 64px;
-}
-```
-
-**Status badge colors:**
+#### Status Badge Colors
 | Status | Background | Text Color |
 |--------|------------|------------|
 | processing | `--color-state-warning-light` | `--color-state-warning` |
@@ -542,7 +236,6 @@ Orders list displays product thumbnails with overlap effect:
 | Gradient backgrounds | Not iOS | Solid colors |
 | No `:active` state on clickables | No touch feedback | Add opacity/scale/background change |
 | `rgba(0,0,0,0.4)` for overlays | Hardcoded value | Use `var(--color-scrim)` |
-| `background: linear-gradient(...)` | Not minimal | Use `var(--color-overlay-dark)` |
 
 ---
 
@@ -559,7 +252,6 @@ Before committing UI changes:
 - [ ] Test animations are smooth (no jank)
 - [ ] Check modal overlays cover header
 - [ ] Verify consistent spacing (8px grid)
-- [ ] Test on different content lengths
 - [ ] Run `npm run build` to catch TypeScript errors
 
 ---
@@ -593,25 +285,5 @@ Base URL configured as `/4blanc-web/` in:
 | `BottomSheet` | iOS-style modal from bottom |
 | `Button` | Primary/secondary buttons |
 | `Badge` | Notification count indicator |
-| `ProductCard` | Product display (iOS list style) |
-| `CollectionCard` | Collection display (iOS list style) |
 | `Header` | Top navigation bar |
 | `BottomTabBar` | Bottom tab navigation (icons only) |
-
-### Key Pages
-| Page | Purpose |
-|------|---------|
-| `AccountPage` | iOS grouped lists menu (guest/authenticated) |
-| `ManualPage` | PDF manuals with external links |
-| `VideoGuidePage` | YouTube videos in BottomSheet |
-| `ContactPage` | Contact form (Name, Email, Phone, Comment) |
-| `ChatPage` | Support chat with product context support |
-| `ProductPage` | Product details with "Ask about this product" |
-| `SetupGuidePage` | Product selection for setup guides |
-| `SetupGuideDetailPage` | Full setup guide with sections, images, videos |
-| `MaestroSetupGuidePage` | Maéstro product setup guide |
-| `AlizeSetupGuidePage` | Alizé product setup guide |
-| `OrdersPage` | Order history list with product thumbnails |
-| `OrderDetailPage` | Order details with status timeline and tracking |
-| `CheckoutPage` | Checkout form with shipping methods and Apple Pay |
-| `OrderSuccessPage` | Order confirmation with animation |

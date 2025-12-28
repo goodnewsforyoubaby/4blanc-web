@@ -64,8 +64,8 @@
 
 .tab-badge {
   position: absolute;
-  top: -6px;
-  right: -10px;
+  top: var(--badge-offset-tab-y);
+  right: var(--badge-offset-tab-x);
 }
 
 /* =========================

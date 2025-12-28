@@ -83,9 +83,9 @@
 
 .faq-modal-question {
   margin-bottom: var(--spacing-4);
-  line-height: 1.4;
+  line-height: var(--leading-snug);
 }
 
 .faq-modal-answer {
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
 }

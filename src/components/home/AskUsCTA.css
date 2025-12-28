@@ -11,8 +11,8 @@
 }
 
 .ask-us-icon {
-  width: 64px;
-  height: 64px;
+  width: var(--icon-64);
+  height: var(--icon-64);
   border-radius: 50%;
   background: var(--color-primary-light);
   display: flex;
@@ -23,7 +23,7 @@
 
 .ask-us-title {
   font-size: var(--text-xl);
-  font-weight: 600;
+  font-weight: var(--font-semibold);
   color: var(--color-text-primary);
   margin: 0;
 }
@@ -33,5 +33,5 @@
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
   margin: 0;
-  max-width: 280px;
+  max-width: var(--max-width-narrow);
 }

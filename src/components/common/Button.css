@@ -90,9 +90,9 @@
 }
 
 .btn-spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid currentColor;
+  width: var(--spinner-sm);
+  height: var(--spinner-sm);
+  border: var(--spinner-border-sm) solid currentColor;
   border-top-color: transparent;
   border-radius: 50%;
   animation: spin 0.6s linear infinite;

@@ -91,6 +91,7 @@
   --font-bold: 700;
 
   --leading-tight: 1.25;
+  --leading-snug: 1.375;
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
 
@@ -138,6 +139,76 @@
   --card-image-size: 80px;
   --toggle-width: 44px;
   --toggle-height: 24px;
+
+  /* =========================
+     COMPONENT-SPECIFIC SIZES
+     ========================= */
+  /* Thumbnails */
+  --thumbnail-sm: 48px;
+  --thumbnail-md: 60px;
+  --thumbnail-lg: 64px;
+  --thumbnail-container: 80px;
+  --thumbnail-overlap: -16px;
+
+  /* Carousel */
+  --carousel-card-sm: 160px;
+  --carousel-card-md: 220px;
+  --carousel-image-height: 200px;
+  --card-compact-width: 140px;
+
+  /* Content Max Widths */
+  --max-width-narrow: 280px;
+  --max-width-content: 320px;
+  --max-width-wide: 340px;
+
+  /* Component Heights */
+  --hero-min-height: 280px;
+  --filter-min-height: 240px;
+  --promo-banner-height: 96px;
+  --textarea-min-height: 120px;
+  --textarea-min-height-sm: 80px;
+
+  /* Timeline */
+  --timeline-icon-size: 40px;
+  --timeline-line-width: 2px;
+
+  /* Status & Form Elements */
+  --status-dot-size: 8px;
+  --checkbox-size: 20px;
+
+  /* Spinner */
+  --spinner-sm: 16px;
+  --spinner-md: 24px;
+  --spinner-lg: 40px;
+  --spinner-border-sm: 2px;
+  --spinner-border-lg: 3px;
+
+  /* Badge */
+  --badge-size: 16px;
+  --badge-offset-x: var(--spacing-1);
+  --badge-offset-y: var(--spacing-1);
+  --badge-offset-tab-x: -10px;
+  --badge-offset-tab-y: -6px;
+
+  /* Header */
+  --header-actions-width: 80px;
+
+  /* Payment */
+  --payment-icon-width: 48px;
+  --payment-icon-height: 32px;
+
+  /* Attachment */
+  --attachment-max-width: 200px;
+  --attachment-name-max-width: 120px;
+
+  /* Icons (additional sizes) */
+  --icon-xs: 20px;
+  --icon-28: 28px;
+  --icon-48: 48px;
+  --icon-64: 64px;
+
+  /* Step/Number indicators */
+  --step-number-size: 28px;
 
   /* =========================
      STATE COLORS (Light variants for backgrounds)

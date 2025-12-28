@@ -57,8 +57,8 @@
 }
 
 .auth-checkbox input {
-  width: 20px;
-  height: 20px;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
   accent-color: var(--color-accent-primary);
 }
 

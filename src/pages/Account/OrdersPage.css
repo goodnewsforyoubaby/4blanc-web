@@ -44,13 +44,13 @@
   display: flex;
   position: relative;
   flex-shrink: 0;
-  width: 80px;
+  width: var(--thumbnail-container);
   justify-content: flex-start;
 }
 
 .order-thumbnail {
-  width: 48px;
-  height: 48px;
+  width: var(--thumbnail-sm);
+  height: var(--thumbnail-sm);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--surface-card-muted);
@@ -58,12 +58,12 @@
 }
 
 .order-thumbnail:only-child {
-  width: 64px;
-  height: 64px;
+  width: var(--thumbnail-lg);
+  height: var(--thumbnail-lg);
 }
 
 .order-thumbnail:not(:first-child) {
-  margin-left: -16px;
+  margin-left: var(--thumbnail-overlap);
 }
 
 .order-thumbnail img {
@@ -79,12 +79,12 @@
 }
 
 .order-thumbnail-more {
-  width: 48px;
-  height: 48px;
+  width: var(--thumbnail-sm);
+  height: var(--thumbnail-sm);
   border-radius: var(--radius-md);
   background: var(--color-bg-tertiary);
   border: 2px solid var(--color-bg-primary);
-  margin-left: -16px;
+  margin-left: var(--thumbnail-overlap);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -51,8 +51,8 @@
 }
 
 .timeline-icon {
-  width: 40px;
-  height: 40px;
+  width: var(--timeline-icon-size);
+  height: var(--timeline-icon-size);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -85,10 +85,10 @@
 
 .timeline-line {
   position: absolute;
-  top: 20px;
-  left: calc(50% + 20px);
-  width: calc(100% - 40px);
-  height: 2px;
+  top: var(--spacing-5);
+  left: calc(50% + var(--spacing-5));
+  width: calc(100% - var(--timeline-icon-size));
+  height: var(--timeline-line-width);
   background: var(--color-border-muted);
 }
 
@@ -107,8 +107,8 @@
 }
 
 .status-icon.cancelled {
-  width: 40px;
-  height: 40px;
+  width: var(--timeline-icon-size);
+  height: var(--timeline-icon-size);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -176,8 +176,8 @@
 }
 
 .order-item-image {
-  width: 60px;
-  height: 60px;
+  width: var(--thumbnail-md);
+  height: var(--thumbnail-md);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--surface-card-muted);

@@ -30,8 +30,8 @@
 }
 
 .chat-status-dot {
-  width: 8px;
-  height: 8px;
+  width: var(--status-dot-size);
+  height: var(--status-dot-size);
   border-radius: var(--radius-full);
   background: var(--color-state-success);
 }
@@ -90,7 +90,7 @@
 .chat-attachment-image {
   border-radius: var(--radius-md);
   overflow: hidden;
-  max-width: 200px;
+  max-width: var(--attachment-max-width);
 }
 
 .chat-attachment-image img {

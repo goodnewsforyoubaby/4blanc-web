@@ -122,7 +122,7 @@
 }
 
 .warranty-field textarea {
-  min-height: 80px;
+  min-height: var(--textarea-min-height-sm);
   resize: vertical;
 }
 
@@ -183,7 +183,7 @@
 .warranty-legal-content {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
 }
 
 .warranty-legal-content p {

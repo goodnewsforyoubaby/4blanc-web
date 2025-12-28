@@ -8,7 +8,7 @@
 }
 
 .partnership-carousel-card {
-  flex: 0 0 220px;
+  flex: 0 0 var(--carousel-card-md);
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -29,8 +29,8 @@
 
 .partnership-carousel-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: var(--icon-48);
+  height: var(--icon-48);
   border-radius: var(--radius-md);
   background: var(--color-primary-soft);
   display: flex;
@@ -46,7 +46,7 @@
 
 .partnership-carousel-title {
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: var(--font-semibold);
   color: var(--color-text-primary);
   line-height: var(--leading-tight);
   display: -webkit-box;

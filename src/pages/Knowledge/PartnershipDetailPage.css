@@ -31,7 +31,7 @@
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   margin: 0 0 var(--spacing-4) 0;
-  line-height: 1.5;
+  line-height: var(--leading-normal);
 }
 
 .pd-hero-cta {
@@ -137,8 +137,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: var(--step-number-size);
+  height: var(--step-number-size);
   background: var(--color-accent-primary);
   color: var(--color-text-inverse);
   border-radius: var(--radius-full);

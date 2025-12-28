@@ -16,7 +16,7 @@
 }
 
 .product-card-compact {
-  width: 140px;
+  width: var(--card-compact-width);
   flex-shrink: 0;
 }
 
@@ -113,8 +113,8 @@
 }
 
 [data-theme="minimal"] .product-card-image {
-  width: 64px;
-  height: 64px;
+  width: var(--thumbnail-lg);
+  height: var(--thumbnail-lg);
   aspect-ratio: auto;
   border-radius: var(--radius-sm);
   flex-shrink: 0;

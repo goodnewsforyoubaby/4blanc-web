@@ -60,7 +60,7 @@
 }
 
 .contact-field textarea {
-  min-height: 120px;
+  min-height: var(--textarea-min-height);
   resize: vertical;
 }
 
@@ -91,7 +91,7 @@
 .contact-attachment-name {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
-  max-width: 120px;
+  max-width: var(--attachment-name-max-width);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

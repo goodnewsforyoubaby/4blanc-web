@@ -20,7 +20,7 @@
 
 .product-carousel__image-container {
   width: 100%;
-  height: 200px;
+  height: var(--carousel-image-height);
   overflow: hidden;
 }
 

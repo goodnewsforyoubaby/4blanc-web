@@ -1,7 +1,7 @@
 .hero-banner {
   position: relative;
   width: 100%;
-  min-height: 280px;
+  min-height: var(--hero-min-height);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@
   line-height: var(--leading-normal);
   margin: 0;
   opacity: 0.9;
-  max-width: 320px;
+  max-width: var(--max-width-content);
 }
 
 .hero-banner__button {

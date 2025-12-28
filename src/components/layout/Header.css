@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-1);
-  min-width: 80px;
+  min-width: var(--header-actions-width);
 }
 
 .header-right {
@@ -69,6 +69,6 @@
 
 .header-btn .badge {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: var(--badge-offset-y);
+  right: var(--badge-offset-x);
 }

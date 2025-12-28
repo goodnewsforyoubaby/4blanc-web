@@ -16,21 +16,21 @@
 }
 
 .loading-small .loading-spinner {
-  width: 16px;
-  height: 16px;
-  border-width: 2px;
+  width: var(--spinner-sm);
+  height: var(--spinner-sm);
+  border-width: var(--spinner-border-sm);
 }
 
 .loading-medium .loading-spinner {
-  width: 24px;
-  height: 24px;
-  border-width: 2px;
+  width: var(--spinner-md);
+  height: var(--spinner-md);
+  border-width: var(--spinner-border-sm);
 }
 
 .loading-large .loading-spinner {
-  width: 40px;
-  height: 40px;
-  border-width: 3px;
+  width: var(--spinner-lg);
+  height: var(--spinner-lg);
+  border-width: var(--spinner-border-lg);
 }
 
 .loading-text {
