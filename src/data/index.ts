@@ -8,3 +8,4 @@ export * from './warranty';
 export * from './shippingFAQ';
 export * from './productFAQ';
 export * from './productGuideMapping';
+export * from './shopPromos';

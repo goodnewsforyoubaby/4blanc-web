@@ -176,6 +176,26 @@ export interface Order {
   estimatedDelivery?: Date;
 }
 
+// Shop Page Types
+export type ProductCategory = 'all' | 'lamps' | 'dust-collectors' | 'accessories';
+
+export interface CategoryItem {
+  id: ProductCategory;
+  label: string;
+}
+
+export type PromoType = 'sale' | 'new-arrival' | 'seasonal' | 'featured';
+
+export interface PromoCardData {
+  id: string;
+  title: string;
+  subtitle?: string;
+  image: string;
+  badge?: string;
+  type: PromoType;
+  link: string;
+}
+
 // Partnership Types
 export interface PartnershipBenefit {
   title: string;

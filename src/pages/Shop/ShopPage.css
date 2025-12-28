@@ -42,18 +42,20 @@
   margin-bottom: var(--spacing-3);
 }
 
-.shop-section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacing-3);
-}
 
-/* Collections: сетка 2 колонки */
-.shop-collections {
+/* Promo Grid: 2 колонки */
+.shop-promo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-3);
+  padding: 0 var(--page-padding);
+}
+
+/* Collections: iOS list style */
+.shop-collections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 /* Products: сетка 2 колонки */
@@ -88,27 +90,61 @@
 }
 
 [data-theme="minimal"] .shop-search,
-[data-theme="minimal"] .shop-section-header,
 [data-theme="minimal"] .shop-section-title {
   padding: 0 var(--page-padding);
-}
-
-[data-theme="minimal"] .shop-section-header .shop-section-title {
-  padding: 0;
 }
 
 [data-theme="minimal"] .shop-empty {
   padding: var(--spacing-8) var(--page-padding);
 }
 
-/* Collections: iOS list (1 колонка) */
+/* Promo Grid: keep 2 columns in minimal theme */
+[data-theme="minimal"] .shop-promo-grid {
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 var(--page-padding);
+}
+
+/* Collections: iOS list style in minimal theme */
 [data-theme="minimal"] .shop-collections {
   grid-template-columns: 1fr;
   gap: 0;
 }
 
-/* Products: iOS list style (1 колонка) */
+/* Products: карточки 2 в ряд */
 [data-theme="minimal"] .shop-products-grid {
-  grid-template-columns: 1fr;
-  gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3);
+  padding: 0 var(--page-padding);
+}
+
+/* ProductCard в Shop: вертикальные карточки (не iOS-список) */
+[data-theme="minimal"] .shop-products-grid .product-card {
+  flex-direction: column;
+  background: var(--surface-card);
+  border: var(--card-border);
+  border-radius: var(--radius-lg);
+  border-bottom: var(--card-border);
+  padding: 0;
+}
+
+[data-theme="minimal"] .shop-products-grid .product-card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 0;
+}
+
+[data-theme="minimal"] .shop-products-grid .product-card-info {
+  padding: var(--spacing-3);
+}
+
+[data-theme="minimal"] .shop-products-grid .product-card-title {
+  font-size: var(--text-sm);
+  text-align: left;
+  -webkit-line-clamp: 2;
+}
+
+[data-theme="minimal"] .shop-products-grid .product-card:active {
+  transform: scale(0.98);
+  background: var(--surface-card);
 }
