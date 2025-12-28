@@ -125,10 +125,6 @@
 
 [data-theme="minimal"] .video-guide-list {
   gap: 0;
-  background: var(--color-bg-primary);
-  border-radius: var(--radius-lg);
-  margin: 0 var(--page-padding);
-  overflow: hidden;
 }
 
 [data-theme="minimal"] .video-guide-item {

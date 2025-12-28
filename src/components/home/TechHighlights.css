@@ -3,7 +3,10 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: var(--spacing-3);
-  padding: 0 var(--page-padding);
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+  scroll-padding-left: var(--page-padding);
+  scroll-padding-right: var(--page-padding);
   -webkit-overflow-scrolling: touch;
 }
 
