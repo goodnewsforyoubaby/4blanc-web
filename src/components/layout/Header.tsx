@@ -37,7 +37,7 @@ const getTitleByPath = (pathname: string): string => {
 };
 
 const shouldShowBackButton = (pathname: string): boolean => {
-  const noBackRoutes = ['/', '/shop', '/chat', '/knowledge', '/account'];
+  const noBackRoutes = ['/'];
   return !noBackRoutes.includes(pathname);
 };
 
