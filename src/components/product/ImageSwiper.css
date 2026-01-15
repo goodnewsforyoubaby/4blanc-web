@@ -1,0 +1,77 @@
+.image-swiper {
+  position: relative;
+  width: 100%;
+  background: var(--surface-card-muted);
+  overflow: hidden;
+}
+
+.image-swiper-track {
+  display: flex;
+  transition: transform 300ms var(--ios-ease);
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+.image-swiper-track:active {
+  cursor: grabbing;
+}
+
+.image-swiper-slide {
+  flex: 0 0 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.image-swiper-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--text-base);
+}
+
+/* Dot indicators */
+.image-swiper-dots {
+  position: absolute;
+  bottom: var(--spacing-3);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-2);
+  padding: var(--spacing-1) var(--spacing-2);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-full);
+}
+
+.image-swiper-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 200ms var(--ios-ease);
+}
+
+.image-swiper-dot.active {
+  background: var(--color-text-inverse);
+  width: 20px;
+}
+
+.image-swiper-dot:active {
+  transform: scale(0.9);
+}

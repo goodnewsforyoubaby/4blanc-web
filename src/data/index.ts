@@ -10,3 +10,4 @@ export * from './productFAQ';
 export * from './productGuideMapping';
 export * from './shopPromos';
 export * from './homeBanners';
+export * from './maestroContent';

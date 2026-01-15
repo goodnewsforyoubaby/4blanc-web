@@ -103,6 +103,43 @@ export const productFAQData: Record<string, ProductFAQItem[]> = {
       answer: 'The lens provides 20X magnification, perfect for capturing intricate nail art details, cuticle work, and before/after comparison photos.',
     },
   ],
+  'maestro-nail-station': [
+    {
+      id: 'station-faq-1',
+      question: 'Where can I buy 4BLANC dust collectors and filters?',
+      answer: 'You can purchase our products directly from our official website or through our partners like Amazon (US, France, Germany, Australia).',
+    },
+    {
+      id: 'station-faq-2',
+      question: 'How do I install the Maéstro Nail Station?',
+      answer: 'Watch our setup video guide for step-by-step installation instructions. The table mount system requires only 10cm² at the side of your working space.',
+    },
+    {
+      id: 'station-faq-3',
+      question: 'How do I clean my dust collector?',
+      answer: 'Regular cleaning involves removing the filter and wiping down surfaces. The durable filter lasts through 150+ treatments before needing replacement.',
+    },
+    {
+      id: 'station-faq-4',
+      question: 'What is the voltage of your machines?',
+      answer: 'Our machines support 110-240V universal voltage for worldwide use.',
+    },
+    {
+      id: 'station-faq-5',
+      question: 'Where can I find a serial number?',
+      answer: 'The serial number is located on the bottom of the device and on the original packaging.',
+    },
+    {
+      id: 'station-faq-6',
+      question: 'Can I use this machine for pedicures?',
+      answer: 'Yes! With the optional rolling stand, Maéstro is perfect for both manicures and pedicures. The articulating arm provides flexible positioning for any treatment.',
+    },
+    {
+      id: 'station-faq-7',
+      question: 'What are the main features of the Maéstro Nail Station?',
+      answer: 'Key features include HEPA-12 filtration, UV-C disinfection, 168 LED light ring with adjustable color temperature, 360° adjustable arm, and smart multi-level protection system.',
+    },
+  ],
 };
 
 // Helper function to get FAQ by product handle

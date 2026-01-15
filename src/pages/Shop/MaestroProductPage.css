@@ -1,0 +1,361 @@
+/* =========================
+   Maestro Product Page - Premium Style
+   ========================= */
+
+.maestro-page {
+  padding-bottom: 0;
+}
+
+.maestro-empty {
+  text-align: center;
+  padding: var(--spacing-8);
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+.maestro-hero {
+  padding: var(--spacing-4) var(--page-padding);
+  text-align: center;
+}
+
+.maestro-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  padding: var(--spacing-1) var(--spacing-3);
+  background: var(--color-state-success-light);
+  color: var(--color-state-success);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--spacing-3);
+}
+
+.maestro-hero h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-1);
+}
+
+.maestro-hero-subtitle {
+  margin-bottom: var(--spacing-2);
+}
+
+.maestro-hero-price {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+/* =========================
+   Description Section
+   ========================= */
+.maestro-description {
+  padding: var(--spacing-4) var(--page-padding);
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.maestro-description-purpose {
+  display: block;
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-primary);
+}
+
+/* =========================
+   Video Guide Section
+   ========================= */
+.maestro-video {
+  padding: var(--spacing-4) var(--page-padding);
+}
+
+.maestro-video-title {
+  margin-bottom: var(--spacing-3);
+}
+
+.maestro-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.maestro-video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.maestro-video-caption {
+  display: block;
+  margin-top: var(--spacing-2);
+  text-align: center;
+}
+
+/* =========================
+   Key Features - Dark Section
+   ========================= */
+.maestro-features {
+  background: #1a1a1a;
+  padding: var(--spacing-6) var(--page-padding);
+  margin: var(--section-gap) 0;
+}
+
+.maestro-features-title {
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-4);
+}
+
+.maestro-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.maestro-feature-card {
+  display: flex;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  transition: background var(--transition-fast);
+}
+
+.maestro-feature-card:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.maestro-feature-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+}
+
+.maestro-feature-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.maestro-feature-title {
+  color: var(--color-text-inverse);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--spacing-1);
+}
+
+.maestro-feature-desc {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: var(--leading-relaxed);
+}
+
+/* =========================
+   Technical Specifications - iOS-style list
+   ========================= */
+.maestro-specs {
+  padding: var(--spacing-4) var(--page-padding);
+}
+
+.maestro-specs-title {
+  margin-bottom: var(--spacing-3);
+}
+
+.maestro-specs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.maestro-spec-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.maestro-spec-row:last-child {
+  border-bottom: none;
+}
+
+.maestro-spec-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.maestro-spec-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.maestro-spec-label {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+.maestro-spec-value {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* =========================
+   FAQ Section
+   ========================= */
+.maestro-faq {
+  padding: var(--spacing-4) var(--page-padding);
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.maestro-faq-title {
+  margin-bottom: var(--spacing-3);
+}
+
+.maestro-faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.maestro-faq-item {
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.maestro-faq-item:last-child {
+  border-bottom: none;
+}
+
+.maestro-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-3) 0;
+  min-height: var(--touch-target-min);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 80ms var(--ios-ease);
+}
+
+.maestro-faq-question:active {
+  background: var(--color-bg-secondary);
+}
+
+.maestro-faq-question p {
+  flex: 1;
+  padding-right: var(--spacing-2);
+  font-weight: var(--font-medium);
+}
+
+.maestro-faq-chevron {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.maestro-faq-chevron.expanded {
+  transform: rotate(90deg);
+}
+
+.maestro-faq-answer {
+  padding: 0 0 var(--spacing-3) 0;
+  line-height: var(--leading-relaxed);
+}
+
+/* =========================
+   Resources Section
+   ========================= */
+.maestro-resources {
+  padding: var(--spacing-4) var(--page-padding);
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.maestro-resources-title {
+  margin-bottom: var(--spacing-3);
+}
+
+.maestro-resources-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.maestro-resource-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) 0;
+  min-height: var(--touch-target-min);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: background 80ms var(--ios-ease);
+}
+
+.maestro-resource-item:last-child {
+  border-bottom: none;
+}
+
+.maestro-resource-item:active {
+  background: var(--color-bg-secondary);
+}
+
+.maestro-resource-item svg:first-child {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.maestro-resource-item span {
+  flex: 1;
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+}
+
+.maestro-resource-item svg:last-child {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+/* =========================
+   Actions Section
+   ========================= */
+.maestro-actions {
+  padding: var(--spacing-4) var(--page-padding);
+}
+
+/* =========================
+   Footer Spacer
+   ========================= */
+.maestro-footer-spacer {
+  height: 80px;
+}
+
+/* =========================
+   Minimal Theme Overrides
+   ========================= */
+[data-theme="minimal"] .maestro-empty {
+  padding: var(--spacing-8) var(--page-padding);
+}
+
+[data-theme="minimal"] .maestro-feature-card {
+  border-radius: var(--radius-md);
+}

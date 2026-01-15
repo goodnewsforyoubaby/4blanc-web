@@ -117,6 +117,19 @@ export const mockProducts: ProductListItem[] = [
       altText: 'Macro 20X Photo Lens',
     },
   },
+  {
+    id: 'prod-9',
+    title: 'Maéstro™ Ultimate Protection Nail Station',
+    handle: 'maestro-nail-station',
+    availableForSale: true,
+    priceRange: {
+      minVariantPrice: { amount: '899.00', currencyCode: 'USD' },
+    },
+    featuredImage: {
+      url: 'https://4blanc.com/cdn/shop/files/Maestro-nail-dust-collector-1.jpg?v=1743608297',
+      altText: 'Maéstro™ Ultimate Protection Nail Station',
+    },
+  },
 ];
 
 export const mockProductDetails: Record<string, Product> = {
@@ -187,6 +200,27 @@ export const mockProductDetails: Record<string, Product> = {
     ],
     options: [{ name: 'Color', values: ['White', 'Black'] }],
   },
+  'maestro-nail-station': {
+    ...mockProducts[8],
+    description: 'Maéstro™ is an innovative, all-in-one nail salon solution emphasizing health protection and workplace wellness. It offers high efficiency with low energy use, integrating multiple functions and adjustability. Features include a powerful vacuum for capturing nail, gel, and skin particles with exceptional suction power and low noise, HEPA-12 air filtration system, UV disinfection, adjustable circled light, smart protection system, and flexible mounting for diverse treatments.',
+    images: [
+      { url: 'https://4blanc.com/cdn/shop/files/Maestro-nail-dust-collector-1.jpg?v=1743608297', altText: 'Maéstro Station Front' },
+      { url: 'https://4blanc.com/cdn/shop/files/Maestro-nail-dust-collector-2.jpg?v=1743608298', altText: 'Maéstro Station Side' },
+      { url: 'https://4blanc.com/cdn/shop/files/Maestro-nail-dust-collector-3.jpg?v=1743608298', altText: 'Maéstro Station Detail' },
+      { url: 'https://4blanc.com/cdn/shop/files/Maestro-nail-dust-collector-4.jpg?v=1743608298', altText: 'Maéstro Station Features' },
+      { url: 'https://4blanc.com/cdn/shop/files/Maestro-nail-dust-collector-5.jpg?v=1743608298', altText: 'Maéstro Station In Use' },
+    ],
+    variants: [
+      {
+        id: 'var-9-1',
+        title: 'Default',
+        price: { amount: '899.00', currencyCode: 'USD' },
+        availableForSale: true,
+        selectedOptions: [],
+      },
+    ],
+    options: [],
+  },
 };
 
 export const mockCollections: Collection[] = [
@@ -232,9 +266,16 @@ export const getProductsByCollection = (handle: string): ProductListItem[] => {
     case 'uv-led-lamps':
       return mockProducts.filter((p) => p.handle.includes('lamp'));
     case 'dust-collectors':
-      return mockProducts.filter((p) => p.handle.includes('collector') || p.handle.includes('alize') || p.handle.includes('maestro'));
+      return mockProducts.filter((p) =>
+        p.handle.includes('collector') ||
+        p.handle.includes('alize') ||
+        p.handle.includes('maestro')
+      );
     case 'maestro-series':
-      return mockProducts.filter((p) => p.handle.includes('maestro'));
+      return mockProducts.filter((p) =>
+        p.handle.includes('maestro') ||
+        p.handle === 'maestro-nail-station'
+      );
     case 'accessories':
       return mockProducts.filter((p) =>
         p.handle.includes('filter') || p.handle.includes('mat') || p.handle.includes('lens')

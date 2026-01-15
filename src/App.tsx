@@ -4,7 +4,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { NotificationProvider } from './contexts/NotificationContext';
 import { AppLayout } from './components/layout';
 import { HomePage } from './pages/Home';
-import { ShopPage, CollectionPage, ProductPage } from './pages/Shop';
+import { ShopPage, CollectionPage, ProductPage, MaestroProductPage } from './pages/Shop';
 import { ChatPage } from './pages/Chat';
 import { ContactPage } from './pages/Contact';
 import { CartPage } from './pages/Cart';
@@ -50,6 +50,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/shop/:handle" element={<CollectionPage />} />
+                <Route path="/product/maestro-nail-station" element={<MaestroProductPage />} />
                 <Route path="/product/:handle" element={<ProductPage />} />
                 <Route path="/chat" element={<ChatPage />} />
                 <Route path="/contact" element={<ContactPage />} />
