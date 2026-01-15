@@ -49,8 +49,26 @@
   align-self: flex-start;
 }
 
+.home-hero-slide .hero-banner__pricing {
+  justify-content: flex-start;
+}
+
+.home-hero-slide .hero-banner__features {
+  justify-content: flex-start;
+}
+
+/* Promotional Slider Section */
+.home-promo-section {
+  padding: var(--spacing-6) 0 var(--spacing-4);
+  background: var(--color-bg-secondary);
+}
+
+.home-promo-section .home-section-header {
+  padding-top: 0;
+}
+
 .home-content {
-  padding: var(--spacing-6) 0 var(--spacing-8);
+  padding: var(--spacing-8) 0 var(--spacing-8);
   scroll-snap-align: start;
 }
 

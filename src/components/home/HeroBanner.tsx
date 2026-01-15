@@ -13,6 +13,9 @@ interface HeroBannerProps {
   badge?: string;
   overlay?: boolean;
   variant?: 'default' | 'christmas' | 'dark';
+  price?: string;
+  compareAtPrice?: string;
+  features?: string[];
 }
 
 export const HeroBanner: React.FC<HeroBannerProps> = ({
@@ -25,6 +28,9 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
   badge,
   overlay = true,
   variant = 'default',
+  price,
+  compareAtPrice,
+  features,
 }) => {
   const navigate = useNavigate();
 
@@ -51,6 +57,23 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
         )}
         <h2 className="hero-banner__title">{title}</h2>
         {subtitle && <p className="hero-banner__subtitle">{subtitle}</p>}
+        {(price || compareAtPrice) && (
+          <div className="hero-banner__pricing">
+            {price && <span className="hero-banner__price">{price}</span>}
+            {compareAtPrice && (
+              <span className="hero-banner__compare-price">{compareAtPrice}</span>
+            )}
+          </div>
+        )}
+        {features && features.length > 0 && (
+          <div className="hero-banner__features">
+            {features.map((feature, index) => (
+              <span key={index} className="hero-banner__feature">
+                {feature}
+              </span>
+            ))}
+          </div>
+        )}
         <Button onClick={handleClick} className="hero-banner__button">
           {buttonText}
         </Button>

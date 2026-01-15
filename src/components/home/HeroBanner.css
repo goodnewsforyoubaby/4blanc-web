@@ -95,3 +95,45 @@
 .hero-banner__button:active {
   transform: scale(0.96);
 }
+
+/* Pricing */
+.hero-banner__pricing {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-2);
+}
+
+.hero-banner__price {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+}
+
+.hero-banner__compare-price {
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  color: var(--color-text-inverse);
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+/* Features (pill badges) */
+.hero-banner__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-1);
+}
+
+.hero-banner__feature {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}

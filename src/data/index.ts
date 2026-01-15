@@ -9,3 +9,4 @@ export * from './shippingFAQ';
 export * from './productFAQ';
 export * from './productGuideMapping';
 export * from './shopPromos';
+export * from './homeBanners';
