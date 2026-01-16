@@ -31,7 +31,7 @@ export const productBanners: ProductBanner[] = [
     price: '$899',
     features: ['HEPA-12 Filter', 'UV Disinfection', 'Ultra Quiet'],
     buttonText: 'Shop Now',
-    buttonLink: '/product/maestro-nail-dust-collector',
+    buttonLink: '/product/maestro-nail-station',
     variant: 'dark',
   },
   {
@@ -83,6 +83,6 @@ export const promoSlides: PromoSlide[] = [
     title: 'Maestro Nail Station',
     subtitle: 'Award-Winning Professional Equipment',
     badge: '/4blanc-web/images/home/award-badge.png',
-    link: '/product/maestro-nail-dust-collector',
+    link: '/product/maestro-nail-station',
   },
 ];
